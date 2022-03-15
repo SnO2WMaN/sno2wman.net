@@ -1,0 +1,38 @@
+@import "ress";
+
+:root {
+  font-family: "sans-serif";
+}
+
+body > article {
+  max-width: 960px;
+  margin: 32px auto;
+}
+
+section {
+  margin-top: 16px;
+}
+
+footer {
+  margin-top: 24px;
+}
+
+h1 {
+  margin-bottom: 8px;
+}
+
+h2 {
+  margin-bottom: 8px;
+}
+
+dt:not(:first-of-type) {
+  margin-top: 8px;
+}
+
+dd {
+  margin-top: 4px;
+}
+
+li:not(:first-of-type) {
+  margin-top: 8px;
+}

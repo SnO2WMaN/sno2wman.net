@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+package-lock.json
+yarn.lock
+
+# Log
+*.log
+
+# Environment
+.env.*.local
+
+# VSCode
+.vscode/*
+!.vscode/extensions.json
+
+# ESLint
+.eslintcache
+
+# Output
+dist/
+.parcel-cache/
