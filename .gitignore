@@ -17,6 +17,9 @@ pnpm-lock.ymal
 # ESLint
 .eslintcache
 
+# Parcel
+.cache/
+.parcel-cache/
+
 # Output
 dist/
-.parcel-cache/
