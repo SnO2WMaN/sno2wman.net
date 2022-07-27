@@ -10,11 +10,11 @@
     "lineWidth": 120,
     "indentWidth": 2
   },
-  "markdown": {
-  },
-  "toml": {
-  },
-  "includes": ["**/*.{ts,tsx,js,jsx,cjs,mjs,json,md,toml,html,css,scss}"],
+  "markdown": {},
+  "toml": {},
+  "includes": [
+    "**/*.{ts,tsx,js,jsx,cjs,mjs,json,md,toml,html,css,scss}"
+  ],
   "excludes": [
     "**/node_modules",
     "**/*-lock.json",

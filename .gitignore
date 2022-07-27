@@ -10,9 +10,8 @@ pnpm-lock.ymal
 # Environment
 .env.*.local
 
-# VSCode
-.vscode/*
-!.vscode/extensions.json
+# direnv
+.direnv
 
 # ESLint
 .eslintcache
