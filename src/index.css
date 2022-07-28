@@ -35,11 +35,6 @@ section {
   margin-block-end: 16px;
 }
 
-blockquote {
-  margin: 0;
-  padding: 4px 8px;
-  font-size: smaller;
-}
 
 h1 {
   margin-block-start: 0;
@@ -62,6 +57,19 @@ dt,
 dd,
 blockquote {
   color: var(--text-color);
+}
+
+#sampling {
+  margin: 0;
+  padding: 4px 8px;
+  box-sizing: content-box;
+  font-size: smaller;
+  font-style: italic;
+}
+
+#sampling>a,
+#sampling>span {
+  float: right;
 }
 
 a {
