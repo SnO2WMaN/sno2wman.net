@@ -3,9 +3,7 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "files.exclude": {
     "**/.direnv": true,
-    "**/.parcel-cache": true,
-    "**/node_modules": true,
-    "**/dist": true
+    "**/node_modules": true
   },
   "customLocalFormatters.formatters": [
     {
@@ -15,7 +13,11 @@
         "jsonc",
         "markdown",
         "nix",
-        "toml"
+        "toml",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
       ]
     }
   ],
@@ -31,8 +33,25 @@
   "[jsonc]": {
     "editor.defaultFormatter": "jkillian.custom-local-formatters"
   },
+  "[javascript]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
   "[markdown]": {
     "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-workflow.json": [
+      ".github/workflows/*.yml"
+    ]
   },
   "editor.unicodeHighlight.allowedCharacters": {
     "！": true
