@@ -24,7 +24,6 @@ jobs:
       - name: Build & Copy
         run: |
           nix build ".#default" -o result
-          mkdir _site
           cp -rL ./result ./_site
           chmod 755 ./_site
           chmod 644 ./_site/**/*
