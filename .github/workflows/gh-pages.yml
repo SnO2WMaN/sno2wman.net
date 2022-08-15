@@ -25,7 +25,7 @@ jobs:
         run: |
           nix build ".#default" -o result
           mkdir _site
-          cp ./result/**/* ./_site
+          cp -rL ./result ./_site
           chmod 755 ./_site
           chmod 644 ./_site/**/*
       - uses: actions/upload-pages-artifact@v1
