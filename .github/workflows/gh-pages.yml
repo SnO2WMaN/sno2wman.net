@@ -21,12 +21,8 @@ jobs:
         with:
           name: sno2wman
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-      - name: Build & Copy
-        run: |
-          nix build ".#default" -o result
-          cp -rL ./result ./_site
-          chmod 755 ./_site
-          chmod 644 ./_site/*
+      - run: nix build ".#default"
+      - run: cp -r --dereference --no-preserve=mode,ownership result/ _site/
       - uses: actions/upload-pages-artifact@v1
 
   deploy:
