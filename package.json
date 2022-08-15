@@ -1,13 +1,11 @@
 {
   "name": "@sno2wman/sno2wman-net",
+  "version": "0.1.0",
   "private": true,
   "source": "./src/index.html",
   "scripts": {
     "start": "parcel",
     "build": "parcel build"
-  },
-  "engines": {
-    "node": "16"
   },
   "dependencies": {},
   "devDependencies": {

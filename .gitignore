@@ -10,8 +10,9 @@ pnpm-lock.ymal
 # Environment
 .env.*.local
 
-# direnv
+# Nix
 .direnv
+result
 
 # ESLint
 .eslintcache
