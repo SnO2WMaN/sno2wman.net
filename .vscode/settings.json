@@ -3,6 +3,8 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "files.exclude": {
     "**/.direnv": true,
+    "**/.parcel-cache": true,
+    "**/dist": true,
     "**/node_modules": true
   },
   "customLocalFormatters.formatters": [
