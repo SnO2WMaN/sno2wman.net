@@ -26,7 +26,7 @@ jobs:
           nix build ".#default" -o result
           cp -rL ./result ./_site
           chmod 755 ./_site
-          chmod 644 ./_site/**/*
+          chmod 644 ./_site/*
       - uses: actions/upload-pages-artifact@v1
 
   deploy:
