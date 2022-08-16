@@ -33,9 +33,18 @@
             })
           ];
         };
+        inherit (pkgs) lib;
       in {
         packages.website = pkgs.npmlock2nix.build {
-          src = ./.;
+          src = builtins.path {
+            path = ./.;
+            filter = name: type:
+              (name == toString ./package.json)
+              || (name == toString ./package-lock.json)
+              || (name == toString ./.tsconfig.json)
+              || (name == toString ./.browserslistrc)
+              || (lib.hasPrefix (toString ./src) name);
+          };
           installPhase = "cp -r dist $out";
           buildCommands = [
             "npm run build"
