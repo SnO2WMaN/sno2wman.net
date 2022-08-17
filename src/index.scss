@@ -27,11 +27,12 @@
 
 @media (prefers-color-scheme:dark) {
   :root {
-    --background-color: hsl(217, 25%, 36%);
-    --nav-background-color: hsl(217, 25%, 24%);
-    --text-color: hsl(223, 42%, 80%);
-    --link-color: hsl(207, 88%, 75%);
-    --link-visited-color: hsl(278, 70%, 75%);
+    --background-color: #3b4252;
+    --nav-background-color: #2e3440;
+    --text-color: #e5e9f0;
+    --text-color-weaken: #d8dee9;
+    --link-color: #81a1c1;
+    --link-visited-color: #b48ead;
   }
 }
 
