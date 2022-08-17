@@ -47,6 +47,10 @@ a {
   text-align: center;
 }
 
+.select-all {
+  user-select: all;
+}
+
 h1,
 h2,
 p,
@@ -54,6 +58,7 @@ dt,
 dd,
 blockquote {
   color: var(--text-color);
+  margin: 0;
 }
 
 ul {
@@ -74,7 +79,7 @@ body {
 
 
 
-#sidebar {
+body>nav {
   width: 20rem;
   height: 100vh;
   padding: 1.5rem 2rem;
@@ -82,6 +87,8 @@ body {
 
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
+  flex-grow: 0;
 
 
   &>div:nth-of-type(1) {
@@ -90,7 +97,7 @@ body {
     &>.site-name {
       display: block;
       color: var(--text-color);
-      font-size: 1.25rem;
+      font-size: larger;
       font-weight: bold;
       text-decoration: none;
     }
@@ -99,7 +106,7 @@ body {
       margin: 0;
       margin-block-start: 0.5rem;
       padding: 0 0.5rem;
-      font-size: 0.8rem;
+      font-size: smaller;
       font-style: italic;
 
       &>a,
@@ -118,8 +125,50 @@ body {
 
     &>.copyright {
       margin-top: 1rem;
-      font-size: 0.8rem;
+      font-size: smaller;
       color: var(--text-color-weaken);
+    }
+  }
+}
+
+body>main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  flex-grow: 1;
+  padding: 1.5rem 0;
+
+  &>div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 1rem;
+
+    &>h1 {
+      font-size: xx-large;
+      grid-column: 1 / span 2;
+      margin-block-end: 1rem;
+    }
+
+    &>section {
+
+      &>h2 {
+        font-size: x-large;
+        margin-block-end: 1rem;
+      }
+
+      &>p {
+        font-size: smaller;
+      }
+
+      &>dl {
+        margin: 0.5rem 0;
+
+        dd {
+          font-size: smaller;
+          margin-inline-start: 0.5rem;
+        }
+      }
     }
   }
 }
