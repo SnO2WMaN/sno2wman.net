@@ -61,6 +61,18 @@ blockquote {
   margin: 0;
 }
 
+input {
+  background-color: var(--background-color);
+  border-radius: 0.125rem;
+  border: 1px solid var(--text-color-weaken);
+  color: var(--text-color);
+  padding: 0.25rem 0.5rem;
+
+  &::placeholder {
+    color: var(--text-color-weaken);
+  }
+}
+
 ul {
   margin: 0;
   padding-left: 0;
