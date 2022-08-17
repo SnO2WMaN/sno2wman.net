@@ -50,7 +50,10 @@ a {
 
 h1,
 h2,
+h3,
 p,
+ul,
+li,
 dt,
 dd,
 blockquote {
@@ -147,19 +150,39 @@ body>main {
 
     &>h1 {
       font-size: xx-large;
-      grid-column: 1 / full;
+      grid-column: 1 / -1;
       margin-block-end: 1rem;
     }
 
     &>section {
+      grid-column: span 1 / span 1;
+
+      &.full {
+        grid-column: 1 / -1;
+      }
 
       &>h2 {
         font-size: x-large;
         margin-block-end: 1rem;
       }
 
+      &>h3 {
+        font-size: large;
+        margin-block-end: 0.75rem;
+      }
+
       &>p {
         font-size: smaller;
+        margin-block-end: 0.5rem;
+      }
+
+      &>ul {
+        margin: 0.5rem 0;
+
+        &>li {
+          font-size: smaller;
+          margin-inline-start: 0.5rem;
+        }
       }
 
       &>dl {
@@ -173,6 +196,7 @@ body>main {
     }
   }
 }
+
 
 @media (max-width: 1024px) {
   body {
@@ -224,7 +248,7 @@ body>main {
       grid-template-columns: 1fr;
 
       &>h1 {
-        grid-column: auto;
+        grid-column: 1 / 1;
       }
     }
   }

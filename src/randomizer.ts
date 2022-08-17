@@ -1,4 +1,9 @@
 import samples from "./samples.json";
+import iamnots from "./iamnot.json";
+
+const $iamnot = document.getElementById("iamnot")!;
+const iamnot = iamnots.at(Math.floor(iamnots.length * Math.random()))!
+$iamnot.textContent = iamnot;
 
 const $sampling = document.getElementById("sampling")!;
 const sample = samples.at(Math.floor(samples.length * Math.random()))!
