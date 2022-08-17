@@ -15,13 +15,47 @@
   <meta name="twitter:site" content="@SnO2WMaN" />
   <title>sno2wman.net</title>
   <style>
-    @import "./index.css";
+    @import "./index.scss";
   </style>
-  <script type="module" src="./sampling.ts"></script>
 </head>
 
 <body>
-  <header>
+  <nav id="sidebar">
+    <div>
+      <a class="site-name" href="/">
+        sno2wman.net
+      </a>
+      <blockquote id="sampling" class="sampling"></blockquote>
+      <script type="module" src="./sampling.ts"></script>
+    </div>
+
+    <div>
+      <img src="https://count.getloli.com/get/@sno2wman.net-dev?theme=rule34" />
+      <div id="copyright" class="copyright">
+        <div class="text-center">
+          <time datetime="2022">2022</time>
+          SnO<sub>2</sub>WMaN
+        </div>
+        <ul>
+          <li>Sourced from
+            <a href="https://github.com/SnO2WMaN/sno2wman.net/tree/main">GitHub</a>
+          </li>
+          <li>Licenced by
+            <a href="https://github.com/SnO2WMaN/sno2wman.net/tree/main/LICENSE">WTFPL</a>
+          </li>
+          <li>Hosted on
+            <a href="https://github.com/SnO2WMaN/sno2wman.net/actions/workflows/gh-pages.yml">GitHub Pages</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--
+    <object type="image/svg+xml" data="https://count.getloli.com/get/@sno2wman.net-dev?theme=rule34" width="300"
+      height="80"></object>
+    -->
+  </nav>
+
+  <main>
     <h1>
       SnO<sub>2</sub>WMaN,
       sno2wman.net

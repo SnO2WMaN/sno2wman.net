@@ -1,0 +1,125 @@
+@import "npm:cssremedy/css/remedy.css";
+
+:root {
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Helvetica Neue,
+    Arial,
+    Noto Sans,
+    sans-serif,
+    Apple Color Emoji,
+    Segoe UI Emoji,
+    Segoe UI Symbol,
+    Noto Color Emoji;
+
+  --background-color: #eceff4;
+  --nav-background-color: #d8dee9;
+  --text-color: #2e3440;
+  --text-color-weaken: #434c5e;
+  --link-color: #5e81ac;
+  --link-visited-color: #b48ead;
+}
+
+@media (prefers-color-scheme:dark) {
+  :root {
+    --background-color: hsl(217, 25%, 36%);
+    --nav-background-color: hsl(217, 25%, 24%);
+    --text-color: hsl(223, 42%, 80%);
+    --link-color: hsl(207, 88%, 75%);
+    --link-visited-color: hsl(278, 70%, 75%);
+  }
+}
+
+a {
+  color: var(--link-color);
+
+  &:visited {
+    color: var(--link-visited-color);
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+h1,
+h2,
+p,
+dt,
+dd,
+blockquote {
+  color: var(--text-color);
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+html {
+  background: var(--background-color);
+}
+
+body {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+}
+
+
+
+#sidebar {
+  width: 20rem;
+  height: 100vh;
+  padding: 1.5rem 2rem;
+  background-color: var(--nav-background-color);
+
+  display: flex;
+  flex-direction: column;
+
+
+  &>div:nth-of-type(1) {
+    flex-grow: 1;
+
+    &>.site-name {
+      display: block;
+      color: var(--text-color);
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    &>.sampling {
+      margin: 0;
+      margin-block-start: 0.5rem;
+      padding: 0 0.5rem;
+      font-size: 0.8rem;
+      font-style: italic;
+
+      &>a,
+      &>span {
+        float: right;
+      }
+
+      &>span {
+        color: var(--text-color-weaken);
+      }
+    }
+  }
+
+  &>div:nth-of-type(2) {
+    flex-grow: 0;
+
+    &>.copyright {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-color-weaken);
+    }
+  }
+}
