@@ -53,6 +53,11 @@
         packages.default = self.packages.${system}.website;
         defaultPackage = self.packages.${system}.default;
 
+        apps.preview = flake-utils.lib.mkApp {
+          drv = with pkgs; (writeShellScriptBin "serve-preview" "${miniserve}/bin/miniserve ${self.packages.${system}.website}");
+        };
+        apps.default = self.apps.${system}.preview;
+
         devShells.default = pkgs.devshell.mkShell {
           imports = [
             (pkgs.devshell.importTOML ./devshell.toml)
