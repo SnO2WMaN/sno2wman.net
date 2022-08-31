@@ -1,6 +1,7 @@
 {
   "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix",
   "typescript.tsdk": "node_modules/typescript/lib",
+  "vscode-dhall-lsp-server.executable": "dhall-lsp-server",
   "files.exclude": {
     "**/.direnv": true,
     "**/.parcel-cache": true,
