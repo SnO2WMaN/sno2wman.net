@@ -22,6 +22,12 @@
         "typescript",
         "typescriptreact"
       ]
+    },
+    {
+      "command": "dhall format",
+      "languages": [
+        "dhall"
+      ]
     }
   ],
   "[toml]": {
@@ -49,6 +55,9 @@
     "editor.defaultFormatter": "jkillian.custom-local-formatters"
   },
   "[markdown]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "[dhall]": {
     "editor.defaultFormatter": "jkillian.custom-local-formatters"
   },
   "yaml.schemas": {

@@ -19,6 +19,22 @@
         "type": "github"
       }
     },
+    "dhall-haskell": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1660609269,
+        "narHash": "sha256-IX6Ut+V4+e9jTdkYvM/pju/8MG7Zl3lF1QDNxBYri7E=",
+        "owner": "dhall-lang",
+        "repo": "dhall-haskell",
+        "rev": "4763acc7c6d9172bb7e26a990884fa1302eecca7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dhall-lang",
+        "repo": "dhall-haskell",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -131,6 +147,7 @@
     "root": {
       "inputs": {
         "devshell": "devshell",
+        "dhall-haskell": "dhall-haskell",
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils_2",
         "nix-filter": "nix-filter",

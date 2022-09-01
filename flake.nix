@@ -6,10 +6,10 @@
       url = "github:nix-community/npmlock2nix";
       flake = false;
     };
-    # dhall-haskell = {
-    #   url = "github:dhall-lang/dhall-haskell/1.41.2";
-    #   flake = false;
-    # };
+    dhall-haskell = {
+      url = "github:dhall-lang/dhall-haskell";
+      flake = false;
+    };
   };
 
   # dev
@@ -33,9 +33,9 @@
   } @ inputs:
     flake-utils.lib.eachDefaultSystem (
       system: let
-        # dhall-haskell' = (import "${inputs.dhall-haskell}/nix/shared.nix") {
-        #   inherit system nixpkgs;
-        # };
+        dhall-haskell' = (import "${inputs.dhall-haskell}/nix/shared.nix") {
+          inherit system nixpkgs;
+        };
         pkgs = import nixpkgs {
           inherit system;
           overlays = [
@@ -87,6 +87,8 @@
             dprint
             nodejs-16_x
             treefmt
+            dhall
+            dhall-json
             dhall-lsp-server
           ];
           commands = [
