@@ -1,8 +1,9 @@
 { Type =
     { link : Text
-    , service : Text
-    , alias : Optional Text
+    , name : Text
+    , owner : Text
+    , mutual : Bool
     , description : Optional Text
     }
-, default = { alias = None Text, description = None Text }
+, default = { mutual = False, description = None Text }
 }

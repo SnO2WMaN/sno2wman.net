@@ -1,26 +1,27 @@
 let Boost = ./Boost.dhall
 
-let Website = ./Website.dhall
+let Social = ./Social.dhall
 
 let Quote = ./Quote.dhall
 
-let Social = ./Social.dhall
+let Contact = ./Contact.dhall
 
 let Link = ./Link.dhall
 
 in  { Type =
-        { quotes : List Quote.Type
-        , boost : List Boost.Type
-        , social : List Social.Type
-        , websites : List Website.Type
+        { accessCounter : Text
         , sourcedOn : Link.Type
         , licencedBy : Link.Type
         , hostedBy : Link.Type
+        , quotes : List Quote.Type
+        , boosts : List Boost.Type
+        , contacts : List Contact.Type
+        , socials : List Social.Type
         }
     , default =
       { quotes = [] : List Quote.Type
-      , boost = [] : List Boost.Type
-      , social = [] : List Social.Type
-      , websites = [] : List Website.Type
+      , boosts = [] : List Boost.Type
+      , contacts = [] : List Contact.Type
+      , socials = [] : List Social.Type
       }
     }
