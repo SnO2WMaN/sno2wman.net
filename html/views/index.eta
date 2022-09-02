@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="IBM HomePage Builder 2001 V5.0.3 for Windows">
+  <meta name="og:type" content="website" />
+  <meta name="og:title" content="sno2wman.net" />
+  <meta name="og:site_name" content="sno2wman.net" />
+  <meta name="og:url" content="https://sno2wman.net/" />
+  <meta name="og:image" content="https://scrapbox.io/api/pages/sno2wman/sno2wman/icon#.png" />
+  <meta name="twitter:title" content="sno2wman.net" />
+  <meta name="twitter:url" content="https://sno2wman.net/" />
+  <meta name="twitter:site" content="@SnO2WMaN" />
+  <title>sno2wman.net</title>
+  <style>
+    @import "./index.scss";
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div>
+      <a class="site-name" href="/">
+        sno2wman.net
+      </a>
+      <blockquote id="sampling" class="sampling"></blockquote>
+    </div>
+
+    <div>
+      <img class="access-counter" src="https://count.getloli.com/get/@sno2wman.net?theme=rule34" />
+      <div id="copyright" class="copyright">
+        <div>
+          <time datetime="2022">2022</time>
+          <span class="select-all">
+            SnO<sub>2</sub>WMaN
+          </span>
+        </div>
+        <ul>
+          <li>Sourced from
+            <a href="https://github.com/SnO2WMaN/sno2wman.net/tree/main">GitHub</a>
+          </li>
+          <li>Licenced by
+            <a href="https://github.com/SnO2WMaN/sno2wman.net/tree/main/LICENSE">WTFPL</a>
+          </li>
+          <li>Hosted on
+            <a href="https://github.com/SnO2WMaN/sno2wman.net/actions/workflows/gh-pages.yml">GitHub Pages</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div>
+      <h1>
+        <span class="select-all">
+          SnO<sub>2</sub>WMaN
+        </span>
+        @
+        <span class="select-all">
+          sno2wman.net
+        </span>
+      </h1>
+      <section id="aboutme" class="full">
+        <h2>アバウト・ミー</h2>
+        <p>私は<span id="iamnot"></span>ではありません．</p>
+        <h3>インタレスト</h3>
+        <p>次のことに興味があります．</p>
+        <ul>
+          <li>
+            <input type="text" placeholder="興味のあることを入力">
+          </li>
+        </ul>
+        <p>逆に，次のことには興味がありません．</p>
+        <ul>
+          <li>上記以外全て</li>
+        </ul>
+      </section>
+      <section id="links">
+        <h2>リンク</h2>
+        <dl>
+          <dt><a href="https://twitter.com/SnO2WMaN">Twitter</a></dt>
+          <dd>コミュニケーションツール(1)</dd>
+          <dt><a href="https://scrapbox.io/sno2wman">Scrapbox (Internet Explorer 2.0)</a></dt>
+          <dd>私的領域</dd>
+          <dt><a href="https://github.com/SnO2WMaN">GitHub</a></dt>
+          <dd>制作物</dd>
+          <dt><a href="mailto:me@sno2wman.net">me@sno2wman.net</a></dt>
+          <dd>重要連絡</dd>
+        </dl>
+      </section>
+      </section>
+      <section id="social">
+        <h2>ソーシャル</h2>
+        <p>
+          削除や追加依頼は
+          <a href="https://github.com/SnO2WMaN/sno2wman.net/issues">ここ</a>
+          か
+          <a href="mailto:me@sno2wman.net">メール</a>
+          してください．積極募集中．
+        </p>
+        <%~ E.includeFile('./socials.eta', {socials: it.socials}) %>
+      </section>
+    </div>
+  </main>
+</body>
+
+</html>
