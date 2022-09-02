@@ -26,5 +26,5 @@ dist/
 _site/
 
 # Dhall
-src/config.json
-src/dhall/*.json
+config.json
+dhall/*.json
