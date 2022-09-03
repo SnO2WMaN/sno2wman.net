@@ -1,6 +1,7 @@
 {
   "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix",
   "typescript.tsdk": "node_modules/typescript/lib",
+  "vscode-dhall-lsp-server.executable": "dhall-lsp-server",
   "files.exclude": {
     "**/.direnv": true,
     "**/.parcel-cache": true,
@@ -20,6 +21,12 @@
         "javascriptreact",
         "typescript",
         "typescriptreact"
+      ]
+    },
+    {
+      "command": "dhall format",
+      "languages": [
+        "dhall"
       ]
     }
   ],
@@ -48,6 +55,9 @@
     "editor.defaultFormatter": "jkillian.custom-local-formatters"
   },
   "[markdown]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "[dhall]": {
     "editor.defaultFormatter": "jkillian.custom-local-formatters"
   },
   "yaml.schemas": {

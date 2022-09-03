@@ -7,24 +7,12 @@ pnpm-lock.ymal
 # Log
 *.log
 
-# Environment
-.env.*.local
-
-# Nix
-.direnv
-result
-
-# ESLint
-.eslintcache
-
 # Parcel
 .cache/
 .parcel-cache/
 
 # Output
 dist/
-_site/
 
-# Dhall
+# misc
 config.json
-dhall/*.json

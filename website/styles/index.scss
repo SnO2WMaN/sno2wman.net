@@ -114,22 +114,6 @@ body>nav {
       text-decoration: none;
     }
 
-    &>.sampling {
-      margin: 0;
-      margin-block-start: 0.5rem;
-      padding: 0 0.5rem;
-      font-size: smaller;
-      font-style: italic;
-
-      &>a,
-      &>span {
-        float: right;
-      }
-
-      &>span {
-        color: var(--text-color-weaken);
-      }
-    }
   }
 
   &>div:nth-of-type(2) {
@@ -147,6 +131,23 @@ body>nav {
   }
 }
 
+#sampling {
+  margin: 0;
+  margin-block-start: 0.5rem;
+  padding: 0 0.5rem;
+  font-size: smaller;
+  font-style: italic;
+
+  &>a,
+  &>span {
+    float: right;
+  }
+
+  &>span {
+    color: var(--text-color-weaken);
+  }
+}
+
 body>main {
   display: flex;
   flex-direction: column;
@@ -158,7 +159,7 @@ body>main {
   &>div {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem 1rem;
+    gap: 1rem 1rem;
 
     &>h1 {
       font-size: xx-large;

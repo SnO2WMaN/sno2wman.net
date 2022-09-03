@@ -5,5 +5,7 @@
     "arrterian.nix-env-selector",
     "tamasfe.even-better-toml",
     "jkillian.custom-local-formatters",
+    "dhall.dhall-lang",
+    "dhall.vscode-dhall-lsp-server"
   ]
 }

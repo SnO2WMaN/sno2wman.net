@@ -1,12 +1,21 @@
 {
+  # main
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     npmlock2nix = {
       url = "github:nix-community/npmlock2nix";
       flake = false;
     };
-    devshell.url = "github:numtide/devshell";
+    dhall-haskell = {
+      url = "github:dhall-lang/dhall-haskell";
+      flake = false;
+    };
+  };
 
+  # dev
+  inputs = {
+    devshell.url = "github:numtide/devshell";
+    nix-filter.url = "github:numtide/nix-filter";
     flake-utils.url = "github:numtide/flake-utils";
     flake-compat = {
       url = "github:edolstra/flake-compat";
@@ -17,50 +26,66 @@
   outputs = {
     self,
     nixpkgs,
-    npmlock2nix,
-    flake-utils,
     devshell,
+    flake-utils,
     ...
-  }:
+  } @ inputs:
     flake-utils.lib.eachDefaultSystem (
       system: let
+        dhall-haskell' = (import "${inputs.dhall-haskell}/nix/shared.nix") {
+          inherit system nixpkgs;
+        };
         pkgs = import nixpkgs {
           inherit system;
-          overlays = [
+          overlays = with inputs; [
             devshell.overlay
-            (self: super: {
-              npmlock2nix = super.callPackage npmlock2nix {};
-            })
+            nix-filter.overlays.default
+            (
+              final: prev: {
+                # inherit
+                #   (dhall-haskell')
+                #   dhall-json
+                #   dhall-lsp-server
+                #   ;
+                npmlock2nix = final.callPackage inputs.npmlock2nix {};
+              }
+            )
           ];
         };
         inherit (pkgs) lib;
       in {
-        packages.website = pkgs.npmlock2nix.build {
-          src = builtins.path {
-            path = ./.;
-            filter = name: type:
-              (name == toString ./package.json)
-              || (name == toString ./package-lock.json)
-              || (name == toString ./.tsconfig.json)
-              || (name == toString ./.browserslistrc)
-              || (lib.hasPrefix (toString ./src) name);
-          };
-          installPhase = "cp -r dist $out";
-          buildCommands = [
-            "npm run build"
-          ];
-        };
+        # packages.dhall-haskell = import inputs.dhall-haskell;
+        packages.website = pkgs.callPackage ./website {};
         packages.default = self.packages.${system}.website;
         defaultPackage = self.packages.${system}.default;
 
         apps.preview = flake-utils.lib.mkApp {
-          drv = with pkgs; (writeShellScriptBin "serve-preview" "${miniserve}/bin/miniserve ${self.packages.${system}.website}");
+          drv = with pkgs; (
+            writeShellScriptBin
+            "serve-preview"
+            "${miniserve}/bin/miniserve ${self.packages.${system}.website}"
+          );
         };
         apps.default = self.apps.${system}.preview;
 
         devShells.default = pkgs.devshell.mkShell {
-          imports = [
-            (pkgs.devshell.importTOML ./devshell.toml)
+          packages = with pkgs; [
+            alejandra
+            dprint
+            nodejs-16_x
+            treefmt
+            dhall
+            dhall-json
+            dhall-lsp-server
+            deno
+            taplo-cli
+            cargo-make
+          ];
+          commands = [
+            {
+              package = "treefmt";
+              category = "formatters";
+            }
           ];
         };
       }
