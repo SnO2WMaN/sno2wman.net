@@ -55,27 +55,9 @@
         inherit (pkgs) lib;
       in {
         # packages.dhall-haskell = import inputs.dhall-haskell;
-        packages.config-json = pkgs.callPackage ./dhall {};
-        # packages.website = pkgs.npmlock2nix.build {
-        #   src = with nix-filter.lib;
-        #     filter {
-        #       root = ./.;
-        #       include = [
-        #         "./package.json"
-        #         "./package-lock.json"
-        #         "./tsconfig.json"
-        #         "./.browserslistrc"
-        #         (inDirectory "src")
-        #       ];
-        #       # exclude = [];
-        #     };
-        #   installPhase = "cp -r dist $out";
-        #   buildCommands = [
-        #     "npm run build"
-        #   ];
-        # };
-        # packages.default = self.packages.${system}.website;
-        # defaultPackage = self.packages.${system}.default;
+        packages.website = pkgs.callPackage ./website {};
+        packages.default = self.packages.${system}.website;
+        defaultPackage = self.packages.${system}.default;
 
         apps.preview = flake-utils.lib.mkApp {
           drv = with pkgs; (
