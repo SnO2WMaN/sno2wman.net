@@ -1,4 +1,4 @@
-let siteconf = ./dhall/types/package.dhall
+let siteconf = ./types/package.dhall
 
 let Config = siteconf.Config
 
@@ -19,8 +19,8 @@ in  Config::{
       , link =
           "https://github.com/SnO2WMaN/sno2wman.net/actions/workflows/gh-pages.yml"
       }
-    , quotes = ./dhall/quotes.dhall
-    , contacts = ./dhall/contacts.dhall
-    , boosts = ./dhall/boosts.dhall
-    , socials = ./dhall/socials.dhall
+    , quotes = ./quotes.dhall
+    , contacts = ./contacts.dhall
+    , boosts = ./boosts.dhall
+    , socials = ./socials.dhall
     }

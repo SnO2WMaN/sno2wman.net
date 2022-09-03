@@ -28,7 +28,6 @@
     nixpkgs,
     devshell,
     flake-utils,
-    nix-filter,
     ...
   } @ inputs:
     flake-utils.lib.eachDefaultSystem (
@@ -38,8 +37,9 @@
         };
         pkgs = import nixpkgs {
           inherit system;
-          overlays = [
+          overlays = with inputs; [
             devshell.overlay
+            nix-filter.overlays.default
             (
               final: prev: {
                 # inherit
@@ -55,29 +55,34 @@
         inherit (pkgs) lib;
       in {
         # packages.dhall-haskell = import inputs.dhall-haskell;
-        packages.website = pkgs.npmlock2nix.build {
-          src = with nix-filter.lib;
-            filter {
-              root = ./.;
-              include = [
-                "./package.json"
-                "./package-lock.json"
-                "./tsconfig.json"
-                "./.browserslistrc"
-                (inDirectory "src")
-              ];
-              # exclude = [];
-            };
-          installPhase = "cp -r dist $out";
-          buildCommands = [
-            "npm run build"
-          ];
-        };
-        packages.default = self.packages.${system}.website;
-        defaultPackage = self.packages.${system}.default;
+        packages.config-json = pkgs.callPackage ./nix/config-json.nix {};
+        # packages.website = pkgs.npmlock2nix.build {
+        #   src = with nix-filter.lib;
+        #     filter {
+        #       root = ./.;
+        #       include = [
+        #         "./package.json"
+        #         "./package-lock.json"
+        #         "./tsconfig.json"
+        #         "./.browserslistrc"
+        #         (inDirectory "src")
+        #       ];
+        #       # exclude = [];
+        #     };
+        #   installPhase = "cp -r dist $out";
+        #   buildCommands = [
+        #     "npm run build"
+        #   ];
+        # };
+        # packages.default = self.packages.${system}.website;
+        # defaultPackage = self.packages.${system}.default;
 
         apps.preview = flake-utils.lib.mkApp {
-          drv = with pkgs; (writeShellScriptBin "serve-preview" "${miniserve}/bin/miniserve ${self.packages.${system}.website}");
+          drv = with pkgs; (
+            writeShellScriptBin
+            "serve-preview"
+            "${miniserve}/bin/miniserve ${self.packages.${system}.website}"
+          );
         };
         apps.default = self.apps.${system}.preview;
 
@@ -90,17 +95,14 @@
             dhall
             dhall-json
             dhall-lsp-server
+            deno
+            taplo-cli
+            cargo-make
           ];
           commands = [
             {
               package = "treefmt";
               category = "formatters";
-            }
-          ];
-          env = [
-            {
-              name = "PATH";
-              eval = "$PATH:$PRJ_ROOT/node_modules/.bin";
             }
           ];
         };
