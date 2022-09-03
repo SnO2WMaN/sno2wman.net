@@ -12,7 +12,7 @@ in  { Type =
         { accessCounter : Text
         , sourcedOn : Link.Type
         , licencedBy : Link.Type
-        , hostedBy : Link.Type
+        , deployedTo : Link.Type
         , quotes : List Quote.Type
         , boosts : List Boost.Type
         , contacts : List Contact.Type

@@ -9,6 +9,7 @@ stdenv.mkDerivation {
     filter {
       root = ./.;
       exclude = [
+        ".gitignore"
         "*.json"
       ];
     };

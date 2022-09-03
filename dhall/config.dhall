@@ -14,7 +14,7 @@ in  Config::{
       , name = "WTFPL"
       , link = "https://github.com/SnO2WMaN/sno2wman.net/tree/main/LICENSE"
       }
-    , hostedBy = Link::{
+    , deployedTo = Link::{
       , name = "GitHub Pages"
       , link =
           "https://github.com/SnO2WMaN/sno2wman.net/actions/workflows/gh-pages.yml"

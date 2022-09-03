@@ -1,3 +1,3 @@
-{ Type = { text : Text, reference : Text, link : Optional Text }
+{ Type = { text : Text, reference : Text, link : Text }
 , default.link = None Text
 }
