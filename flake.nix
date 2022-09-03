@@ -55,7 +55,7 @@
         inherit (pkgs) lib;
       in {
         # packages.dhall-haskell = import inputs.dhall-haskell;
-        packages.config-json = pkgs.callPackage ./nix/config-json.nix {};
+        packages.config-json = pkgs.callPackage ./dhall {};
         # packages.website = pkgs.npmlock2nix.build {
         #   src = with nix-filter.lib;
         #     filter {

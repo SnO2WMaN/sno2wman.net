@@ -7,7 +7,7 @@ stdenv.mkDerivation {
   name = "config-json";
   src = with nix-filter;
     filter {
-      root = ../dhall;
+      root = ./.;
       exclude = [
         "*.json"
       ];

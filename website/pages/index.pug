@@ -1,0 +1,87 @@
+doctype html
+
+html(lang="ja")
+  head
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="generator" content="IBM HomePage Builder 2001 V5.0.3 for Windows")
+
+    meta(name="og:type" content="website")
+    meta(name="og:title" content="sno2wman.net")
+    meta(name="og:site_name" content="sno2wman.net")
+    meta(name="og:url" content="https://sno2wman.net")
+    meta(name="og:image" content="https://scrapbox.io/api/pages/sno2wman/sno2wman/icon#.png")
+
+    meta(name="twitter:title" content="sno2wman.net")
+    meta(name="twitter:url" content="https://sno2wman.net/")
+    meta(name="twitter:site" content="@SnO2WMaN")
+
+    link(rel="stylesheet", href="../styles/index.scss")
+    script(type="module" src="../scripts/sampling.ts")
+
+  body
+    nav
+      div
+        a.site-name(href="/") sno2wman.net
+        blockquote#sampling
+      div
+        img.access-counter(src=accessCounter)
+        #copyright
+          span
+            time(datetime="2022") 2022
+            |
+            |
+            span.select-all
+              | SnO
+              sub 2
+              | WMaN
+          ul
+            li
+              | Sourced on
+              |
+              a(href=sourcedOn.link)=sourcedOn.name
+            li
+              | Licenced by
+              |
+              a(href=licencedBy.link)=licencedBy.name
+            li
+              | Deployed to
+              |
+              a(href=deployedTo.link)=deployedTo.name
+    main
+      div
+        h1
+          span.select-all
+            | SnO
+            sub 2
+            | WMaN
+          |
+          | @
+          |
+          span.select-all
+            | sno2wman.net
+        section#aboutme.full
+          h2 アバウト・ミー
+        section#contacts
+          h2 連絡先
+          dl
+            each contact in contacts
+              dt
+                a(href=contact.link)= contact.service
+              if contact.alias
+                dd=contact.alias
+              dd=contact.description
+        section#socials
+          h2 ソーシャル
+          p
+            | 削除や追加の依頼は
+            a(href="https://github.com/SnO2WMaN/sno2wman.net/issues") ここ
+            | や
+            a(href="#contacts") 連絡先
+            | に行うこと．
+          dl
+            each social in socials
+              dt
+                a(href=social.link)= social.name
+              dd=social.owner
+              if social.description
+                dd=social.description

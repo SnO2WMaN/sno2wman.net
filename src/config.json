@@ -1,0 +1,146 @@
+{
+  "accessCounter": "https://count.getloli.com/get/@sno2wman.net?theme=rule34",
+  "boosts": [],
+  "contacts": [
+    {
+      "alias": "Internet Explorer 2.0",
+      "description": "私的領域",
+      "link": "https://scrapbox.io/sno2wman",
+      "service": "Scrapbox"
+    },
+    {
+      "description": "コミュニケーションツール(1)",
+      "link": "https://twitter.com/SnO2WMaN",
+      "service": "Twitter"
+    },
+    {
+      "description": "制作物(1)",
+      "link": "https://github.com/SnO2WMaN",
+      "service": "GitHub"
+    },
+    {
+      "description": "重要連絡",
+      "link": "mailto:me@sno2wman.net",
+      "service": "email"
+    }
+  ],
+  "hostedBy": {
+    "link": "https://github.com/SnO2WMaN/sno2wman.net/actions/workflows/gh-pages.yml",
+    "name": "GitHub Pages"
+  },
+  "licencedBy": {
+    "link": "https://github.com/SnO2WMaN/sno2wman.net/tree/main/LICENSE",
+    "name": "WTFPL"
+  },
+  "quotes": [
+    {
+      "link": "https://petitlyrics.com/lyrics/935567",
+      "reference": "『恋は渾沌の隷也』",
+      "text": "困らせて神話になあれ"
+    },
+    {
+      "link": "https://twitter.com/horodamsmr/status/1540322955938234368",
+      "reference": "幌田",
+      "text": "2022は留年が来ます。"
+    },
+    {
+      "link": "https://www.sfc.keio.ac.jp/deans_diary/015686.html",
+      "reference": "脇田 玲",
+      "text": "この2年間、環境情報学部の意思決定は最終的には犬がしていたのでした。"
+    },
+    {
+      "link": "https://www.nicovideo.jp/watch/sm36166677",
+      "reference": "『テレフォン・ハンバーガー』コメント欄",
+      "text": "お前の好きなものが分かってよかった"
+    },
+    {
+      "link": "https://omocoro.jp/kiji/353293",
+      "reference": "永田",
+      "text": "意味のあることを言おう"
+    },
+    {
+      "reference": "コトヤマ『だがしかし』",
+      "text": "これがJavaScriptっスよ！！"
+    },
+    {
+      "link": "https://dic.nicovideo.jp/b/a/ワザップ!/91-",
+      "reference": "ニコニコ大百科『ワザップ!について語るスレ』>>108",
+      "text": "信じるものがワザップしかない時代が一番楽しかった"
+    },
+    {
+      "link": "https://petitlyrics.com/lyrics/3097591",
+      "reference": "患部で止まってすぐ溶ける 〜 狂気の優曇華院",
+      "text": "熱が42度です"
+    },
+    {
+      "link": "https://soundcloud.com/yokstiwar/20220206a",
+      "reference": "negimiso",
+      "text": "ﾗ┐″］･/ｔ°ｭ─勺ｰ"
+    }
+  ],
+  "socials": [
+    {
+      "link": "https://www.haxibami",
+      "mutual": true,
+      "name": "haxibami.net",
+      "owner": "haxibami"
+    },
+    {
+      "description": "非常に混乱した文体",
+      "link": "https://not-miso-inside.netlify.app",
+      "mutual": true,
+      "name": "みそは入ってませんけど",
+      "owner": "一階堂洋"
+    },
+    {
+      "link": "https://mikanixonable.github.io",
+      "mutual": false,
+      "name": "人造日本人",
+      "owner": "みかぶる"
+    },
+    {
+      "link": "https://rinsuki.net",
+      "mutual": true,
+      "name": "rinsuki.net",
+      "owner": "りんすき"
+    },
+    {
+      "description": "動きの滑らかさや細部への拘り",
+      "link": "https://uynet.work",
+      "mutual": false,
+      "name": "ゆいネット",
+      "owner": "uynet"
+    },
+    {
+      "link": "https://www.fabon.info",
+      "mutual": true,
+      "name": "ふぁぼんのホームページ",
+      "owner": "ふぁぼん"
+    },
+    {
+      "description": "Nixや様々なWeb技術、面白い試みなど",
+      "link": "https://xeiaso.net",
+      "mutual": false,
+      "name": "Xe Iaso",
+      "owner": "Xe"
+    },
+    {
+      "description": "組版システムSATySFiの開発者",
+      "link": "https://gfngfn.github.io/ja",
+      "mutual": false,
+      "name": "gfnweb",
+      "owner": "gfngfn"
+    },
+    {
+      "description": "ブログにNixなどの応用例など",
+      "link": "https://ryota-ka.me",
+      "mutual": false,
+      "name": "ryota-ka.me",
+      "owner": "Ryota Kameoka"
+    }
+  ],
+  "sourcedOn": {
+    "link": "https://github.com/SnO2WMaN/sno2wman.net/tree/main",
+    "name": "GitHub"
+  }
+}

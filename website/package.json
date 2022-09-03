@@ -2,12 +2,14 @@
   "name": "@sno2wman/sno2wman-net",
   "version": "0.1.0",
   "private": true,
-  "source": "./src/index.html",
+  "source": "./pages/index.pug",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build",
+    "build:prod": "parcel build --no-cache --no-source-maps"
   },
   "devDependencies": {
+    "@parcel/transformer-pug": "^2.7.0",
     "@parcel/transformer-sass": "^2.7.0",
     "@tsconfig/node16": "^1.0.3",
     "cssremedy": "^0.1.0-beta.2",
