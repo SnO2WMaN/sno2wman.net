@@ -4,6 +4,18 @@ on:
   push:
 
 jobs:
+  flake-check:
+    name: flake-check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v17
+      - uses: cachix/cachix-action@v10
+        with:
+          name: sno2wman
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+      - run: nix flake check
+
   treefmt:
     name: treefmt
     runs-on: ubuntu-latest
