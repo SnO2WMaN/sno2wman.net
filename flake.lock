@@ -1,5 +1,20 @@
 {
   "nodes": {
+    "corepack": {
+      "locked": {
+        "lastModified": 1665305306,
+        "narHash": "sha256-KjFU4Ckgw/qRU+ZR8vhkgKlFsrNc0k7hlcxF+kxeHJk=",
+        "owner": "SnO2WMaN",
+        "repo": "corepack-flake",
+        "rev": "33246606a39b74580c80bf3226e9434e6a65a7ed",
+        "type": "github"
+      },
+      "original": {
+        "owner": "SnO2WMaN",
+        "repo": "corepack-flake",
+        "type": "github"
+      }
+    },
     "devshell": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -81,21 +96,6 @@
         "type": "github"
       }
     },
-    "nix-filter": {
-      "locked": {
-        "lastModified": 1661201956,
-        "narHash": "sha256-RizGJH/buaw9A2+fiBf9WnXYw4LZABB5kMAZIEE5/T8=",
-        "owner": "numtide",
-        "repo": "nix-filter",
-        "rev": "3b821578685d661a10b563cba30b1861eec05748",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "nix-filter",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1643381941,
@@ -114,16 +114,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1658737577,
-        "narHash": "sha256-xosJ5nJT9HX+b6UWsSX6R+ap4AdZOCrl/r+IKFp2ASQ=",
+        "lastModified": 1666753130,
+        "narHash": "sha256-Wff1dGPFSneXJLI2c0kkdWTgxnQ416KE6X4KnFkgPYQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5a0e0d73b944157328d54c4ded1cf2f0146a86a5",
+        "rev": "f540aeda6f677354f1e7144ab04352f61aaa0118",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-unstable",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -146,11 +146,11 @@
     },
     "root": {
       "inputs": {
+        "corepack": "corepack",
         "devshell": "devshell",
         "dhall-haskell": "dhall-haskell",
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils_2",
-        "nix-filter": "nix-filter",
         "nixpkgs": "nixpkgs_2",
         "npmlock2nix": "npmlock2nix"
       }
