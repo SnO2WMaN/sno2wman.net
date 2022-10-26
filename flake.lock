@@ -34,22 +34,6 @@
         "type": "github"
       }
     },
-    "dhall-haskell": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1660609269,
-        "narHash": "sha256-IX6Ut+V4+e9jTdkYvM/pju/8MG7Zl3lF1QDNxBYri7E=",
-        "owner": "dhall-lang",
-        "repo": "dhall-haskell",
-        "rev": "4763acc7c6d9172bb7e26a990884fa1302eecca7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "dhall-lang",
-        "repo": "dhall-haskell",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -128,31 +112,13 @@
         "type": "github"
       }
     },
-    "npmlock2nix": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1654775747,
-        "narHash": "sha256-9pXHDpIjmsK5390wmpGHu9aA4QOPpegPBvThHeBlef4=",
-        "owner": "nix-community",
-        "repo": "npmlock2nix",
-        "rev": "5c4f247688fc91d665df65f71c81e0726621aaa8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "npmlock2nix",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "corepack": "corepack",
         "devshell": "devshell",
-        "dhall-haskell": "dhall-haskell",
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils_2",
-        "nixpkgs": "nixpkgs_2",
-        "npmlock2nix": "npmlock2nix"
+        "nixpkgs": "nixpkgs_2"
       }
     }
   },
