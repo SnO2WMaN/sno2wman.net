@@ -1,7 +1,8 @@
 ---
-// Component Imports
 import MainHead from "../components/MainHead.astro";
 import Blockquote from "../components/Blockquote/Blockquote.svelte";
+
+import NormalLayout from "../layouts/NormalLayout.astro";
 
 import clsx from "clsx";
 
@@ -103,202 +104,161 @@ const socials: {
 ];
 ---
 
-<html lang="en">
-  <head>
-    <MainHead />
-  </head>
-  <body
+<NormalLayout>
+  <h1
     class={clsx(
-      ["min-h-screen"],
-      ["flex", "flex-col"],
-      ["bg-slate-200", "dark:bg-slate-800"]
+      ["text-3xl"],
+      ["text-slate-700", "dark:text-slate-200"],
+      ["font-bold"],
+      ["mb-2"]
     )}
   >
-    <main
-      class={clsx(
-        ["flex-grow"],
-        ["mx-auto"],
-        ["px-4"],
-        ["py-8", "md:py-12"],
-        ["max-w-screen-lg"]
-      )}
-    >
-      <h1
+    SnO2WMaN, sno2wman.net
+  </h1>
+  <Blockquote client:load />
+  <div
+    class={clsx(
+      ["mt-8"],
+      ["grid", ["grid-cols-1", "md:grid-cols-2"]],
+      ["gap-x-4"],
+      ["gap-y-4"]
+    )}
+  >
+    <section id="aboutme" class={clsx(["col-span-full"])}>
+      <h2
         class={clsx(
-          ["text-3xl"],
-          ["text-slate-700", "dark:text-slate-200"],
+          ["text-2xl"],
+          ["text-slate-800", "dark:text-slate-200"],
           ["font-bold"],
           ["mb-2"]
         )}
       >
-        SnO2WMaN, sno2wman.net
-      </h1>
-      <Blockquote client:load />
-      <div
+        自己紹介
+      </h2>
+      <p class={clsx(["text-slate-800", "dark:text-slate-300"])}>
+        私は正直者です。
+        （ただし、この世界には常に真実を話す正直者と、常に嘘を話す狂人しかいないとする。）
+      </p>
+    </section>
+    <section id="contacts">
+      <h2
         class={clsx(
-          ["mt-8"],
-          ["grid", ["grid-cols-1", "md:grid-cols-2"]],
-          ["gap-x-4"],
-          ["gap-y-4"]
+          ["text-2xl"],
+          ["text-slate-800", "dark:text-slate-200"],
+          ["font-bold"],
+          ["mb-2"]
         )}
       >
-        <section id="aboutme" class={clsx(["col-span-full"])}>
-          <h2
-            class={clsx(
-              ["text-2xl"],
-              ["text-slate-800", "dark:text-slate-200"],
-              ["font-bold"],
-              ["mb-2"]
-            )}
-          >
-            自己紹介
-          </h2>
-          <p class={clsx(["text-slate-800", "dark:text-slate-300"])}>
-            私は正直者です。
-            （ただし、この世界には常に真実を話す正直者と、常に嘘を話す狂人しかいないとする。）
-          </p>
-        </section>
-        <section id="contacts">
-          <h2
-            class={clsx(
-              ["text-2xl"],
-              ["text-slate-800", "dark:text-slate-200"],
-              ["font-bold"],
-              ["mb-2"]
-            )}
-          >
-            連絡先
-          </h2>
-          <dl>
-            {
-              contacts.map((contact) => (
-                <>
-                  <dt>
-                    <a
-                      class={clsx(
-                        ["text-normal"],
-                        [
-                          ["text-sky-600", "visited:text-violet-600"],
-                          ["dark:text-sky-400", "dark:visited:text-violet-400"],
-                        ],
-                        ["underline"]
-                      )}
-                      href={contact.link}
-                    >
-                      {contact.service}
-                    </a>
-                  </dt>
-                  <dd
-                    class={clsx(
-                      ["pl-2"],
-                      ["text-sm"],
-                      ["text-slate-800", "dark:text-slate-400"]
-                    )}
-                  >
-                    {contact.description}
-                  </dd>
-                </>
-              ))
-            }
-          </dl>
-        </section>
-        <section id="socials">
-          <h2
-            class={clsx(
-              ["text-2xl"],
-              ["text-slate-800", "dark:text-slate-200"],
-              ["font-bold"],
-              ["mb-2"]
-            )}
-          >
-            ソーシャル
-          </h2>
-          <p
-            class={clsx(["text-sm"], ["text-slate-700", "dark:text-slate-400"])}
-          >
-            削除や追加は
-            <a
-              class={clsx(
-                [
-                  ["text-sky-600", "visited:text-violet-600"],
-                  ["dark:text-sky-400", "dark:visited:text-violet-400"],
-                ],
-                ["underline"]
-              )}
-              href="https://github.com/SnO2WMaN/sno2wman.net/issues">ここ</a
-            >
-            や
-            <a
-              class={clsx(
-                [
-                  ["text-sky-600", "visited:text-violet-600"],
-                  ["dark:text-sky-400", "dark:visited:text-violet-400"],
-                ],
-                ["underline"]
-              )}
-              href="#contacts">連絡先</a
-            >
-            に申請してください。
-          </p>
-          <dl>
-            {
-              socials.map((social) => (
-                <>
-                  <dt class={clsx(["mt-1"])}>
-                    <span
-                      class={clsx(["text-slate-800", "dark:text-slate-300"])}
-                    >
-                      {social.owner},
-                    </span>
-                    <a
-                      class={clsx(
-                        ["text-normal"],
-                        [
-                          ["text-sky-600", "visited:text-violet-600"],
-                          ["dark:text-sky-400", "dark:visited:text-violet-400"],
-                        ],
-                        ["underline"]
-                      )}
-                      href={social.link}
-                    >
-                      {social.name}
-                    </a>
-                  </dt>
-                  <dd
-                    class={clsx(
-                      ["pl-2"],
-                      ["text-sm"],
-                      ["text-slate-700", "dark:text-slate-400"]
-                    )}
-                  >
-                    {social.description}
-                  </dd>
-                </>
-              ))
-            }
-          </dl>
-        </section>
-      </div>
-    </main>
-    <footer
-      class={clsx(
-        ["w-full"],
-        ["px-4"],
-        ["py-8"],
-        ["bg-slate-300", "dark:bg-slate-900"]
-      )}
-    >
-      <div class={clsx(["mx-auto"], ["max-w-screen-md"])}>
-        <span class={clsx(["text-slate-700", "dark:text-slate-400"])}>
-          2022 SnO2WMaN, sno2wman.net
-        </span>
-        <img
-          class={clsx(["mt-4"], ["h-16"])}
-          src={import.meta.env.DEV
-            ? "https://count.getloli.com/get/@sno2wman.net-dev?theme=rule34"
-            : "https://count.getloli.com/get/@sno2wman.net?theme=rule34"}
-        />
-      </div>
-    </footer>
-  </body>
-</html>
+        連絡先
+      </h2>
+      <dl>
+        {
+          contacts.map((contact) => (
+            <>
+              <dt>
+                <a
+                  class={clsx(
+                    ["text-normal"],
+                    [
+                      ["text-sky-600", "visited:text-violet-600"],
+                      ["dark:text-sky-400", "dark:visited:text-violet-400"],
+                    ],
+                    ["underline"]
+                  )}
+                  href={contact.link}
+                >
+                  {contact.service}
+                </a>
+              </dt>
+              <dd
+                class={clsx(
+                  ["pl-2"],
+                  ["text-sm"],
+                  ["text-slate-800", "dark:text-slate-400"]
+                )}
+              >
+                {contact.description}
+              </dd>
+            </>
+          ))
+        }
+      </dl>
+    </section>
+    <section id="socials">
+      <h2
+        class={clsx(
+          ["text-2xl"],
+          ["text-slate-800", "dark:text-slate-200"],
+          ["font-bold"],
+          ["mb-2"]
+        )}
+      >
+        ソーシャル
+      </h2>
+      <p
+        class={clsx(["text-sm"], ["text-slate-700", "dark:text-slate-400"])}
+      >
+        削除や追加は
+        <a
+          class={clsx(
+            [
+              ["text-sky-600", "visited:text-violet-600"],
+              ["dark:text-sky-400", "dark:visited:text-violet-400"],
+            ],
+            ["underline"]
+          )}
+          href="https://github.com/SnO2WMaN/sno2wman.net/issues">ここ</a
+        >
+        や
+        <a
+          class={clsx(
+            [
+              ["text-sky-600", "visited:text-violet-600"],
+              ["dark:text-sky-400", "dark:visited:text-violet-400"],
+            ],
+            ["underline"]
+          )}
+          href="#contacts">連絡先</a
+        >
+        に申請してください。
+      </p>
+      <dl>
+        {
+          socials.map((social) => (
+            <>
+              <dt class={clsx(["mt-1"])}>
+                <span
+                  class={clsx(["text-slate-800", "dark:text-slate-300"])}
+                >
+                  {social.owner},
+                </span>
+                <a
+                  class={clsx(
+                    ["text-normal"],
+                    [
+                      ["text-sky-600", "visited:text-violet-600"],
+                      ["dark:text-sky-400", "dark:visited:text-violet-400"],
+                    ],
+                    ["underline"]
+                  )}
+                  href={social.link}
+                >
+                  {social.name}
+                </a>
+              </dt>
+              <dd
+                class={clsx(
+                  ["pl-2"],
+                  ["text-sm"],
+                  ["text-slate-700", "dark:text-slate-400"]
+                )}
+              >
+                {social.description}
+              </dd>
+            </>
+          ))
+        }
+      </dl>
+    </section>
+  </div>
+</NormalLayout>

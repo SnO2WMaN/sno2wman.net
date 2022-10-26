@@ -1,0 +1,24 @@
+---
+import clsx from "clsx";
+---
+
+<footer
+  class={clsx(
+    ["w-full"],
+    ["px-4"],
+    ["py-8"],
+    ["bg-slate-300", "dark:bg-slate-900"]
+  )}
+>
+  <div class={clsx(["mx-auto"], ["max-w-screen-md"])}>
+    <span class={clsx(["text-slate-700", "dark:text-slate-400"])}>
+      2022 SnO2WMaN, sno2wman.net
+    </span>
+    <img
+      class={clsx(["mt-4"], ["h-16"])}
+      src={import.meta.env.DEV
+        ? "https://count.getloli.com/get/@sno2wman.net-dev?theme=rule34"
+        : "https://count.getloli.com/get/@sno2wman.net?theme=rule34"}
+    />
+  </div>
+</footer>
