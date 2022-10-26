@@ -21,7 +21,7 @@ result
 .cache/
 .parcel-cache/
 
-# Output
+# build output
 dist/
 _site/
 

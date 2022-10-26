@@ -1,0 +1,302 @@
+---
+// Component Imports
+import MainHead from "../components/MainHead.astro";
+import Blockquote from "../components/Blockquote/Blockquote.svelte";
+
+import clsx from "clsx";
+
+const contacts: {
+  link: string;
+  service: string;
+  alias?: string;
+  description: string;
+}[] = [
+  {
+    alias: "Internet Explorer 2.0",
+    description: "私的領域",
+    link: "https://scrapbox.io/sno2wman",
+    service: "Scrapbox",
+  },
+  {
+    description: "コミュニケーションツール(1)",
+    link: "https://twitter.com/SnO2WMaN",
+    service: "Twitter",
+  },
+  {
+    description: "制作物(1)",
+    link: "https://github.com/SnO2WMaN",
+    service: "GitHub",
+  },
+  {
+    description: "重要連絡",
+    link: "mailto:me@sno2wman.net",
+    service: "email",
+  },
+];
+
+const socials: {
+  link: string;
+  name: string;
+  owner: string;
+  mutual: boolean;
+  description?: string;
+}[] = [
+  {
+    link: "https://www.haxibami",
+    name: "haxibami.net",
+    owner: "haxibami",
+    mutual: true,
+  },
+  {
+    link: "https://not-miso-inside.netlify.app",
+    name: "みそは入ってませんけど",
+    owner: "一階堂洋",
+    description: "非常に混乱した文体",
+    mutual: true,
+  },
+  {
+    link: "https://mikanixonable.github.io",
+    name: "人造日本人",
+    owner: "みかぶる",
+    mutual: false,
+  },
+  {
+    link: "https://rinsuki.net",
+    name: "rinsuki.net",
+    owner: "りんすき",
+    mutual: true,
+  },
+  {
+    link: "https://uynet.work",
+    name: "ゆいネット",
+    owner: "uynet",
+    description: "動きの滑らかさや細部への拘り",
+    mutual: false,
+  },
+  {
+    link: "https://www.fabon.info",
+    name: "ふぁぼんのホームページ",
+    owner: "ふぁぼん",
+    mutual: true,
+  },
+  {
+    link: "https://xeiaso.net",
+    name: "Xe Iaso",
+    owner: "Xe",
+    description: "Nixや様々なWeb技術、面白い試みなど",
+    mutual: false,
+  },
+  {
+    link: "https://gfngfn.github.io/ja",
+    name: "gfnweb",
+    owner: "gfngfn",
+    description: "組版システムSATySFiの開発者",
+    mutual: false,
+  },
+  {
+    link: "https://ryota-ka.me",
+    name: "ryota-ka.me",
+    owner: "Ryota Kameoka",
+    description: "ブログにNixなどの応用例など",
+    mutual: false,
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <MainHead />
+  </head>
+  <body
+    class={clsx(
+      ["min-h-screen"],
+      ["flex", "flex-col"],
+      ["bg-slate-200", "dark:bg-slate-800"]
+    )}
+  >
+    <main
+      class={clsx(
+        ["flex-grow"],
+        ["mx-auto"],
+        ["px-4"],
+        ["py-8", "md:py-12"],
+        ["max-w-screen-lg"]
+      )}
+    >
+      <h1
+        class={clsx(
+          ["text-3xl"],
+          ["text-slate-700", "dark:text-slate-200"],
+          ["font-bold"],
+          ["mb-2"]
+        )}
+      >
+        SnO2WMaN, sno2wman.net
+      </h1>
+      <Blockquote client:load />
+      <div
+        class={clsx(
+          ["mt-8"],
+          ["grid", ["grid-cols-1", "md:grid-cols-2"]],
+          ["gap-x-4"],
+          ["gap-y-4"]
+        )}
+      >
+        <section id="aboutme" class={clsx(["col-span-full"])}>
+          <h2
+            class={clsx(
+              ["text-2xl"],
+              ["text-slate-800", "dark:text-slate-200"],
+              ["font-bold"],
+              ["mb-2"]
+            )}
+          >
+            自己紹介
+          </h2>
+          <p class={clsx(["text-slate-800", "dark:text-slate-300"])}>
+            私は正直者です。
+            （ただし、この世界には常に真実を話す正直者と、常に嘘を話す狂人しかいないとする。）
+          </p>
+        </section>
+        <section id="contacts">
+          <h2
+            class={clsx(
+              ["text-2xl"],
+              ["text-slate-800", "dark:text-slate-200"],
+              ["font-bold"],
+              ["mb-2"]
+            )}
+          >
+            連絡先
+          </h2>
+          <dl>
+            {
+              contacts.map((contact) => (
+                <>
+                  <dt>
+                    <a
+                      class={clsx(
+                        ["text-normal"],
+                        [
+                          ["text-sky-600", "visited:text-violet-600"],
+                          ["dark:text-sky-400", "dark:visited:text-violet-400"],
+                        ],
+                        ["underline"]
+                      )}
+                      href={contact.link}
+                    >
+                      {contact.service}
+                    </a>
+                  </dt>
+                  <dd
+                    class={clsx(
+                      ["pl-2"],
+                      ["text-sm"],
+                      ["text-slate-800", "dark:text-slate-400"]
+                    )}
+                  >
+                    {contact.description}
+                  </dd>
+                </>
+              ))
+            }
+          </dl>
+        </section>
+        <section id="socials">
+          <h2
+            class={clsx(
+              ["text-2xl"],
+              ["text-slate-800", "dark:text-slate-200"],
+              ["font-bold"],
+              ["mb-2"]
+            )}
+          >
+            ソーシャル
+          </h2>
+          <p
+            class={clsx(["text-sm"], ["text-slate-700", "dark:text-slate-400"])}
+          >
+            削除や追加は
+            <a
+              class={clsx(
+                [
+                  ["text-sky-600", "visited:text-violet-600"],
+                  ["dark:text-sky-400", "dark:visited:text-violet-400"],
+                ],
+                ["underline"]
+              )}
+              href="https://github.com/SnO2WMaN/sno2wman.net/issues">ここ</a
+            >
+            や
+            <a
+              class={clsx(
+                [
+                  ["text-sky-600", "visited:text-violet-600"],
+                  ["dark:text-sky-400", "dark:visited:text-violet-400"],
+                ],
+                ["underline"]
+              )}
+              href="#contacts">連絡先</a
+            >
+            に申請してください。
+          </p>
+          <dl>
+            {
+              socials.map((social) => (
+                <>
+                  <dt class={clsx(["mt-1"])}>
+                    <span
+                      class={clsx(["text-slate-800", "dark:text-slate-300"])}
+                    >
+                      {social.owner},
+                    </span>
+                    <a
+                      class={clsx(
+                        ["text-normal"],
+                        [
+                          ["text-sky-600", "visited:text-violet-600"],
+                          ["dark:text-sky-400", "dark:visited:text-violet-400"],
+                        ],
+                        ["underline"]
+                      )}
+                      href={social.link}
+                    >
+                      {social.name}
+                    </a>
+                  </dt>
+                  <dd
+                    class={clsx(
+                      ["pl-2"],
+                      ["text-sm"],
+                      ["text-slate-700", "dark:text-slate-400"]
+                    )}
+                  >
+                    {social.description}
+                  </dd>
+                </>
+              ))
+            }
+          </dl>
+        </section>
+      </div>
+    </main>
+    <footer
+      class={clsx(
+        ["w-full"],
+        ["px-4"],
+        ["py-8"],
+        ["bg-slate-300", "dark:bg-slate-900"]
+      )}
+    >
+      <div class={clsx(["mx-auto"], ["max-w-screen-md"])}>
+        <span class={clsx(["text-slate-700", "dark:text-slate-400"])}>
+          2022 SnO2WMaN, sno2wman.net
+        </span>
+        <img
+          class={clsx(["mt-4"], ["h-16"])}
+          src="https://count.getloli.com/get/@sno2wman.net?theme=rule34"
+        />
+      </div>
+    </footer>
+  </body>
+</html>

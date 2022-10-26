@@ -5,4 +5,11 @@ includes = ["*.nix"]
 [formatter.dprint]
 command = "dprint"
 options = ["fmt"]
-includes = ["*.json", "*.toml", "*.md"]
+includes = [
+  "*.js",
+  "*.mjs",
+  "*.ts",
+  "*.json",
+  "*.toml",
+  "*.md",
+]

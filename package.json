@@ -1,0 +1,24 @@
+{
+  "name": "@sno2wman/sno2wman-net",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^1.0.2",
+    "@astrojs/tailwind": "^2.1.1",
+    "astro": "^1.5.3",
+    "clsx": "^1.2.1",
+    "svelte": "^3.52.0",
+    "tailwindcss": "^3.2.1"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.8.4"
+  }
+}
