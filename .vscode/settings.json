@@ -1,13 +1,14 @@
 {
-  "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix",
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "vscode-dhall-lsp-server.executable": "dhall-lsp-server",
   "files.exclude": {
     "**/.direnv": true,
     "**/.parcel-cache": true,
-    "**/dist": true,
     "**/node_modules": true
   },
+  "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix",
+
+  "astro.html.completions.enabled": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  // custom formatter
   "customLocalFormatters.formatters": [
     {
       "command": "treefmt -q --stdin ${file}",
@@ -21,12 +22,6 @@
         "javascriptreact",
         "typescript",
         "typescriptreact"
-      ]
-    },
-    {
-      "command": "dhall format",
-      "languages": [
-        "dhall"
       ]
     }
   ],
