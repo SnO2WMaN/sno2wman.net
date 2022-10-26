@@ -1,6 +1,8 @@
 ---
 // Component Imports
 import MainHead from "../components/MainHead.astro";
+import Blockquote from "../components/Blockquote/Blockquote.svelte";
+
 import clsx from "clsx";
 
 const contacts: {
@@ -121,9 +123,7 @@ const socials: {
       >
         SnO2WMaN, sno2wman.net
       </h1>
-      <blockquote class={clsx(["text-sm"], ["italic"], ["text-slate-400"])}>
-        信じるものがワザップしかない時代が一番楽しかった
-      </blockquote>
+      <Blockquote client:visible />
       <div
         class={clsx(
           ["mt-8"],

@@ -1,4 +1,4 @@
-import {quotes} from "../config.json";
+import { quotes } from "../config.json";
 
 const $sampling = document.getElementById("sampling")!;
 

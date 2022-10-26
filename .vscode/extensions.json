@@ -6,7 +6,6 @@
     "tamasfe.even-better-toml",
     "jkillian.custom-local-formatters",
     "astro-build.astro-vscode",
-    "dhall.dhall-lang",
-    "dhall.vscode-dhall-lsp-server"
+    "svelte.svelte-vscode"
   ]
 }
