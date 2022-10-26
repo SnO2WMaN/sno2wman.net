@@ -23,9 +23,6 @@
   } @ inputs:
     flake-utils.lib.eachDefaultSystem (
       system: let
-        dhall-haskell' = (import "${inputs.dhall-haskell}/nix/shared.nix") {
-          inherit system nixpkgs;
-        };
         pkgs = import nixpkgs {
           inherit system;
           overlays = with inputs; [
