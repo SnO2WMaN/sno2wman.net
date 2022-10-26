@@ -14,3 +14,19 @@
 >
   {quote.text}
 </blockquote>
+
+<style>
+  blockquote {
+    animation: blur 0.5s ease-out 0.25s both;
+  }
+
+  @keyframes blur {
+    from {
+      opacity: 0;
+      transform: translateY(25%);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
