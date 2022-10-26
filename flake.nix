@@ -3,15 +3,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     corepack.url = "github:SnO2WMaN/corepack-flake";
-
-    npmlock2nix = {
-      url = "github:nix-community/npmlock2nix";
-      flake = false;
-    };
-    dhall-haskell = {
-      url = "github:dhall-lang/dhall-haskell";
-      flake = false;
-    };
   };
 
   # dev
@@ -27,7 +18,6 @@
   outputs = {
     self,
     nixpkgs,
-    devshell,
     flake-utils,
     ...
   } @ inputs:
