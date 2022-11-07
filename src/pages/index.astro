@@ -1,9 +1,10 @@
 ---
-import Quote from "../components/Quote/Quote.svelte";
+import Quote from "~/components/Quote/Quote.svelte";
 
-import NormalLayout from "../layouts/NormalLayout.astro";
+import NormalLayout from "~/layouts/NormalLayout.astro";
 
 import clsx from "clsx";
+import socials from "~/data/socials.json";
 
 const contacts: {
   link: string;
@@ -31,74 +32,6 @@ const contacts: {
     description: "重要連絡",
     link: "mailto:me@sno2wman.net",
     service: "email",
-  },
-];
-
-const socials: {
-  link: string;
-  name: string;
-  owner: string;
-  mutual: boolean;
-  description?: string;
-}[] = [
-  {
-    link: "https://www.haxibami",
-    name: "haxibami.net",
-    owner: "haxibami",
-    mutual: true,
-  },
-  {
-    link: "https://not-miso-inside.netlify.app",
-    name: "みそは入ってませんけど",
-    owner: "一階堂洋",
-    description: "非常に混乱した文体",
-    mutual: true,
-  },
-  {
-    link: "https://mikanixonable.github.io",
-    name: "人造日本人",
-    owner: "みかぶる",
-    mutual: false,
-  },
-  {
-    link: "https://rinsuki.net",
-    name: "rinsuki.net",
-    owner: "りんすき",
-    mutual: true,
-  },
-  {
-    link: "https://uynet.work",
-    name: "ゆいネット",
-    owner: "uynet",
-    description: "動きの滑らかさや細部への拘り",
-    mutual: false,
-  },
-  {
-    link: "https://www.fabon.info",
-    name: "ふぁぼんのホームページ",
-    owner: "ふぁぼん",
-    mutual: true,
-  },
-  {
-    link: "https://xeiaso.net",
-    name: "Xe Iaso",
-    owner: "Xe",
-    description: "Nixや様々なWeb技術、面白い試みなど",
-    mutual: false,
-  },
-  {
-    link: "https://gfngfn.github.io/ja",
-    name: "gfnweb",
-    owner: "gfngfn",
-    description: "組版システムSATySFiの開発者",
-    mutual: false,
-  },
-  {
-    link: "https://ryota-ka.me",
-    name: "ryota-ka.me",
-    owner: "Ryota Kameoka",
-    description: "ブログにNixなどの応用例など",
-    mutual: false,
   },
 ];
 ---

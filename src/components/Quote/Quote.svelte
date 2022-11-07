@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import quotes from "./quotes.json";
+  import quotes from "~/data/quotes.json";
 
   let quote = quotes[Math.floor(Math.random() * quotes.length)];
 </script>
