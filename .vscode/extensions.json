@@ -3,6 +3,7 @@
     "editorconfig.editorconfig",
     "jnoortheen.nix-ide",
     "arrterian.nix-env-selector",
+    "mkhl.direnv",
     "tamasfe.even-better-toml",
     "jkillian.custom-local-formatters",
     "astro-build.astro-vscode",
