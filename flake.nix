@@ -43,6 +43,12 @@
               pm = "pnpm";
             })
           ];
+          env = [
+            {
+              name = "PATH";
+              prefix = "$PRJ_ROOT/node_modules/.bin";
+            }
+          ];
         };
       }
     );
