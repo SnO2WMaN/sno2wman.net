@@ -57,5 +57,11 @@
     "owner": "Ryota Kameoka",
     "description": "ブログにNixなどの応用例など",
     "mutual": false
+  },
+  {
+    "link": "https://okkaradon.com/",
+    "name": "okkaradon.com",
+    "owner": "okkaradon",
+    "mutual": false
   }
 ]
