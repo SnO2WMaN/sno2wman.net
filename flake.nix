@@ -3,16 +3,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     corepack.url = "github:SnO2WMaN/corepack-flake";
-  };
-
-  # dev
-  inputs = {
     devshell.url = "github:numtide/devshell";
     flake-utils.url = "github:numtide/flake-utils";
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
   };
 
   outputs = {
@@ -37,9 +29,9 @@
             alejandra
             dprint
             treefmt
-            nodejs-16_x
+            nodejs-18_x
             (mkCorepack {
-              nodejs = nodejs-16_x;
+              nodejs = nodejs-18_x;
               pm = "pnpm";
             })
           ];
