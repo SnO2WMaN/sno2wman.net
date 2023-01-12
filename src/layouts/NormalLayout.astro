@@ -1,6 +1,7 @@
 ---
-import clsx from "clsx";
-import Footer from "~/components/Footer.astro";
+import "the-new-css-reset";
+import "@fontsource/silkscreen/400.css";
+import "@fontsource/josefin-sans/latin-200.css";
 
 const { title = "sno2wman.net", description = "SnO2WMaN, sno2wman.net" } =
   Astro.props;
@@ -25,20 +26,7 @@ const { title = "sno2wman.net", description = "SnO2WMaN, sno2wman.net" } =
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  <body
-    class={clsx(
-      ["min-h-screen"],
-      ["flex", "flex-col"],
-      ["bg-slate-200", "dark:bg-slate-800"]
-    )}
-  >
-    <main class={clsx(["flex-grow"], ["py-8", "md:py-12"])}>
-      <div
-        class={clsx(["container"], ["mx-auto"], ["max-w-screen-lg"], ["px-4"])}
-      >
-        <slot />
-      </div>
-    </main>
-    <Footer />
+  <body>
+    <slot />
   </body>
 </html>
