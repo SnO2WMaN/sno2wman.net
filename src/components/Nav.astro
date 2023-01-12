@@ -1,0 +1,325 @@
+---
+const { id } = Astro.props;
+---
+
+<nav id={id}>
+  <style lang="scss">
+    nav {
+      position: absolute;
+      bottom: 64px;
+      left: 64px;
+      z-index: 1;
+      overflow: hidden;
+
+      & > .dummy,
+      & > .real > .contents {
+        padding: 12px 24px;
+      }
+
+      & > .dummy > .sitename > div::after,
+      & > .real > .contents > .sitename > p {
+        font-size: 24px;
+        font-family: "Silkscreen", sans-serif;
+        color: var(--color-theme-1);
+        letter-spacing: 0.1em;
+      }
+
+      & > .dummy,
+      & > .real > .cover,
+      & > .real > .contents {
+        animation-delay: 1250ms;
+        animation-duration: 400ms;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(0.94, 0.075, 0.1, 0.985);
+      }
+
+      & > .dummy {
+        position: absolute;
+        bottom: 0;
+        padding: 8px 24px;
+        overflow: hidden;
+        animation-name: nav-dummy;
+        @keyframes nav-dummy {
+          0% {
+            visibility: visible;
+          }
+          50% {
+            visibility: hidden;
+          }
+          100% {
+            visibility: hidden;
+          }
+        }
+
+        & > .borders {
+          position: absolute;
+          inset: 0;
+          & > .border {
+            position: absolute;
+            inset: 0;
+            $delay-start: 0.75s;
+            $duration: 0.1s;
+            animation-duration: $duration;
+            animation-fill-mode: both;
+            &:nth-of-type(1) {
+              border-left: 1px solid var(--color-theme-1);
+              animation-name: nav-dummy-borders-1;
+              transform-origin: bottom;
+              animation-delay: $delay-start;
+              @keyframes nav-dummy-borders-1 {
+                0% {
+                  transform: scaleY(0);
+                }
+                100% {
+                  transform: scaleY(1);
+                }
+              }
+            }
+            &:nth-of-type(2) {
+              border-top: 1px solid var(--color-theme-1);
+              transform-origin: left;
+              animation-name: nav-dummy-borders-2;
+              animation-delay: $delay-start + $duration;
+              @keyframes nav-dummy-borders-2 {
+                0% {
+                  transform: scaleX(0);
+                }
+                100% {
+                  transform: scaleX(1);
+                }
+              }
+            }
+            &:nth-of-type(3) {
+              border-right: 1px solid var(--color-theme-1);
+              transform-origin: top;
+              animation-name: nav-dummy-borders-3;
+              animation-delay: $delay-start + $duration * 2;
+              @keyframes nav-dummy-borders-3 {
+                0% {
+                  transform: scaleY(0);
+                }
+                100% {
+                  transform: scaleY(1);
+                }
+              }
+            }
+            &:nth-of-type(4) {
+              border-bottom: 1px solid var(--color-theme-1);
+              transform-origin: right;
+              animation-name: nav-dummy-borders-4;
+              animation-delay: $delay-start + $duration * 3;
+              @keyframes nav-dummy-borders-4 {
+                0% {
+                  transform: scaleX(0);
+                }
+                100% {
+                  transform: scaleX(1);
+                }
+              }
+            }
+          }
+        }
+
+        & > .sitename {
+          overflow: hidden;
+          & > div {
+            &::after {
+              content: attr(ml-name);
+            }
+            animation-name: nav-dummy-sitename;
+            animation-delay: 800ms;
+            animation-duration: 0.25s;
+            animation-fill-mode: both;
+            @keyframes nav-dummy-sitename {
+              0% {
+                transform: translateX(-24px);
+                opacity: 0;
+              }
+              100% {
+                transform: translateX(0%);
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+
+      & > .real {
+        overflow: hidden;
+        & > .cover {
+          position: absolute;
+          inset: 0;
+          background-color: var(--color-theme-1);
+          animation-name: nav-real-cover;
+          transform-origin: bottom;
+          @keyframes nav-real-cover {
+            0% {
+              transform: scaleY(0);
+            }
+            50% {
+              transform: scaleY(1) translateY(0);
+            }
+            100% {
+              transform: translateY(-100%);
+            }
+          }
+        }
+        & > .contents {
+          animation-name: nav-real-contents;
+          @keyframes nav-real-contents {
+            0% {
+              visibility: hidden;
+            }
+            50% {
+              visibility: hidden;
+            }
+            100% {
+              visibility: visible;
+            }
+          }
+          border: 1px solid var(--color-theme-1);
+          & > .menu {
+            margin-top: 8px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 4px;
+            & > .menuitem {
+              font-family: "Silkscreen", sans-serif;
+              color: var(--color-theme-1);
+              letter-spacing: 0.1em;
+              $delay-start: 1.5s;
+              & > span {
+                display: block;
+                animation-name: nav-real-menuitem;
+                animation-duration: 0.5s;
+                animation-fill-mode: both;
+                animation-timing-function: ease-out;
+                @keyframes nav-real-menuitem {
+                  0% {
+                    transform: translateX(-12px);
+                    opacity: 0;
+                  }
+                  100% {
+                    transform: translateX(0%);
+                    opacity: 1;
+                  }
+                }
+              }
+              &:nth-of-type(1) > span {
+                animation-delay: $delay-start + 0s;
+              }
+              &:nth-of-type(2) > span {
+                animation-delay: $delay-start + 0.125s;
+              }
+            }
+          }
+          & > .socials {
+            margin-top: 8px;
+            display: flex;
+            justify-content: space-between;
+            & > .social {
+              font-size: 10px;
+              font-family: "Silkscreen", sans-serif;
+              color: var(--color-theme-1);
+              letter-spacing: 0.05em;
+              display: block;
+              $delay-start: 1.4s;
+              & > span {
+                display: block;
+                animation-name: nav-real-socials;
+                animation-duration: 0.5s;
+                animation-fill-mode: both;
+                animation-timing-function: ease-out;
+                transform-origin: left center;
+                @keyframes nav-real-socials {
+                  0% {
+                    transform: translateX(-12px);
+                    opacity: 0;
+                  }
+                  100% {
+                    transform: translateX(0%);
+                    opacity: 1;
+                  }
+                }
+              }
+              &:nth-of-type(1) > span {
+                animation-delay: $delay-start + 0s;
+              }
+              &:nth-of-type(2) > span {
+                animation-delay: $delay-start + 0.1s;
+              }
+              &:nth-of-type(3) > span {
+                animation-delay: $delay-start + 0.2s;
+              }
+            }
+          }
+          & > .copyright {
+            margin-top: 16px;
+            overflow: hidden;
+            & > p {
+              font-size: 8px;
+              font-family: "Silkscreen", sans-serif;
+              color: var(--color-theme-1);
+              animation-name: nav-real-copyright;
+              animation-duration: 0.5s;
+              animation-delay: 1.5s;
+              animation-fill-mode: both;
+              animation-timing-function: ease-out;
+              @keyframes nav-real-copyright {
+                0% {
+                  transform: translateY(50%);
+                  opacity: 0;
+                }
+                100% {
+                  transform: translateX(0%);
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  </style>
+  <div class="dummy">
+    <div class="borders">
+      <div class="border"></div>
+      <div class="border"></div>
+      <div class="border"></div>
+      <div class="border"></div>
+    </div>
+    <div class="sitename">
+      <div ml-name="sno2wman.net"></div>
+    </div>
+  </div>
+  <div class="real">
+    <div class="cover"></div>
+    <div class="contents">
+      <div class="sitename">
+        <p>sno2wman.net</p>
+      </div>
+      <div class="menu">
+        <a class="menuitem" href="/profile.html">
+          <span>PROFILE</span>
+        </a>
+        <a class="menuitem" href="/links.html">
+          <span>LINKS</span>
+        </a>
+      </div>
+      <div class="socials">
+        <a class="social" href="https://twitter.com/SnO2WMaN">
+          <span>Twitter</span>
+        </a>
+        <a class="social" href="https://github.com/SnO2WMaN">
+          <span>GitHub</span>
+        </a>
+        <a class="social" href="https://scrapbox.io/sno2wman/"
+          ><span>Scrapbox</span>
+        </a>
+      </div>
+      <div class="copyright">
+        <p>2023 - SnO2WMaN - WTFPL</p>
+      </div>
+    </div>
+  </div>
+</nav>
