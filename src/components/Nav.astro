@@ -6,10 +6,11 @@ const { id } = Astro.props;
   <style lang="scss">
     nav {
       position: absolute;
-      bottom: 64px;
-      left: 64px;
+      bottom: 96px;
+      left: 96px;
       z-index: 1;
       overflow: hidden;
+      $nav-delay-start: 0.125s;
 
       & > .dummy,
       & > .real > .contents {
@@ -21,14 +22,14 @@ const { id } = Astro.props;
         font-size: 24px;
         font-family: "Silkscreen", sans-serif;
         color: var(--color-theme-1);
-        letter-spacing: 0.1em;
+        letter-spacing: 0.125em;
       }
 
       & > .dummy,
       & > .real > .cover,
       & > .real > .contents {
-        animation-delay: 1250ms;
-        animation-duration: 400ms;
+        animation-delay: $nav-delay-start + 400ms;
+        animation-duration: 350ms;
         animation-fill-mode: both;
         animation-timing-function: cubic-bezier(0.94, 0.075, 0.1, 0.985);
       }
@@ -57,7 +58,7 @@ const { id } = Astro.props;
           & > .border {
             position: absolute;
             inset: 0;
-            $delay-start: 0.75s;
+            $delay-start: $nav-delay-start;
             $duration: 0.1s;
             animation-duration: $duration;
             animation-fill-mode: both;
@@ -127,7 +128,7 @@ const { id } = Astro.props;
               content: attr(ml-name);
             }
             animation-name: nav-dummy-sitename;
-            animation-delay: 800ms;
+            animation-delay: $nav-delay-start + 50ms;
             animation-duration: 0.25s;
             animation-fill-mode: both;
             @keyframes nav-dummy-sitename {
@@ -178,6 +179,23 @@ const { id } = Astro.props;
             }
           }
           border: 1px solid var(--color-theme-1);
+          & > .sitename {
+            animation-name: nav-real-sitename;
+            animation-duration: 0.5s;
+            animation-fill-mode: both;
+            animation-timing-function: ease-out;
+            animation-delay: $nav-delay-start + 0.5s;
+            @keyframes nav-real-sitename {
+              0% {
+                transform: translateY(4px);
+                opacity: 0;
+              }
+              100% {
+                transform: translateY(0%);
+                opacity: 1;
+              }
+            }
+          }
           & > .menu {
             margin-top: 8px;
             display: flex;
@@ -187,7 +205,7 @@ const { id } = Astro.props;
               font-family: "Silkscreen", sans-serif;
               color: var(--color-theme-1);
               letter-spacing: 0.1em;
-              $delay-start: 1.5s;
+              $delay-start: $nav-delay-start + 500ms;
               & > span {
                 display: block;
                 animation-name: nav-real-menuitem;
@@ -223,7 +241,7 @@ const { id } = Astro.props;
               color: var(--color-theme-1);
               letter-spacing: 0.05em;
               display: block;
-              $delay-start: 1.4s;
+              $delay-start: $nav-delay-start + 750ms;
               & > span {
                 display: block;
                 animation-name: nav-real-socials;
@@ -246,10 +264,10 @@ const { id } = Astro.props;
                 animation-delay: $delay-start + 0s;
               }
               &:nth-of-type(2) > span {
-                animation-delay: $delay-start + 0.1s;
+                animation-delay: $delay-start + 0.05s;
               }
               &:nth-of-type(3) > span {
-                animation-delay: $delay-start + 0.2s;
+                animation-delay: $delay-start + 0.1s;
               }
             }
           }
@@ -262,7 +280,7 @@ const { id } = Astro.props;
               color: var(--color-theme-1);
               animation-name: nav-real-copyright;
               animation-duration: 0.5s;
-              animation-delay: 1.5s;
+              animation-delay: $nav-delay-start + 750ms;
               animation-fill-mode: both;
               animation-timing-function: ease-out;
               @keyframes nav-real-copyright {
