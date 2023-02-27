@@ -2,16 +2,14 @@
   # main
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    corepack.url = "github:SnO2WMaN/corepack-flake";
-  };
-
-  # dev
-  inputs = {
-    devshell.url = "github:numtide/devshell";
     flake-utils.url = "github:numtide/flake-utils";
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
+    corepack = {
+      url = "github:SnO2WMaN/corepack-flake";
+    };
+    devshell = {
+      url = "github:numtide/devshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
     };
   };
 
@@ -23,14 +21,14 @@
   } @ inputs:
     flake-utils.lib.eachDefaultSystem (
       system: let
+        inherit (pkgs) lib;
         pkgs = import nixpkgs {
           inherit system;
           overlays = with inputs; [
-            devshell.overlay
+            devshell.overlays.default
             corepack.overlays.default
           ];
         };
-        inherit (pkgs) lib;
       in {
         devShells.default = pkgs.devshell.mkShell {
           packages = with pkgs; [
@@ -39,7 +37,7 @@
             treefmt
             nodejs-16_x
             (mkCorepack {
-              nodejs = nodejs-16_x;
+              nodejs = nodejs;
               pm = "pnpm";
             })
           ];
