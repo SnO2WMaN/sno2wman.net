@@ -2,20 +2,48 @@
 import clsx from "clsx";
 ---
 
-<footer
-  class={clsx(
-    ["w-full"],
-    ["px-4"],
-    ["py-8"],
-    ["bg-slate-300", "dark:bg-slate-900"]
-  )}
->
-  <div class={clsx(["mx-auto"], ["max-w-screen-md"])}>
-    <span class={clsx(["text-slate-700", "dark:text-slate-400"])}>
-      2022 SnO2WMaN, sno2wman.net
-    </span>
+<style lang="scss">
+  footer {
+    width: 100%;
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    background-color: #374151;
+    & > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      max-width: 1280px;
+      margin: auto;
+
+      & > p {
+        font-size: 0.95rem;
+      }
+
+      & > img {
+        margin-top: 12px;
+        height: 80px;
+      }
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    footer {
+      background-color: #f3f4f6;
+    }
+  }
+</style>
+
+<footer>
+  <div>
+    <p>
+      <time>2023</time>
+      <span>SnO2WMaN</span>
+      <span>sno2wman.net</span>
+    </p>
     <img
-      class={clsx(["mt-4"], ["h-16"])}
       src={import.meta.env.DEV
         ? "https://count.getloli.com/get/@sno2wman.net-dev?theme=rule34"
         : "https://count.getloli.com/get/@sno2wman.net?theme=rule34"}

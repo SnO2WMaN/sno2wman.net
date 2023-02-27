@@ -1,0 +1,40 @@
+---
+import Template from "../template.astro";
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<style lang="scss">
+  p {
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 1280px) {
+    p {
+      font-size: 0.8rem;
+    }
+  }
+</style>
+
+<Template
+  id={id}
+  title="Otomadb Web"
+  href="https://github.com/otomad-database/api"
+  keywords={[
+    "TypeScript",
+    "Node.js",
+    "Next.js",
+    "GraphQL",
+    "urql",
+    "Tailwind CSS",
+    "Storybook",
+    "Vercel",
+  ]}
+>
+  <p>
+    <a href="http://otomadb.com/">Otomadb</a>のWebフロントエンド．
+  </p>
+</Template>

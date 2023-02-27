@@ -1,0 +1,29 @@
+---
+import Template from "../template.astro";
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<style lang="scss">
+  p {
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 1280px) {
+    p {
+      font-size: 0.8rem;
+    }
+  }
+</style>
+
+<Template
+  id={id}
+  title="satyxin"
+  href="https://github.com/SnO2WMaN/deno2nix"
+  keywords={["Nix", "SATySFi"]}
+>
+  <p>SATySFIのパッケージ解決などをNixで行うための諸々．</p>
+</Template>

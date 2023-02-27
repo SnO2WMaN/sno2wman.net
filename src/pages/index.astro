@@ -1,210 +1,112 @@
 ---
-import Quote from "~/components/Quote/Quote.svelte";
-
 import NormalLayout from "~/layouts/NormalLayout.astro";
 
-import clsx from "clsx";
-import socials from "~/data/socials.json";
-
-const contacts: {
-  link: string;
-  service: string;
-  alias?: string;
-  description: string;
-}[] = [
-  {
-    alias: "Internet Explorer 2.0",
-    description: "私的領域",
-    link: "https://scrapbox.io/sno2wman",
-    service: "Scrapbox",
-  },
-  {
-    description: "コミュニケーションツール(1)",
-    link: "https://twitter.com/SnO2WMaN",
-    service: "Twitter",
-  },
-  {
-    description: "制作物(1)",
-    link: "https://github.com/SnO2WMaN",
-    service: "GitHub",
-  },
-  {
-    description: "重要連絡",
-    link: "mailto:me@sno2wman.net",
-    service: "email",
-  },
-];
+import WorkOtomadbAPI from "~/components/Works/otomadb-api/article.astro";
+import WorkOtomadbWeb from "~/components/Works/otomadb-web/article.astro";
+import WorkSnO2WMaNNet from "~/components/Works/sno2wman-net/article.astro";
+import WorkSnO2WMaNInfrastructure from "~/components/Works/sno2wman-infrastructure/article.astro";
+import WorkOtomadbK8sManifests from "~/components/Works/otomadb-k8s-manifests/article.astro";
+import WorkRustPropLogic from "~/components/Works/rust-proplogic-toylang/article.astro";
+import WorkDeno2nix from "~/components/Works/deno2nix/article.astro";
+import WorkCorepackNix from "~/components/Works/corepack-nix/article.astro";
+import WorkSatyxin from "~/components/Works/satyxin/article.astro";
+import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovideos-in-scrapbox/article.astro";
 ---
 
-<NormalLayout>
-  <h1
-    class={clsx(
-      ["text-3xl"],
-      ["text-slate-700", "dark:text-slate-200"],
-      ["font-bold"],
-      ["mb-2"]
-    )}
-  >
-    SnO2WMaN, sno2wman.net
-  </h1>
-  <Quote client:load />
-  <div
-    class={clsx(
-      ["mt-4"],
-      ["grid", ["grid-cols-1", "md:grid-cols-2"]],
-      ["gap-x-8"],
-      ["gap-y-8"]
-    )}
-  >
-    <section id="aboutme" class={clsx(["col-span-full"])}>
-      <h2
-        class={clsx(
-          ["text-2xl"],
-          ["text-slate-800", "dark:text-slate-200"],
-          ["font-bold"],
-          ["mb-2"]
-        )}
-      >
-        自己紹介
-      </h2>
-      <p class={clsx(["text-slate-800", "dark:text-slate-300"])}>
-        私は正直者です。（ただし、この世界には常に真実を話す正直者と、常に嘘を話す狂人以外は存在しないとする。）
-      </p>
-    </section>
-    <section id="contacts">
-      <h2
-        class={clsx(
-          ["text-2xl"],
-          ["text-slate-800", "dark:text-slate-200"],
-          ["font-bold"],
-          ["mb-2"]
-        )}
-      >
-        連絡先
-      </h2>
-      <dl>
-        {
-          contacts.map((contact) => (
-            <>
-              <dt>
-                <a
-                  class={clsx(
-                    ["text-normal"],
-                    [
-                      ["text-sky-600", "visited:text-violet-600"],
-                      ["dark:text-sky-400", "dark:visited:text-violet-400"],
-                    ],
-                    ["underline"]
-                  )}
-                  href={contact.link}
-                >
-                  {contact.service}
-                </a>
-              </dt>
-              <dd
-                class={clsx(
-                  ["pl-2"],
-                  ["text-sm"],
-                  ["text-slate-800", "dark:text-slate-400"]
-                )}
-              >
-                {contact.description}
-              </dd>
-            </>
-          ))
-        }
-        <dt>
-          <a
-            rel="me"
-            href="https://fedibird.com/@sno2wman"
-            class={clsx(
-              ["text-normal"],
-              [
-                ["text-sky-600", "visited:text-violet-600"],
-                ["dark:text-sky-400", "dark:visited:text-violet-400"],
-              ],
-              ["underline"]
-            )}>Fedibird</a
-          >
-        </dt>
-        <dd
-          class={clsx(
-            ["pl-2"],
-            ["text-sm"],
-            ["text-slate-800", "dark:text-slate-400"]
-          )}
-        >
-          コミュニケーションツール(2)
-        </dd>
-      </dl>
-    </section>
-  </div>
-  <section id="socials">
-    <h2
-      class={clsx(
-        ["text-2xl"],
-        ["text-slate-800", "dark:text-slate-200"],
-        ["font-bold"],
-        ["mb-2"]
-      )}
-    >
-      ソーシャル
-    </h2>
-    <p class={clsx(["text-sm"], ["text-slate-700", "dark:text-slate-400"])}>
-      削除や追加は<a
-        class={clsx(
-          [
-            ["text-sky-600", "visited:text-violet-600"],
-            ["dark:text-sky-400", "dark:visited:text-violet-400"],
-          ],
-          ["underline"]
-        )}
-        href="https://github.com/SnO2WMaN/sno2wman.net/issues">ここ</a
-      >や<a
-        class={clsx(
-          [
-            ["text-sky-600", "visited:text-violet-600"],
-            ["dark:text-sky-400", "dark:visited:text-violet-400"],
-          ],
-          ["underline"]
-        )}
-        href="#contacts">連絡先</a
-      >に申請してください。
-    </p>
-    <dl>
-      {
-        socials.map((social) => (
-          <>
-            <dt class={clsx(["mt-1"])}>
-              <span class={clsx(["text-slate-800", "dark:text-slate-300"])}>
-                {social.owner},
-              </span>
-              <a
-                class={clsx(
-                  ["text-normal"],
-                  [
-                    ["text-sky-600", "visited:text-violet-600"],
-                    ["dark:text-sky-400", "dark:visited:text-violet-400"],
-                  ],
-                  ["underline"]
-                )}
-                href={social.link}
-              >
-                {social.name}
-              </a>
-            </dt>
-            <dd
-              class={clsx(
-                ["pl-2"],
-                ["text-sm"],
-                ["text-slate-700", "dark:text-slate-400"]
-              )}
-            >
-              {social.description}
-            </dd>
-          </>
-        ))
+<style lang="scss">
+  header {
+    padding: 1rem 0;
+    max-width: 1280px;
+    margin: auto;
+    & > h1 {
+      font-size: 2rem;
+      font-family: "Silkscreen", sans-serif;
+    }
+  }
+
+  section {
+    max-width: 1280px;
+    margin: auto;
+    & > hgroup {
+      & > h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
       }
-    </dl>
+      & > p {
+        font-size: 0.9rem;
+        color: var(--weak-text-color);
+      }
+    }
+  }
+
+  #works {
+    container-type: inline-size;
+    & > .list {
+      margin-top: 1rem;
+      display: grid;
+      column-gap: 0.5rem;
+      row-gap: 0.5rem;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 700px) {
+    #works > .list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 960px) {
+    #works {
+      & > .list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    #works > .list {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>
+
+<NormalLayout>
+  <header>
+    <h1>sno2wman.net</h1>
+  </header>
+
+  <section>
+    <h2></h2>
+    <p></p>
+  </section>
+
+  <section id="works">
+    <hgroup>
+      <h2>制作物</h2>
+      <p>
+        <a href="https://www.youtube.com/watch?v=qwJaQN1dbVk">
+          つくりましょう つくりましょう さてさて何ができるかな
+        </a>
+      </p>
+    </hgroup>
+    <div class="list">
+      <WorkSnO2WMaNNet id="work-sno2wman-net" />
+      <WorkSnO2WMaNInfrastructure id="work-sno2wman-infrastructure" />
+      <WorkOtomadbWeb id="work-otomadb-web" />
+      <WorkOtomadbAPI id="work-otomadb-api" />
+      <WorkOtomadbK8sManifests id="work-otomadb-k8s-manifest" />
+      <WorkRustPropLogic id="work-rust-proplogic-toylang" />
+      <WorkDeno2nix id="work-deno2nix" />
+      <WorkCorepackNix id="work-corepack-nix" />
+      <WorkSatyxin id="work-satyxin" />
+      <WorkAllYourNicovideosInScrapbox
+        id="work-all-your-nicovideos-in-scrapbox"
+      />
+    </div>
+  </section>
+
+  <section>
+    <h2></h2>
   </section>
 </NormalLayout>

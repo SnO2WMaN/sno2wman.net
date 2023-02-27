@@ -1,3 +1,10 @@
+# Nix
+.direnv
+result
+
+# VSCode
+.vscode/*
+
 # Dependencies
 node_modules/
 
@@ -10,10 +17,6 @@ pnpm-lock.ymal
 # Environment
 .env.*.local
 
-# Nix
-.direnv
-result
-
 # ESLint
 .eslintcache
 
@@ -25,6 +28,3 @@ result
 dist/
 _site/
 
-# Dhall
-config.json
-dhall/*.json

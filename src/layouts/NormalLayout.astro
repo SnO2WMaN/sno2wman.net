@@ -1,44 +1,68 @@
 ---
-import clsx from "clsx";
+import "the-new-css-reset";
+import "@fontsource/silkscreen/400.css";
+import "@fontsource/rubik/latin-400.css";
+import "@fontsource/rubik/latin-600.css";
+
 import Footer from "~/components/Footer.astro";
 
 const { title = "sno2wman.net", description = "SnO2WMaN, sno2wman.net" } =
   Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" property="og:description" content={description} />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+<style is:global>
+  :root {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+    font-size: 16px;
+    color: var(--text-color);
 
-    <meta name="og:type" content="website" />
-    <meta name="og:title" content={title} />
-    <meta name="og:site_name" content="sno2wman.net" />
-    <meta name="og:type" content="website" />
-    <meta name="og:url" content="https://sno2wman.net" />
+    --text-color: #f1f5f9;
+    --weak-text-color: #94a3b8;
+  }
 
-    <meta name="twitter:title" content="sno2wman.net" />
-    <meta name="twitter:url" content="https://sno2wman.net" />
-    <meta name="twitter:site" content="@SnO2WMaN" />
-    <title>{title}</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  </head>
-  <body
-    class={clsx(
-      ["min-h-screen"],
-      ["flex", "flex-col"],
-      ["bg-slate-200", "dark:bg-slate-800"]
-    )}
-  >
-    <main class={clsx(["flex-grow"], ["py-8", "md:py-12"])}>
-      <div
-        class={clsx(["container"], ["mx-auto"], ["max-w-screen-lg"], ["px-4"])}
-      >
-        <slot />
-      </div>
-    </main>
-    <Footer />
-  </body>
-</html>
+  body {
+    background-color: #0f172a;
+    overflow-y: scroll;
+  }
+
+  main {
+    min-height: calc(100vh - 160px);
+    padding: 64px;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --text-color: #1e293b;
+      --weak-text-color: #334155;
+    }
+
+    body {
+      background-color: #e5e7eb;
+    }
+  }
+</style>
+
+<meta charset="UTF-8" />
+<meta name="description" property="og:description" content={description} />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+
+<meta name="og:type" content="website" />
+<meta name="og:title" content={title} />
+<meta name="og:site_name" content="sno2wman.net" />
+<meta name="og:type" content="website" />
+<meta name="og:url" content="https://sno2wman.net" />
+
+<meta name="twitter:title" content="sno2wman.net" />
+<meta name="twitter:url" content="https://sno2wman.net" />
+<meta name="twitter:site" content="@SnO2WMaN" />
+<title>{title}</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<body>
+  <main><slot /></main>
+  <Footer />
+</body>

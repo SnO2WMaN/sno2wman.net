@@ -1,0 +1,48 @@
+---
+import Template from "../template.astro";
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<style lang="scss">
+  p {
+    font-size: 0.9rem;
+  }
+
+  ol {
+    list-style: decimal;
+    padding-inline-start: 1.25rem;
+  }
+
+  li {
+    font-size: 0.8rem;
+  }
+
+  @media (min-width: 1280px) {
+    p {
+      font-size: 0.8rem;
+    }
+    ol {
+      padding-inline-start: 0.75rem;
+    }
+    li {
+      font-size: 0.75rem;
+    }
+  }
+</style>
+
+<Template
+  id={id}
+  title="rust-proplogic-toylang"
+  href="https://github.com/otomad-database/api"
+  keywords={["Rust", "Nix", "Dev Container"]}
+>
+  <p>命題論理の簡単な計算機をRustで作る．次の目的があった．</p>
+  <ol>
+    <li>Rustの勉強</li>
+    <li>Dev ContainerにNixを入れて安定したRustの開発環境を構築する．</li>
+  </ol>
+</Template>

@@ -1,0 +1,23 @@
+---
+import Template from "../template.astro";
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<style lang="scss">
+  p {
+    font-size: 0.9rem;
+  }
+</style>
+
+<Template
+  id={id}
+  title="sno2wman.net"
+  href="https://github.com/otomad-database/api"
+  keywords={["Astro", "Svelte", "Cloudflare Pages"]}
+>
+  <p>このサイト．</p>
+</Template>
