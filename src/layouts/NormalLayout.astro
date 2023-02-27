@@ -30,7 +30,13 @@ const { title = "sno2wman.net", description = "SnO2WMaN, sno2wman.net" } =
 
   main {
     min-height: calc(100vh - 160px);
-    padding: 64px;
+    padding: 32px;
+  }
+
+  @media (min-width: 1280px) {
+    main {
+      padding: 64px;
+    }
   }
 
   @media (prefers-color-scheme: light) {

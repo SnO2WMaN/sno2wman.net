@@ -1,6 +1,8 @@
 ---
 import NormalLayout from "~/layouts/NormalLayout.astro";
 
+import AboutMe from "~/components/Aboutme/Aboutme.svelte";
+
 import WorkOtomadbAPI from "~/components/Works/otomadb-api/article.astro";
 import WorkOtomadbWeb from "~/components/Works/otomadb-web/article.astro";
 import WorkSnO2WMaNNet from "~/components/Works/sno2wman-net/article.astro";
@@ -26,14 +28,20 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
 
   section {
     max-width: 1280px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 1rem 0;
     & > hgroup {
+      display: flex;
+      flex-direction: column;
+      border-inline-start: 0.5rem solid var(--weak-text-color);
+      padding-inline-start: 0.5rem;
+      margin-block-end: 0.75rem;
       & > h2 {
         font-size: 1.25rem;
         font-weight: 700;
       }
       & > p {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
         color: var(--weak-text-color);
       }
     }
@@ -42,7 +50,6 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
   #works {
     container-type: inline-size;
     & > .list {
-      margin-top: 1rem;
       display: grid;
       column-gap: 0.5rem;
       row-gap: 0.5rem;
@@ -65,6 +72,14 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
   }
 
   @media (min-width: 1280px) {
+    section > hgroup {
+      flex-direction: row;
+      align-items: center;
+      & > p {
+        margin-inline-start: 0.5rem;
+      }
+    }
+
     #works > .list {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
@@ -76,9 +91,14 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
     <h1>sno2wman.net</h1>
   </header>
 
-  <section>
-    <h2></h2>
-    <p></p>
+  <section id="aboutme">
+    <hgroup>
+      <h2>自己紹介</h2>
+      <p>
+        <a href="https://nico.ms/sm23507309?from=43">怪しい奴め お前は誰だ</a>
+      </p>
+    </hgroup>
+    <AboutMe />
   </section>
 
   <section id="works">
