@@ -36,6 +36,7 @@
             dprint
             treefmt
             nodejs-16_x
+            httpie
             (mkCorepack {
               nodejs = nodejs;
               pm = "pnpm";
