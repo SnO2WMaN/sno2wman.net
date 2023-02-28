@@ -30,6 +30,7 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
       font-size: 2.5rem;
       font-family: "Silkscreen", sans-serif;
       text-align: center;
+      word-break: break-all;
     }
     & > .quote {
       margin-block-start: 0.5rem;
@@ -120,6 +121,12 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
     }
   }
 
+  @media (max-width: 520px) {
+    header > h1 {
+      font-size: 1.25rem;
+    }
+  }
+
   @media (min-width: 700px) {
     #works {
       & > .list {
@@ -166,9 +173,7 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
 <NormalLayout>
   <div class="grider">
     <header class="full">
-      <h1>
-        sno<sub>2</sub>wman.net
-      </h1>
+      <h1>sno<sub>2</sub>wman.net</h1>
       <div class="quote">
         <Quote />
       </div>
