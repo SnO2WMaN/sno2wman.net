@@ -52,7 +52,7 @@
       <span>ななしのよっしん</span>
       <cite>
         <a href="https://dic.nicovideo.jp/b/a/ワザップ!/91-">
-          ニコニコ大百科『ワザップ!について語るスレ』>>108
+          ニコニコ大百科『ワザップ!について語るスレ』&gt;&gt;108
         </a>
       </cite>
     </figcaption>
