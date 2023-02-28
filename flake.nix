@@ -37,10 +37,10 @@
         devShells.default = pkgs.devshell.mkShell {
           packages = with pkgs; [
             alejandra
-            nodejs
+            nodejs-16_x
             httpie
             (mkCorepack {
-              nodejs = nodejs;
+              nodejs = nodejs-16_x;
               pm = "pnpm";
             })
           ];
