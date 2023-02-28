@@ -4,6 +4,8 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
 import AboutMe from "~/components/Aboutme/Aboutme.svelte";
 import Quote from "~/components/Quote/Quote.svelte";
 
+import ProjectOtomadb from "~/components/Projects/otomadb/article.astro";
+
 import WorkOtomadbAPI from "~/components/Works/otomadb-api/article.astro";
 import WorkOtomadbWeb from "~/components/Works/otomadb-web/article.astro";
 import WorkSnO2WMaNNet from "~/components/Works/sno2wman-net/article.astro";
@@ -66,7 +68,8 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
     }
   }
 
-  #works {
+  #works,
+  #projects {
     container-type: inline-size;
     & > .list {
       display: grid;
@@ -118,16 +121,20 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
   }
 
   @media (min-width: 700px) {
-    #works > .list {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    #works {
+      & > .list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
   }
 
   @media (min-width: 960px) {
-    #works {
-      & > .list {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+    #works > .list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #projects > .list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .grider {
@@ -148,6 +155,10 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
   @media (min-width: 1280px) {
     #works > .list {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    #projects > .list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 </style>
@@ -186,6 +197,9 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
           >
         </p>
       </hgroup>
+      <div class="list">
+        <ProjectOtomadb id="project-otomadb" />
+      </div>
     </section>
   </div>
 

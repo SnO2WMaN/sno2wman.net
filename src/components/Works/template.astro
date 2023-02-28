@@ -5,7 +5,7 @@ interface Props {
   id: string;
   title: string;
   href: string;
-  keywords: string[];
+  keywords?: string[];
 }
 
 const { id, title, href, keywords } = Astro.props;
@@ -18,6 +18,7 @@ const { id, title, href, keywords } = Astro.props;
     padding: 1rem 1.25rem;
     display: flex;
     flex-direction: column;
+    container-type: inline-size;
   }
 
   h3 {
@@ -55,9 +56,15 @@ const { id, title, href, keywords } = Astro.props;
       {title}
     </a>
   </h3>
-  <div class="keywords">
-    {keywords.map((keyword) => <Tag keyword={keyword} />)}
-  </div>
+  {
+    keywords && (
+      <div class="keywords">
+        {keywords.map((keyword) => (
+          <Tag keyword={keyword} />
+        ))}
+      </div>
+    )
+  }
   <div class="slot">
     <slot />
   </div>

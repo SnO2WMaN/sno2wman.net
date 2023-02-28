@@ -33,7 +33,7 @@
     <p>
       次のものに興味があります．いくつかの項目には具体的なキーワードも付けておきます．ただし，私はここで挙がっているあらゆるものの専門家ではありません．
     </p>
-    <ul>
+    <ol>
       <li>
         Webフロントエンド開発
         <span class="keywords">
@@ -79,7 +79,7 @@
       <li>知識工学</li>
       <li>推薦システム</li>
       <li>検索システム</li>
-    </ul>
+    </ol>
   {/if}
   {#if what === 4}
     <p>TODO: ここに自己紹介を入力する</p>
@@ -101,7 +101,7 @@
         font-style: italic;
       }
     }
-    & > ul {
+    & > ol {
       list-style: decimal;
       padding-inline-start: 1rem;
       & > li {
