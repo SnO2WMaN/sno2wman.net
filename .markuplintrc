@@ -1,0 +1,9 @@
+{
+  "parser": {
+    "\\.svelte$": "@markuplint/svelte-parser",
+    "\\.astro$": "@markuplint/astro-parser"
+  },
+  "extends": [
+    "markuplint:recommended"
+  ]
+}
