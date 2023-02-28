@@ -36,6 +36,8 @@
       {
         devShells.default = pkgs.devshell.mkShell {
           packages = with pkgs; [
+            act
+            actionlint
             alejandra
             nodejs-16_x
             httpie
