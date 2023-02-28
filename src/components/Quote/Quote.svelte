@@ -187,7 +187,7 @@
       <p>梯子を登りきった者は梯子を投げ棄てなければならない。</p>
     </blockquote>
     <figcaption>
-      <span>Ledwig Wittgenstein</span>
+      <span>Ludwig Wittgenstein</span>
       <cite>
         <a href="https://www.iwanami.co.jp/book/b246897.html"
           >『論理哲学論考』(訳:野矢茂樹)</a
