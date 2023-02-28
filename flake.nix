@@ -13,14 +13,15 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-    ...
-  } @ inputs:
+  outputs =
+    { self
+    , nixpkgs
+    , flake-utils
+    , ...
+    } @ inputs:
     flake-utils.lib.eachDefaultSystem (
-      system: let
+      system:
+      let
         inherit (pkgs) lib;
         pkgs = import nixpkgs {
           inherit system;
@@ -29,12 +30,11 @@
             corepack.overlays.default
           ];
         };
-      in {
+      in
+      {
         devShells.default = pkgs.devshell.mkShell {
           packages = with pkgs; [
             alejandra
-            dprint
-            treefmt
             nodejs-18_x
             httpie
             (mkCorepack {

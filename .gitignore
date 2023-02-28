@@ -2,27 +2,16 @@
 .direnv
 result
 
-# VSCode
-.vscode/*
-
 # Dependencies
 node_modules/
 
-yarn.lock
-pnpm-lock.ymal
+# VSCode
+.vscode/*.json
+!.vscode/extensions.json
 
-# Log
+# log
 *.log
-
-# Environment
-.env.*.local
-
-# ESLint
-.eslintcache
-
-# Parcel
-.cache/
-.parcel-cache/
+logs/
 
 # build output
 dist/
