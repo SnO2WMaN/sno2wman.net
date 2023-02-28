@@ -35,10 +35,10 @@
             alejandra
             dprint
             treefmt
-            nodejs-16_x
+            nodejs-18_x
             httpie
             (mkCorepack {
-              nodejs = nodejs;
+              nodejs = nodejs-18_x;
               pm = "pnpm";
             })
           ];
