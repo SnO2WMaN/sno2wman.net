@@ -11,7 +11,8 @@
       </span>
 
       <span>
-        この村に訪れたあなたは，最初に会った村人（<strong>SnO2WMaN</strong
+        この村に訪れたあなたは，最初に会った村人（<strong
+          >SnO<sub>2</sub>WMaN</strong
         >としましょう）に<i>「あなたは正直者ですか，嘘つきですか？」</i
         >と尋ねたところ
         {#if what === 1}
