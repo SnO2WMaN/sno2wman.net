@@ -1,0 +1,71 @@
+---
+import Tag from "./Tag.astro";
+
+interface Props {
+  id: string;
+  title: string;
+  href: string;
+  keywords?: string[];
+}
+
+const { id, title, href, keywords } = Astro.props;
+---
+
+<style lang="scss">
+  article {
+    border: 1px solid;
+    border-color: var(--weak-text-color);
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    container-type: inline-size;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    font-weight: 600;
+    & > a {
+      text-decoration: underline var(--text-color) 1px;
+    }
+  }
+
+  .keywords {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.25rem;
+    row-gap: 0.25rem;
+    margin-top: 0.5rem;
+    container-type: inline-size;
+  }
+
+  .slot {
+    margin-top: 0.5rem;
+  }
+
+  @media (min-width: 1280px) {
+    h3 {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<article id={id}>
+  <h3>
+    <a href={href}>
+      {title}
+    </a>
+  </h3>
+  {
+    keywords && (
+      <div class="keywords">
+        {keywords.map((keyword) => (
+          <Tag keyword={keyword} />
+        ))}
+      </div>
+    )
+  }
+  <div class="slot">
+    <slot />
+  </div>
+</article>

@@ -1,0 +1,35 @@
+---
+import Template from "../template.astro";
+---
+
+<style lang="scss">
+  p {
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 1280px) {
+    p {
+      font-size: 0.8rem;
+    }
+  }
+</style>
+
+<Template
+  id="work-otomadb-web"
+  title="Otomadb Web"
+  href="https://github.com/otomad-database/web"
+  keywords={[
+    "TypeScript",
+    "Node.js",
+    "Next.js",
+    "GraphQL",
+    "urql",
+    "Tailwind CSS",
+    "Storybook",
+    "Vercel",
+  ]}
+>
+  <p>
+    <a href="#project-otomadb">Otomadb</a>のWebフロントエンド．
+  </p>
+</Template>
