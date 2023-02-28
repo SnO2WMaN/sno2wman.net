@@ -39,10 +39,6 @@
             alejandra
             nodejs-16_x
             httpie
-            (mkCorepack {
-              nodejs = nodejs-16_x;
-              pm = "pnpm";
-            })
           ];
           env = [
             {
