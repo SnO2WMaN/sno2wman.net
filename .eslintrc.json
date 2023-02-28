@@ -9,29 +9,16 @@
     "plugin:eslint-comments/recommended",
     "prettier"
   ],
-  "plugins": [
-    "unused-imports",
-    "simple-import-sort"
-  ],
+  "plugins": ["unused-imports", "simple-import-sort"],
   "rules": {
     "prefer-spread": 2,
     "prefer-template": 2,
-    "no-useless-rename": [
-      2
-    ],
-    "object-shorthand": [
-      2,
-      "always"
-    ],
-    "quote-props": [
-      2,
-      "consistent"
-    ],
+    "no-useless-rename": [2],
+    "object-shorthand": [2, "always"],
+    "quote-props": [2, "consistent"],
     "eqeqeq": 2,
     /* unused-imports */
-    "unused-imports/no-unused-imports": [
-      2
-    ],
+    "unused-imports/no-unused-imports": [2],
     /* simple-import-sort */
     "sort-imports": 0,
     "simple-import-sort/imports": 2,
@@ -41,12 +28,8 @@
   },
   "overrides": [
     {
-      "files": [
-        "*.mjs"
-      ],
-      "extends": [
-        "plugin:n/recommended"
-      ],
+      "files": ["*.mjs"],
+      "extends": ["plugin:n/recommended"],
       "parserOptions": {
         "sourceType": "module",
         "ecmaVersion": "latest"
@@ -56,34 +39,19 @@
       }
     },
     {
-      "files": [
-        "*.ts",
-        "*.tsx"
-      ],
-      "extends": [
-        "plugin:@typescript-eslint/recommended"
-      ],
-      "plugins": [
-        "@typescript-eslint"
-      ],
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "plugins": ["@typescript-eslint"],
       "parser": "@typescript-eslint/parser",
       "rules": {}
     },
     {
-      "files": [
-        "*.astro"
-      ],
-      "extends": [
-        "plugin:astro/recommended"
-      ]
+      "files": ["*.astro"],
+      "extends": ["plugin:astro/recommended"]
     },
     {
-      "files": [
-        "*.svelte"
-      ],
-      "plugins": [
-        "svelte3"
-      ],
+      "files": ["*.svelte"],
+      "plugins": ["svelte3"],
       "processor": "svelte3/svelte3"
     }
   ]

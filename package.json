@@ -7,9 +7,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "wrangler pages dev ./dist",
-    "fmt": "prettier --write ./**/*.{js,ts,json,yml,md,astro,svelte}",
-    "lint:eslint": "eslint . --ext .js,.ts,.astro.svelte",
-    "lint:prettier": "prettier --check ./**/*.{js,ts,json,yml,md,astro,svelte}",
+    "fmt": "npm run lint:prettier -- --write",
+    "lint:eslint": "eslint . --ext \".js,.ts,.astro.svelte\"",
+    "lint:prettier": "prettier --check \"**/*.{js,ts,json,yml,md,astro,svelte}\"",
     "lintfix": "run-s 'lintfix:*' 'fmt'",
     "lintfix:eslint": "pnpm run lint:eslint --fix"
   },
