@@ -90,6 +90,7 @@
   div {
     & > p {
       font-size: 0.9rem;
+      margin-block-end: 1rem;
       & > span {
         display: inline-block;
       }
@@ -103,10 +104,11 @@
     & > ul {
       list-style: decimal;
       padding-inline-start: 1rem;
-      padding-block-start: 0.25rem;
-      padding-block-end: 0.25rem;
       & > li {
         font-size: 0.9rem;
+        &:not(:last-of-type) {
+          margin-block-end: 0.125rem;
+        }
         &::marker {
           color: var(--weak-text-color);
         }

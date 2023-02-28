@@ -2,8 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@astrojs/svelte': ^1.0.2
-  '@fontsource/josefin-sans': ^4.5.11
-  '@fontsource/rubik': ^4.5.14
   '@fontsource/silkscreen': ^4.5.0
   astro: ^1.5.3
   clsx: ^1.2.1
@@ -14,8 +12,6 @@ specifiers:
   typescript: ^4.8.4
 
 dependencies:
-  '@fontsource/josefin-sans': 4.5.12
-  '@fontsource/rubik': 4.5.14
   '@fontsource/silkscreen': 4.5.0
   clsx: 1.2.1
   the-new-css-reset: 1.8.4
@@ -438,14 +434,6 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
-
-  /@fontsource/josefin-sans/4.5.12:
-    resolution: {integrity: sha512-Wu69wdmSDrKPPloaQmM8E+tTZO7o+OTTKu/Pcs1vpRveblVI69/n2mcViXxzeItXwx/Wm9DFxEEvCH71cSPeeg==}
-    dev: false
-
-  /@fontsource/rubik/4.5.14:
-    resolution: {integrity: sha512-EvMK3kkeAgKkk8qAeT4PjpyAYyu72pIlJm+SXJ5vR/xhCX2yj2xoq3+YS38rPmPcCAnrAVONoQ3ezLxVm6jhBA==}
-    dev: false
 
   /@fontsource/silkscreen/4.5.0:
     resolution: {integrity: sha512-YXCb8sVgpzOSqLiYfdatDxiSi8+s5rdZ2nA3LFFPNC/ZvAckRXPUMmAbZ1MZi5O3De8EliMPvsZv7mkgMkcCyg==}

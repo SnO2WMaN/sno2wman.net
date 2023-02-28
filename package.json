@@ -10,8 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource/josefin-sans": "^4.5.11",
-    "@fontsource/rubik": "^4.5.14",
     "@fontsource/silkscreen": "^4.5.0",
     "clsx": "^1.2.1",
     "the-new-css-reset": "^1.8.2"
