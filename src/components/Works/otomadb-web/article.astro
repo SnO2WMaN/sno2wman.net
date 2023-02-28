@@ -1,10 +1,5 @@
 ---
 import Template from "../template.astro";
-interface Props {
-  id: string;
-}
-
-const { id } = Astro.props;
 ---
 
 <style lang="scss">
@@ -20,7 +15,7 @@ const { id } = Astro.props;
 </style>
 
 <Template
-  id={id}
+  id="work-otomadb-web"
   title="Otomadb Web"
   href="https://github.com/otomad-database/web"
   keywords={[
@@ -35,6 +30,6 @@ const { id } = Astro.props;
   ]}
 >
   <p>
-    <a href="http://otomadb.com/">Otomadb</a>のWebフロントエンド．
+    <a href="#project-otomadb">Otomadb</a>のWebフロントエンド．
   </p>
 </Template>

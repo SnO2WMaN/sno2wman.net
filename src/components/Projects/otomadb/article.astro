@@ -1,10 +1,5 @@
 ---
 import Template from "../../Works/template.astro";
-interface Props {
-  id: string;
-}
-
-const { id } = Astro.props;
 ---
 
 <style lang="scss">
@@ -37,7 +32,7 @@ const { id } = Astro.props;
   }
 </style>
 
-<Template id={id} title="Otomadb" href="https://otomadb.com">
+<Template id="project-otomadb" title="Otomadb" href="https://otomadb.com">
   <p>
     ユーザからデータを募集したりすることによって，音MADの体系的なデータベースを作る．
     技術的には，以下の目的を持って開発している．

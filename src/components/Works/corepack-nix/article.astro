@@ -1,10 +1,5 @@
 ---
 import Template from "../template.astro";
-interface Props {
-  id: string;
-}
-
-const { id } = Astro.props;
 ---
 
 <style lang="scss">
@@ -20,7 +15,7 @@ const { id } = Astro.props;
 </style>
 
 <Template
-  id={id}
+  id="work-corepack-nix"
   title="corepack.nix"
   href="https://github.com/SnO2WMaN/corepack-flake"
   keywords={["Node.js", "Nix"]}

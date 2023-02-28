@@ -1,10 +1,5 @@
 ---
 import Template from "../template.astro";
-interface Props {
-  id: string;
-}
-
-const { id } = Astro.props;
 ---
 
 <style lang="scss">
@@ -35,7 +30,7 @@ const { id } = Astro.props;
 </style>
 
 <Template
-  id={id}
+  id="work-rust-proplogic-toylang"
   title="rust-proplogic-toylang"
   href="https://github.com/otomad-database/api"
   keywords={["Rust", "Nix", "Dev Container"]}

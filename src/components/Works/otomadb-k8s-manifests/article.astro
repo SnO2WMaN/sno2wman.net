@@ -1,10 +1,5 @@
 ---
 import Template from "../template.astro";
-interface Props {
-  id: string;
-}
-
-const { id } = Astro.props;
 ---
 
 <style lang="scss">
@@ -20,13 +15,13 @@ const { id } = Astro.props;
 </style>
 
 <Template
-  id={id}
+  id="work-otomadb-k8s-manifest"
   title="Otomadb k8s Manifests"
   href="https://github.com/otomad-database/k8s-manifests"
   keywords={["Kubernetes", "ArgoCD"]}
 >
   <p>
-    <a href="http://otomadb.com/">Otomadb</a>のk8sマニフェスト．
+    <a href="#project-otomadb">Otomadb</a>のk8sマニフェスト．
     実際にこのマニフェストが自宅のk8sクラスタにデプロイされている．
   </p>
 </Template>
