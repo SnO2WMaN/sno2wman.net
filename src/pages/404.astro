@@ -1,44 +1,27 @@
 ---
 import clsx from "clsx";
+
 import NormalLayout from "~/layouts/NormalLayout.astro";
+import Quote from "~/components/Quote/Quote.svelte";
 ---
 
-<NormalLayout
-title="404"
-description = "Page not found."
->
-  <h1
-     class={clsx(
-       ["text-xl"],
-       ["text-slate-800", "dark:text-slate-200"],
-       ["font-bold"],
-       ["mb-4"]
-     )}
-   >
-     404, page not found.
-  </h1>
-  <p class={clsx(["text-slate-800", "dark:text-slate-200"])}>
-    このページは<ruby>存在しない<rp>(</rp><rt>404.htmlである</rt><rp>)</rp>
-    </ruby>。以下の理由が考えられる。
-  </p>
-  <ol class={clsx(["my-2"],["ml-8"], ["list-decimal"])}>
-    <li class={clsx(["text-slate-700", "dark:text-slate-300"])}>
-      このページは404.htmlである。
-    </li>
-    <li class={clsx(["text-slate-700", "dark:text-slate-300"])}>
-      誤ったページリンクから飛んだ。 （ これが明確に私の誤りによるものなら、<a
-        class={clsx(
-          [
-            ["text-sky-600", "visited:text-violet-600"],
-            ["dark:text-sky-400", "dark:visited:text-violet-400"],
-          ],
-          ["underline"]
-        )}
-        href="http://sno2wman.net#contacts">連絡してください。</a
-      >）
-    </li>
-    <li class={clsx(["text-slate-700", "dark:text-slate-300"])}>
-      かつて存在したが、今は消えている。
-    </li>
-  </ol>
+<style lang="scss">
+  header {
+    display: flex;
+    flex-direction: column;
+    max-width: 640px;
+    margin: auto;
+    & > h1 {
+      font-size: 2rem;
+      font-family: "Silkscreen", sans-serif;
+      margin-block-end: 1rem;
+    }
+  }
+</style>
+
+<NormalLayout title="404" description="Page not found.">
+  <header>
+    <h1 class={clsx()}>404, page not found.</h1>
+    <Quote />
+  </header>
 </NormalLayout>

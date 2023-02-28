@@ -1,0 +1,26 @@
+---
+import Template from "../template.astro";
+---
+
+<style lang="scss">
+  p {
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 1280px) {
+    p {
+      font-size: 0.8rem;
+    }
+  }
+</style>
+
+<Template
+  id="work-all-your-nicovideos-in-scrapbox"
+  title="All your nicovideos in Scrapbox"
+  href="https://github.com/SnO2WMaN/all-your-nicovideos-in-scrapbox"
+  keywords={["Deno", "TypeScript"]}
+>
+  <p>
+    Scrapbox内で言及したニコニコ動画の動画を全て取得する．使いやすいようにAPIとして提供．
+  </p>
+</Template>
