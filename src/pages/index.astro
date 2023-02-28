@@ -51,6 +51,7 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
       }
       & > p {
         font-size: 0.75rem;
+        font-style: italic;
         color: var(--weak-text-color);
       }
     }
@@ -63,6 +64,33 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
       column-gap: 0.5rem;
       row-gap: 0.5rem;
       grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+
+  #contacts {
+    & > dl {
+      display: flex;
+      flex-direction: column;
+      & > dt {
+        font-size: 0.9rem;
+        &:not(:first-of-type) {
+          margin-top: 0.75rem;
+        }
+        & > span {
+          font-weight: 700;
+          font-family: "Rubik", sans-serif;
+          color: var(--text-color);
+        }
+        & > a {
+          margin-inline-start: 0.25rem;
+          font-family: monospace;
+          color: var(--weak-text-color);
+        }
+      }
+      & > dd {
+        padding-inline-start: 0.5rem;
+        font-size: 0.8rem;
+      }
     }
   }
 
@@ -122,6 +150,59 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
     <AboutMe />
   </section>
 
+  <section id="contacts">
+    <hgroup>
+      <h2>連絡先</h2>
+      <p>
+        <a href="https://www.youtube.com/watch?v=2vpw7Lebvj4&t=74s">
+          It's the hotline, right?
+        </a>
+      </p>
+    </hgroup>
+    <dl>
+      <dt>
+        <span>Twitter</span>
+        <a href="https://twitter.com/SnO2WMaN">@SnO2WMaN</a>
+      </dt>
+      <dd>コミュニケーションツール(1)．</dd>
+
+      <dt>
+        <span>Scrapbox</span>
+        <a href="https://scrapbox.io/sno2wman">/sno2wman</a>
+      </dt>
+      <dd>私的なメモや日報など．</dd>
+
+      <dt>
+        <span>GitHub</span>
+        <a href="https://github.com/SnO2WMaN">@SnO2WMaN</a>
+      </dt>
+      <dd>制作物(1)．</dd>
+
+      <dt>
+        <span>Email</span>
+        <a href="mailto:me@sno2wman.net">me@sno2wman.net</a>
+      </dt>
+      <dd>重要な連絡．</dd>
+
+      <dt>
+        <span>Fedibird</span>
+        <a href="https://fedibird.com/@SnO2WMaN" rel="me">@SnO2WMaN</a>
+      </dt>
+      <dd>コミュニケーションツール(2)．</dd>
+    </dl>
+  </section>
+
+  <section id="projects">
+    <hgroup>
+      <h2>プロジェクト</h2>
+      <p>
+        <a href="http://gonzo.co.jp/archives/nhk/story.html"
+          >プロジェクトにようこそ！</a
+        >
+      </p>
+    </hgroup>
+  </section>
+
   <section id="works">
     <hgroup>
       <h2>制作物</h2>
@@ -147,7 +228,14 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
     </div>
   </section>
 
-  <section>
-    <h2></h2>
+  <section id="social">
+    <hgroup>
+      <h2>ソーシャル</h2>
+      <p>
+        <a href="https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm">
+          改訂により2022年度から高等学校の学習指導要領から『現代社会』は消滅しました．
+        </a>
+      </p>
+    </hgroup>
   </section>
 </NormalLayout>
