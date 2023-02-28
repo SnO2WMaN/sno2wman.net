@@ -11,7 +11,7 @@ interface Props {
 const { id, title, href, keywords } = Astro.props;
 ---
 
-<style>
+<style lang="scss">
   article {
     border: 1px solid;
     border-color: var(--weak-text-color);
@@ -25,6 +25,9 @@ const { id, title, href, keywords } = Astro.props;
     color: var(--text-color);
     font-family: "Rubik", sans-serif, ui-sans-serif, system-ui;
     font-weight: 600;
+    & > a {
+      text-decoration: underline var(--text-color) 1px;
+    }
   }
 
   .keywords {
