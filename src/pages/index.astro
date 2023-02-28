@@ -35,9 +35,8 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
   }
 
   section {
-    max-width: 1280px;
-    margin: 0 auto;
     padding: 1rem 0;
+    container-type: inline-size;
     & > hgroup {
       display: flex;
       flex-direction: column;
@@ -48,11 +47,21 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
       & > h2 {
         font-size: 1.25rem;
         font-weight: 700;
+        flex-shrink: 0;
       }
       & > p {
+        flex-grow: 1;
         font-size: 0.75rem;
         font-style: italic;
         color: var(--weak-text-color);
+      }
+    }
+
+    & > p {
+      font-size: 0.9rem;
+      margin-block-end: 1rem;
+      & > a {
+        text-decoration: underline;
       }
     }
   }
@@ -61,13 +70,14 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
     container-type: inline-size;
     & > .list {
       display: grid;
-      column-gap: 0.5rem;
-      row-gap: 0.5rem;
+      column-gap: 8px;
+      row-gap: 8px;
       grid-template-columns: repeat(1, minmax(0, 1fr));
     }
   }
 
-  #contacts {
+  #contacts,
+  #social {
     & > dl {
       display: flex;
       flex-direction: column;
@@ -78,19 +88,32 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
         }
         & > span {
           font-weight: 700;
-          font-family: "Rubik", sans-serif;
           color: var(--text-color);
         }
         & > a {
           margin-inline-start: 0.25rem;
-          font-family: monospace;
           color: var(--weak-text-color);
+          &.url {
+            font-family: monospace;
+          }
         }
       }
       & > dd {
         padding-inline-start: 0.5rem;
         font-size: 0.8rem;
       }
+    }
+  }
+
+  .grider {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    max-width: 1280px;
+    margin: 0 auto;
+    column-gap: 16px;
+    & > .full {
+      grid-column: 1 / -1;
     }
   }
 
@@ -106,16 +129,13 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
+
+    .grider {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
-  @media (min-width: 1280px) {
-    header {
-      flex-direction: row;
-      & > .quote {
-        margin-block-start: 0.5rem;
-        margin-inline-start: 1rem;
-      }
-    }
+  @container (min-width: 520px) {
     section > hgroup {
       flex-direction: row;
       align-items: center;
@@ -123,7 +143,9 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
         margin-inline-start: 0.5rem;
       }
     }
+  }
 
+  @media (min-width: 1280px) {
     #works > .list {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
@@ -131,111 +153,197 @@ import WorkAllYourNicovideosInScrapbox from "~/components/Works/all-your-nicovid
 </style>
 
 <NormalLayout>
-  <header>
-    <h1>
-      sno<sub>2</sub>wman.net
-    </h1>
-    <div class="quote">
-      <Quote />
-    </div>
-  </header>
+  <div class="grider">
+    <header class="full">
+      <h1>
+        sno<sub>2</sub>wman.net
+      </h1>
+      <div class="quote">
+        <Quote />
+      </div>
+    </header>
+  </div>
 
-  <section id="aboutme">
-    <hgroup>
-      <h2>自己紹介</h2>
+  <div class="grider">
+    <section id="aboutme" class="full">
+      <hgroup>
+        <h2>自己紹介</h2>
+        <p>
+          <a href="https://nico.ms/sm23507309?from=43">怪しい奴め お前は誰だ</a>
+        </p>
+      </hgroup>
+      <AboutMe />
+    </section>
+  </div>
+
+  <div class="grider">
+    <section id="projects" class="full">
+      <hgroup>
+        <h2>プロジェクト</h2>
+        <p>
+          <a href="http://gonzo.co.jp/archives/nhk/story.html"
+            >プロジェクトにようこそ！</a
+          >
+        </p>
+      </hgroup>
+    </section>
+  </div>
+
+  <div class="grider">
+    <section id="works" class="full">
+      <hgroup>
+        <h2>制作物</h2>
+        <p>
+          <a href="https://www.youtube.com/watch?v=qwJaQN1dbVk">
+            つくりましょう つくりましょう さてさて何ができるかな
+          </a>
+        </p>
+      </hgroup>
+      <div class="list">
+        <WorkSnO2WMaNNet id="work-sno2wman-net" />
+        <WorkSnO2WMaNInfrastructure id="work-sno2wman-infrastructure" />
+        <WorkOtomadbWeb id="work-otomadb-web" />
+        <WorkOtomadbAPI id="work-otomadb-api" />
+        <WorkOtomadbK8sManifests id="work-otomadb-k8s-manifest" />
+        <WorkRustPropLogic id="work-rust-proplogic-toylang" />
+        <WorkDeno2nix id="work-deno2nix" />
+        <WorkCorepackNix id="work-corepack-nix" />
+        <WorkSatyxin id="work-satyxin" />
+        <WorkAllYourNicovideosInScrapbox
+          id="work-all-your-nicovideos-in-scrapbox"
+        />
+      </div>
+    </section>
+  </div>
+
+  <div class="grider">
+    <section id="contacts">
+      <hgroup>
+        <h2>連絡先</h2>
+        <p>
+          <a href="https://www.youtube.com/watch?v=2vpw7Lebvj4&t=74s">
+            It's the hotline, right?
+          </a>
+        </p>
+      </hgroup>
+      <dl>
+        <dt>
+          <span>Twitter</span>
+          <a class="url" href="https://twitter.com/SnO2WMaN">@SnO2WMaN</a>
+        </dt>
+        <dd>コミュニケーションツール(1)．</dd>
+
+        <dt>
+          <span>Scrapbox</span>
+          <a class="url" href="https://scrapbox.io/sno2wman">/sno2wman</a>
+        </dt>
+        <dd>私的なメモや日報など．</dd>
+
+        <dt>
+          <span>GitHub</span>
+          <a class="url" href="https://github.com/SnO2WMaN">@SnO2WMaN</a>
+        </dt>
+        <dd>制作物(1)．</dd>
+
+        <dt>
+          <span>Email</span>
+          <a class="url" href="mailto:me@sno2wman.net">me@sno2wman.net</a>
+        </dt>
+        <dd>重要な連絡．</dd>
+
+        <dt>
+          <span>Fedibird</span>
+          <a class="url" href="https://fedibird.com/@SnO2WMaN" rel="me"
+            >@SnO2WMaN</a
+          >
+        </dt>
+        <dd>コミュニケーションツール(2)．</dd>
+      </dl>
+    </section>
+
+    <section id="social">
+      <hgroup>
+        <h2>ソーシャル</h2>
+        <p>
+          <a href="https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm">
+            改訂により2022年度から高等学校の学習指導要領から『現代社会』は消滅しました．
+          </a>
+        </p>
+      </hgroup>
+
       <p>
-        <a href="https://nico.ms/sm23507309?from=43">怪しい奴め お前は誰だ</a>
+        追加や削除は<a href="#contacts">連絡先</a>または<a
+          href="https://github.com/SnO2WMaN/sno2wman.net/issues">Issue</a
+        >より連絡してください．
       </p>
-    </hgroup>
-    <AboutMe />
-  </section>
 
-  <section id="contacts">
-    <hgroup>
-      <h2>連絡先</h2>
-      <p>
-        <a href="https://www.youtube.com/watch?v=2vpw7Lebvj4&t=74s">
-          It's the hotline, right?
-        </a>
-      </p>
-    </hgroup>
-    <dl>
-      <dt>
-        <span>Twitter</span>
-        <a href="https://twitter.com/SnO2WMaN">@SnO2WMaN</a>
-      </dt>
-      <dd>コミュニケーションツール(1)．</dd>
+      <dl>
+        <dt>
+          <span>haxibami</span>
+          <a class="url" href="https://haxibami.net">haxibami.net</a>
+        </dt>
 
-      <dt>
-        <span>Scrapbox</span>
-        <a href="https://scrapbox.io/sno2wman">/sno2wman</a>
-      </dt>
-      <dd>私的なメモや日報など．</dd>
+        <dt>
+          <span>一階堂洋</span>
+          <a href="https://not-miso-inside.netlify.app"
+            >みそは入ってませんけど</a
+          >
+        </dt>
+        <dd>非常に混乱した文体．</dd>
 
-      <dt>
-        <span>GitHub</span>
-        <a href="https://github.com/SnO2WMaN">@SnO2WMaN</a>
-      </dt>
-      <dd>制作物(1)．</dd>
+        <dt>
+          <span>みかぶる</span>
+          <a href="https://mikanixonable.github.io">人造日本人</a>
+        </dt>
 
-      <dt>
-        <span>Email</span>
-        <a href="mailto:me@sno2wman.net">me@sno2wman.net</a>
-      </dt>
-      <dd>重要な連絡．</dd>
+        <dt>
+          <span>りんすき</span>
+          <a href="https://rinsuki.net">rinsuki.net</a>
+        </dt>
 
-      <dt>
-        <span>Fedibird</span>
-        <a href="https://fedibird.com/@SnO2WMaN" rel="me">@SnO2WMaN</a>
-      </dt>
-      <dd>コミュニケーションツール(2)．</dd>
-    </dl>
-  </section>
+        <dt>
+          <span>uynet</span>
+          <a href="https://uynet.work">ゆいネット</a>
+        </dt>
 
-  <section id="projects">
-    <hgroup>
-      <h2>プロジェクト</h2>
-      <p>
-        <a href="http://gonzo.co.jp/archives/nhk/story.html"
-          >プロジェクトにようこそ！</a
-        >
-      </p>
-    </hgroup>
-  </section>
+        <dt>
+          <span>ふぁぼん</span>
+          <a href="https://www.fabon.info">ふぁぼんのホームページ</a>
+        </dt>
 
-  <section id="works">
-    <hgroup>
-      <h2>制作物</h2>
-      <p>
-        <a href="https://www.youtube.com/watch?v=qwJaQN1dbVk">
-          つくりましょう つくりましょう さてさて何ができるかな
-        </a>
-      </p>
-    </hgroup>
-    <div class="list">
-      <WorkSnO2WMaNNet id="work-sno2wman-net" />
-      <WorkSnO2WMaNInfrastructure id="work-sno2wman-infrastructure" />
-      <WorkOtomadbWeb id="work-otomadb-web" />
-      <WorkOtomadbAPI id="work-otomadb-api" />
-      <WorkOtomadbK8sManifests id="work-otomadb-k8s-manifest" />
-      <WorkRustPropLogic id="work-rust-proplogic-toylang" />
-      <WorkDeno2nix id="work-deno2nix" />
-      <WorkCorepackNix id="work-corepack-nix" />
-      <WorkSatyxin id="work-satyxin" />
-      <WorkAllYourNicovideosInScrapbox
-        id="work-all-your-nicovideos-in-scrapbox"
-      />
-    </div>
-  </section>
+        <dt>
+          <span>Xe Iaso</span>
+          <a href="https://xeiaso.net">Xe</a>
+        </dt>
+        <dd>Nixや様々なWeb技術、面白い試みなど．</dd>
 
-  <section id="social">
-    <hgroup>
-      <h2>ソーシャル</h2>
-      <p>
-        <a href="https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm">
-          改訂により2022年度から高等学校の学習指導要領から『現代社会』は消滅しました．
-        </a>
-      </p>
-    </hgroup>
-  </section>
+        <dt>
+          <span>gfngfn</span>
+          <a href="https://gfngfn.github.io/ja">gfnweb</a>
+        </dt>
+        <dd>組版システムSATySFiの開発者．</dd>
+
+        <dt>
+          <span>Ryota Kameoka</span>
+          <a href="https://ryota-ka.me">ryota-ka.me</a>
+        </dt>
+        <dd>ブログにNixなどの日本語の記事がある．</dd>
+
+        <dt>
+          <span>Sigmy</span>
+          <a href="https://shigu.jp/">shigu.jp</a>
+        </dt>
+
+        <dt>
+          <span>バイブ</span>
+          <a href="https://dekameshi.com">デカメシドットコム</a>
+        </dt>
+
+        <dt>
+          <span>okkaradon</span>
+          <a href="https://okkaradon.com">okkaradon.com</a>
+        </dt>
+      </dl>
+    </section>
+  </div>
 </NormalLayout>
