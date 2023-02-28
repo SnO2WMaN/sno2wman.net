@@ -5,6 +5,8 @@
     flake-utils.url = "github:numtide/flake-utils";
     corepack = {
       url = "github:SnO2WMaN/corepack-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
     };
     devshell = {
       url = "github:numtide/devshell";
@@ -35,10 +37,10 @@
         devShells.default = pkgs.devshell.mkShell {
           packages = with pkgs; [
             alejandra
-            nodejs-18_x
+            nodejs
             httpie
             (mkCorepack {
-              nodejs = nodejs-18_x;
+              nodejs = nodejs;
               pm = "pnpm";
             })
           ];
