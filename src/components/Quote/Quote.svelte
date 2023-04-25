@@ -196,7 +196,7 @@
     </figcaption>
   {/if}
   {#if what === 15}
-    <blockquote  >
+    <blockquote>
       <p>
         <strong>結果</strong>
         なりたい自分になれる
@@ -209,7 +209,9 @@
     </figcaption>
   {/if}
   {#if what === 16}
-    <blockquote cite="https://store.steampowered.com/app/274170/Hotline_Miami_2_Wrong_Number">
+    <blockquote
+      cite="https://store.steampowered.com/app/274170/Hotline_Miami_2_Wrong_Number"
+    >
       <p>
         <code>LEAVING THIS WORLD IS NOT SCARY AS IT SOUNDS.</code>
       </p>
