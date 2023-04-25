@@ -52,19 +52,19 @@
       <span>ななしのよっしん</span>
       <cite>
         <a href="https://dic.nicovideo.jp/b/a/ワザップ!/91-">
-          ニコニコ大百科『ワザップ!について語るスレ』>>108
+          ニコニコ大百科『ワザップ!について語るスレ』&gt;&gt;108
         </a>
       </cite>
     </figcaption>
   {/if}
   {#if what === 5}
-    <blockquote cite="https://dic.nicovideo.jp/b/a/ワザップ!/91-">
+    <blockquote cite="https://www.nicovideo.jp/watch/sm28541015">
       <p>死ぬほど好きすぎて！</p>
     </blockquote>
     <figcaption>
       <span>Otomadology</span>
       <cite>
-        <a href="https://dic.nicovideo.jp/b/a/ワザップ!/91-">
+        <a href="https://www.nicovideo.jp/watch/sm28541015">
           『ラーメン屋の親父コア』
         </a>
       </cite>
@@ -196,7 +196,7 @@
     </figcaption>
   {/if}
   {#if what === 15}
-    <blockquote cite="https://www.iwanami.co.jp/book/b246897.html">
+    <blockquote>
       <p>
         <strong>結果</strong>
         なりたい自分になれる
@@ -209,7 +209,9 @@
     </figcaption>
   {/if}
   {#if what === 16}
-    <blockquote cite="https://www.iwanami.co.jp/book/b246897.html">
+    <blockquote
+      cite="https://store.steampowered.com/app/274170/Hotline_Miami_2_Wrong_Number"
+    >
       <p>
         <code>LEAVING THIS WORLD IS NOT SCARY AS IT SOUNDS.</code>
       </p>
@@ -217,7 +219,7 @@
     <figcaption>
       <cite>
         <a
-          href="https://store.steampowered.com/app/274170/Hotline_Miami_2_Wrong_Number/"
+          href="https://store.steampowered.com/app/274170/Hotline_Miami_2_Wrong_Number"
           >『Hotline Miami 2: Wrong Number』</a
         >
       </cite>
