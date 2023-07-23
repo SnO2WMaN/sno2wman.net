@@ -51,8 +51,7 @@
     },
     {
       "files": ["*.svelte"],
-      "plugins": ["svelte3"],
-      "processor": "svelte3/svelte3"
+      "plugins": ["plugin:astro/recommended"]
     }
   ]
 }
