@@ -21,7 +21,7 @@
     "astro": "^2.0.16",
     "clsx": "^2.0.0",
     "sass": "^1.58.3",
-    "svelte": "^3.55.1",
+    "svelte": "^4.0.0",
     "the-new-css-reset": "^1.8.2"
   },
   "devDependencies": {
