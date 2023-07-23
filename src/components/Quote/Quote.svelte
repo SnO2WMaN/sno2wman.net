@@ -277,10 +277,6 @@
 </figure>
 
 <style lang="scss">
-  figure {
-    // animation: blur 0.5s ease-in-out 0.25s both;
-  }
-
   blockquote {
     margin: 0;
     & > p {
