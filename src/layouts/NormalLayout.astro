@@ -2,64 +2,177 @@
 import "the-new-css-reset";
 import "@fontsource/silkscreen/400.css";
 
-import Footer from "~/components/Footer.astro";
+import Quote from "~/components/Quote/Quote.svelte";
 
-const { title = "sno2wman.net", description = "SnO2WMaN, sno2wman.net" } =
-  Astro.props;
+const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
 ---
 
 <style is:global>
   :root {
-    font-family:
-      ui-sans-serif,
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      "Helvetica Neue",
-      Arial,
-      "Noto Sans",
-      sans-serif,
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol",
-      "Noto Color Emoji";
+    font-family: "Shippori Mincho B1", serif;
     font-size: 16px;
     color: var(--text-color);
 
-    --text-color: #f1f5f9;
-    --weak-text-color: #94a3b8;
-  }
+    --theme-hue: 199;
 
-  body {
-    background-color: #0f172a;
-    overflow-y: scroll;
-  }
+    --body-background-color: hsl(var(--theme-hue), 8%, 15%);
 
-  main {
-    min-height: calc(100vh - 160px);
-    padding: 32px;
+    --nav-background-color: hsl(var(--theme-hue), 12%, 12%);
+    --nav-text-color-main: hsl(var(--theme-hue), 19%, 81%);
+    --nav-text-color-sub: hsl(var(--theme-hue), 9%, 61%);
+    --nav-text-color-hover: var(--main-highlight-color);
+
+    --main-highlight-color: hsl(var(--theme-hue), 63%, 76%);
+    --main-text-color-heading: hsl(var(--theme-hue), 15%, 87%);
+    --main-text-color-main: hsl(var(--theme-hue), 24%, 81%);
+    --main-text-color-sub: hsl(var(--theme-hue), 9%, 61%);
+    --main-splitline-color: hsl(var(--theme-hue), 9%, 32%);
   }
 
   sub {
     vertical-align: sub;
   }
 
-  @media (min-width: 1280px) {
-    main {
-      padding: 64px;
-    }
+  rt {
+    font-size: 0.65em;
+    margin-bottom: -0.5em;
   }
 
   @media (prefers-color-scheme: light) {
     :root {
-      --text-color: #1e293b;
-      --weak-text-color: #334155;
+      --body-background-color: hsl(var(--theme-hue), 8%, 96%);
+
+      --nav-background-color: hsl(var(--theme-hue), 59%, 90%);
+      --nav-text-color-main: hsl(var(--theme-hue), 19%, 21%);
+      --nav-text-color-sub: hsl(var(--theme-hue), 21%, 25%);
+      --nav-text-color-hover: var(--main-highlight-color);
+
+      --main-highlight-color: hsl(var(--theme-hue), 83%, 45%);
+      --main-text-color-heading: hsl(var(--theme-hue), 8%, 17%);
+      --main-text-color-main: hsl(var(--theme-hue), 21%, 32%);
+      --main-text-color-sub: hsl(var(--theme-hue), 21%, 25%);
+      --main-splitline-color: hsl(var(--theme-hue), 15%, 65%);
+    }
+  }
+</style>
+
+<style>
+  body {
+    background-color: var(--body-background-color);
+
+    overflow-y: hidden;
+
+    display: flex;
+    flex-direction: row;
+  }
+
+  nav {
+    background-color: var(--nav-background-color);
+    width: 360px;
+    height: 100vh;
+    padding: 24px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 24px var(--nav-background-color);
+
+    & > .header {
+      & > a {
+        font-size: 1.8rem;
+        font-family: "Shippori Mincho B1", serif;
+        text-align: center;
+        word-break: break-all;
+        color: var(--nav-text-color-main);
+      }
     }
 
+    & > .links {
+      width: 100%;
+      flex-grow: 1;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 8px;
+
+      padding: 0 32px;
+      margin: 12px 0;
+      color: var(--nav-text-color-main);
+
+      & > a {
+        font-size: 1.25rem;
+        &:hover {
+          color: var(--nav-text-color-hover);
+          text-decoration: underline;
+        }
+      }
+    }
+
+    & > .counter {
+      width: 240px;
+    }
+
+    & > .copyright {
+      margin-top: 12px;
+      color: var(--nav-text-color-sub);
+      font-size: 0.75rem;
+    }
+  }
+
+  main {
+    height: 100vh;
+    flex-grow: 1;
+
+    padding: 0 32px;
+
+    overflow-y: scroll;
+
+    & > .wrapper {
+      padding-top: 32px;
+      min-height: calc(100vh - 160px);
+      max-width: 860px;
+      margin: 0 auto;
+
+      strong {
+        font-weight: bold;
+        text-decoration: dashed underline;
+      }
+
+      a {
+        color: var(--main-highlight-color);
+        text-decoration: solid underline;
+      }
+
+      & > h1 {
+        text-align: center;
+        text-decoration: solid underline;
+        text-decoration-color: var(--main-highlight-color);
+        font-size: 2.5rem;
+        font-weight: 700;
+        padding: 4px 0 4px 8px;
+        color: var(--main-text-color-heading);
+        letter-spacing: 2px;
+        margin-bottom: 16px;
+      }
+    }
+
+    & > footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 720px;
+
+      margin: 32px auto 0 auto;
+      min-height: 128px;
+      padding: 16px 0;
+      border-block-start: 1px solid var(--main-splitline-color);
+    }
+  }
+
+  @media (max-width: 1280px) {
     body {
-      background-color: #e5e7eb;
+      flex-direction: row;
     }
   }
 </style>
@@ -71,17 +184,51 @@ const { title = "sno2wman.net", description = "SnO2WMaN, sno2wman.net" } =
 
 <meta name="og:type" content="website" />
 <meta name="og:title" content={title} />
-<meta name="og:site_name" content="sno2wman.net" />
+<meta name="og:site_name" content="SnO2WMaN.net" />
 <meta name="og:type" content="website" />
 <meta name="og:url" content="https://sno2wman.net" />
 
-<meta name="twitter:title" content="sno2wman.net" />
+<meta name="twitter:title" content="SnO2WMaN.net" />
 <meta name="twitter:url" content="https://sno2wman.net" />
 <meta name="twitter:site" content="@SnO2WMaN" />
-<title>{title}</title>
+<title>{title || "SnO2WMaN.net"}</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
 
 <body>
-  <main><slot /></main>
-  <Footer />
+  <nav>
+    <div class="header">
+      <a href="/">
+        SnO<sub>2</sub>WMaN.net
+      </a>
+    </div>
+    <div class="links">
+      <a href="/aboutme">AboutMe</a>
+      <a href="/projects">Projects</a>
+      <a href="/links">Links</a>
+    </div>
+    <img
+      class="counter"
+      src={import.meta.env.DEV
+        ? "https://count.getloli.com/get/@sno2wman.net-dev?theme=rule34"
+        : "https://count.getloli.com/get/@sno2wman.net?theme=rule34"}
+    />
+    <p class="copyright">
+      <time>2023</time> - <span>SnO<sub>2</sub>WMaN</span>
+    </p>
+  </nav>
+  <main>
+    <div class="wrapper">
+      <h1>{title}</h1>
+      <slot />
+    </div>
+    <footer>
+      <Quote />
+    </footer>
+  </main>
 </body>
