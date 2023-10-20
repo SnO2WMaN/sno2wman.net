@@ -1,27 +1,25 @@
 ---
-import clsx from "clsx";
-
+import { Image } from "astro:assets";
 import NormalLayout from "~/layouts/NormalLayout.astro";
-import Quote from "~/components/Quote/Quote.svelte";
+import Gif404 from "../images/404.gif";
 ---
 
-<style lang="scss">
-  header {
+<style lang="scss" scoped>
+  .wrapper {
     display: flex;
-    flex-direction: column;
-    max-width: 640px;
-    margin: auto;
-    & > h1 {
-      font-size: 2rem;
-      font-family: "Silkscreen", sans-serif;
-      margin-block-end: 1rem;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      margin: 0 auto;
     }
   }
 </style>
 
-<NormalLayout title="404" description="Page not found.">
-  <header>
-    <h1 class={clsx()}>404, page not found.</h1>
-    <Quote />
-  </header>
+<NormalLayout title="404 Page Not Found" description="Page not found.">
+  <div class="wrapper">
+    <Image src={Gif404} alt="404.gif" />
+  </div>
 </NormalLayout>
