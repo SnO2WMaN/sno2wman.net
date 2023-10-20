@@ -1,4 +1,5 @@
 ---
+import Article from "~/components/Article.astro";
 import NormalLayout from "~/layouts/NormalLayout.astro";
 ---
 
@@ -36,7 +37,7 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
       & > figcaption {
         font-size: 0.9rem;
         font-weight: bold;
-        text-decoration: dashed underline;
+        text-decoration: solid underline;
         margin-bottom: 4px;
       }
     }
@@ -95,7 +96,7 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
 </style>
 
 <NormalLayout title="AboutMe">
-  <article id="introduction">
+  <Article id="introduction">
     <hgroup>
       <h2>自己紹介</h2>
       <p>
@@ -105,9 +106,9 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
     <blockquote>
       <p>私は嘘つきです．</p>
     </blockquote>
-  </article>
+  </Article>
 
-  <article id="interest">
+  <Article id="interest">
     <hgroup>
       <h2>興味と関心について</h2>
       <p>お前の好きなものが分かってよかった</p>
@@ -122,7 +123,7 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
         このポリシーは私のように独学でWebサービス開発を学ぶ人の参考になればと思っています．
       </p>
       <ol class="relates">
-        <li><a href="/projects/otomadb">OtoMADB</a></li>
+        <li><a href="/projects#otomadb">OtoMADB</a></li>
       </ol>
     </section>
 
@@ -166,7 +167,7 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
         個人としては，Leanで命題論理や様相論理の種々の話題について形式化を行っていたりしますが，よりもっと使えるケースがあれば使ってみたいとも思っています．
       </p>
       <ol class="relates">
-        <li><a href="/works#lean4-modal-logic">Lean4 Modal Logic</a></li>
+        <li><a href="/projects#lean4-modal-logic">Lean4 Modal Logic</a></li>
       </ol>
     </section>
     <section>
@@ -179,12 +180,12 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
         知識の蓄積，整理や検索，またそれらの提示や推薦システムなどに興味があります．
       </p>
       <ol class="relates">
-        <li><a href="/projects/otomadb">OtoMADB</a></li>
+        <li><a href="/projects#otomadb">OtoMADB</a></li>
       </ol>
     </section>
-  </article>
+  </Article>
 
-  <article>
+  <Article>
     <hgroup>
       <h2>連絡先</h2>
       <p>
@@ -222,5 +223,19 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
       </dt>
       <dd>コミュニケーションツール(2)．</dd>
     </dl>
-  </article>
+  </Article>
+
+  <Article>
+    <hgroup>
+      <h2>スキルセット</h2>
+      <p>
+        <a href="https://www.youtube.com/watch?v=NunTnaEfxkE">
+          わたしにできること
+        </a>
+      </p>
+    </hgroup>
+    <p>
+      TODO:後で書く．<a href="/projects">Projects</a>などを参照してください．
+    </p>
+  </Article>
 </NormalLayout>

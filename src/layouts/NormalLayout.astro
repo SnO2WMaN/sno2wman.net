@@ -1,7 +1,5 @@
 ---
 import "the-new-css-reset";
-import "@fontsource/silkscreen/400.css";
-
 import Quote from "~/components/Quote/Quote.svelte";
 
 const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
@@ -35,19 +33,20 @@ const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
 
   rt {
     font-size: 0.65em;
-    margin-bottom: -0.5em;
+    margin-bottom: -0.6em;
   }
 
   @media (prefers-color-scheme: light) {
     :root {
+      --theme-hue: 224;
       --body-background-color: hsl(var(--theme-hue), 8%, 96%);
 
-      --nav-background-color: hsl(var(--theme-hue), 59%, 90%);
+      --nav-background-color: hsl(var(--theme-hue), 25.9%, 90%);
       --nav-text-color-main: hsl(var(--theme-hue), 19%, 21%);
       --nav-text-color-sub: hsl(var(--theme-hue), 21%, 25%);
       --nav-text-color-hover: var(--main-highlight-color);
 
-      --main-highlight-color: hsl(var(--theme-hue), 83%, 45%);
+      --main-highlight-color: hsl(var(--theme-hue), 77%, 45%);
       --main-text-color-heading: hsl(var(--theme-hue), 8%, 17%);
       --main-text-color-main: hsl(var(--theme-hue), 21%, 32%);
       --main-text-color-sub: hsl(var(--theme-hue), 21%, 25%);
@@ -100,11 +99,23 @@ const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
       margin: 12px 0;
       color: var(--nav-text-color-main);
 
+      a:hover {
+        color: var(--nav-text-color-hover);
+        text-decoration: underline;
+      }
+
       & > a {
         font-size: 1.25rem;
-        &:hover {
-          color: var(--nav-text-color-hover);
-          text-decoration: underline;
+      }
+
+      & > .sub {
+        margin-left: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 4px;
+        & > a {
+          font-size: 1rem;
         }
       }
     }
@@ -134,16 +145,6 @@ const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
       max-width: 860px;
       margin: 0 auto;
 
-      strong {
-        font-weight: bold;
-        text-decoration: dashed underline;
-      }
-
-      a {
-        color: var(--main-highlight-color);
-        text-decoration: solid underline;
-      }
-
       & > h1 {
         text-align: center;
         text-decoration: solid underline;
@@ -172,7 +173,47 @@ const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
 
   @media (max-width: 1280px) {
     body {
+      flex-direction: column;
+      overflow-y: scroll;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      display: flex;
       flex-direction: row;
+      width: 100%;
+      height: 64px;
+      padding: 8px 32px;
+      & > .header {
+        & > a {
+          font-size: 1rem;
+          word-break: keep-all;
+        }
+      }
+      & > .links {
+        flex-direction: row;
+        column-gap: 12px;
+        & > a {
+          font-size: 1rem;
+        }
+        & > .sub {
+          display: none;
+        }
+      }
+      & > .counter {
+        width: auto;
+        height: auto;
+      }
+      & > .copyright {
+        display: none;
+      }
+    }
+
+    main {
+      height: auto;
+      overflow-y: auto;
     }
   }
 </style>
@@ -210,6 +251,10 @@ const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
     <div class="links">
       <a href="/aboutme">AboutMe</a>
       <a href="/projects">Projects</a>
+      <div class="sub">
+        <a href="/projects#otomadb">OtoMADB</a>
+        <a href="/projects#lean4-modal-logic">Lean4 Modal Logic</a>
+      </div>
       <a href="/links">Links</a>
     </div>
     <img
