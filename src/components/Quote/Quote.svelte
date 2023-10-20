@@ -185,8 +185,9 @@
       </p>
     </blockquote>
     <figcaption>
-      <span>HoaYodritz</span>;<cite>『しずえさんとエッチする方法!!!!!!』, ワザップ！</cite>
-
+      <span>HoaYodritz</span>;<cite
+        >『しずえさんとエッチする方法!!!!!!』, ワザップ！</cite
+      >
     </figcaption>
   {/if}
   {#if what === 15}
@@ -215,8 +216,7 @@
     </blockquote>
     <figcaption>
       <span>阿部共実</span>;<cite>
-        <a
-          href="https://www.akitashoten.co.jp/comics/4253252397"
+        <a href="https://www.akitashoten.co.jp/comics/4253252397"
           >『潮が舞い子が舞い』第2巻</a
         >
       </cite>
@@ -257,7 +257,7 @@
 <style lang="scss">
   blockquote {
     margin: 0;
-      color: var(--main-text-color-main);
+    color: var(--main-text-color-main);
     & > p {
       font-size: 0.8rem;
       & > .saidby {
@@ -294,10 +294,10 @@
     }
     & > cite {
       font-style: italic;
- &>a{ color: var(--main-text-color-sub);
-  text-decoration: none;
- }
+      & > a {
+        color: var(--main-text-color-sub);
+        text-decoration: none;
+      }
     }
   }
-
 </style>
