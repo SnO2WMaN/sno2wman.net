@@ -1,7 +1,16 @@
 ---
 import Article from "~/components/Article.astro";
+import Tags from "~/components/Projects/Tags.astro";
 import NormalLayout from "~/layouts/NormalLayout.astro";
 ---
+
+<style>
+  dl.repos {
+    & > dt {
+      font-size: 1.25rem;
+    }
+  }
+</style>
 
 <NormalLayout title="Projects">
   <Article id="otomadb">
@@ -40,6 +49,57 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
         <a href="https://github.com/otomadb">GitHub</a>
       </li>
     </ol>
+    <dl class="repos">
+      <dt>
+        <a href="https://github.com/otomadb/web">otomadb/web</a>
+      </dt>
+      <dd>
+        <Tags
+          keywords={[
+            "TypeScript",
+            "Node.js",
+            "Next.js",
+            "GraphQL",
+            "urql",
+            "Tailwind CSS",
+            "Storybook",
+            "Vercel",
+          ]}
+        />
+      </dd>
+      <dd>Webフロントエンド側．</dd>
+
+      <dt>
+        <a href="https://github.com/otomadb/api">otomadb/api</a>
+      </dt>
+      <dd>
+        <Tags
+          keywords={[
+            "TypeScript",
+            "Node.js",
+            "GraphQL",
+            "GraphQL Yoga",
+            "Prisma",
+            "PostgreSQL",
+            "Neo4j",
+            "Nix",
+          ]}
+        />
+      </dd>
+      <dd>GraphQL APIとして機能するバックエンド．</dd>
+
+      <dt>
+        <a href="https://github.com/otomadb/k8s-manifests"
+          >otomadb/k8s-manifests</a
+        >
+      </dt>
+      <dd>
+        <Tags keywords={["Kubernetes", "ArgoCD"]} />
+      </dd>
+      <dd>
+        Argo CDによってこのマニフェストが自宅のk8sクラスタにデプロイされる．
+      </dd>
+    </dl>
   </Article>
   <Article id="lean4-modal-logic">
     <hgroup>
@@ -90,6 +150,91 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
           href="https://zenn.dev/qnighy/articles/103144250d0a9d">ipc_bot</a
         >のように，ユーザーから論理式などの入力を受け取り，その式の恒真性や妥当性などを判定するbotとして動かしても理論上は計算効率などは無視すれば停止する筈である．
         Leanは汎用的なプログラミング言語としても設計されているので，そのような用途にも使うことができる（出来てほしい）ので，それを確かめるため実装してみたい．
+      </dd>
+    </dl>
+  </Article>
+
+  <Article id="etc">
+    <hgroup>
+      <h2>Et cetera</h2>
+      <p>その他の細々とした</p>
+    </hgroup>
+    <p>
+      ここにあるものは細々としており，いくつかは開発に戻る気がないものも列挙されている．
+    </p>
+    <dl class="repos">
+      <dt>
+        <a href="https://github.com/sno2wman/sno2wman.net">sno2wman.net</a>
+      </dt>
+      <dd>
+        <Tags keywords={["Astro", "Svelte", "Cloudflare Pages"]} />
+      </dd>
+      <dd>このサイト．</dd>
+
+      <dt>
+        <a href="https://github.com/SnO2WMaN/infrastructures"
+          >SnO2WMaN/infrastructures</a
+        >
+      </dt>
+      <dd>
+        <Tags keywords={["Nix", "NixOS", "Kubernetes", "ArgoCD"]} />
+      </dd>
+      <dd>自宅で実際に運用しているサーバやk8sクラスタ等の構成ファイル．</dd>
+
+      <dt>
+        <a href="https://github.com/SnO2WMaN/deno2nix">deno2nix</a>
+      </dt>
+      <dd>
+        <Tags keywords={["Deno", "Nix"]} />
+      </dd>
+      <dd>
+        Denoで書かれたプログラムをNixでうまく取り扱うためのユーティリティ．
+        Nixそのものへの情熱を失っているため，現在は特にメンテナンスはしていない．
+      </dd>
+
+      <dt>
+        <a href="https://github.com/SnO2WMaN/corepack-flake">corepack.nix</a>
+      </dt>
+      <dd>
+        <Tags keywords={["Node.js", "Nix"]} />
+      </dd>
+      <dd>
+        Node.jsのパッケージマネージャ管理ツールであるCorepackをNixでも使うためのユーティリティ．
+      </dd>
+
+      <dt>
+        <a href="https://github.com/SnO2WMaN/all-your-nicovideos-in-scrapbox"
+          >All your nicovideos in Scrapbox</a
+        >
+      </dt>
+      <dd>
+        <Tags keywords={["Deno", "TypeScript"]} />
+      </dd>
+      <dd>
+        Scrapbox内で言及したニコニコ動画の動画を全て取得する．使いやすいようにAPIとして提供．
+      </dd>
+
+      <dt>
+        <a href="https://github.com/SnO2WMaN/satyxin">satyxin</a>
+      </dt>
+      <dd>
+        <Tags keywords={["Nix", "SATySFi"]} />
+      </dd>
+      <dd>
+        SATySFiのパッケージ解決などをNixで行うための諸々のユーティリティー．
+        SATySFi及びNixそのものへの情熱を失っているため，現在は特にメンテナンスはしていない．
+      </dd>
+
+      <dt>
+        <a href="https://github.com/SnO2WMaN/incompleteness.txt"
+          >Incompleteness.txt</a
+        >
+      </dt>
+      <dd>
+        <Tags keywords={["Typst"]} />
+      </dd>
+      <dd>
+        不完全性定理と諸々の話題についてのメモ．書き途中かつ放棄している．
       </dd>
     </dl>
   </Article>

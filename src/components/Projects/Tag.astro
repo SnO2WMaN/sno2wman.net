@@ -1,0 +1,99 @@
+---
+interface Props {
+  keyword: string;
+}
+
+import clsx from "clsx";
+
+const { keyword } = Astro.props;
+
+const colors = (() => {
+  switch (keyword.replaceAll(" ", "_").replaceAll(".", "_").toLowerCase()) {
+    case "typescript":
+      return "#3178C6";
+    case "nix":
+    case "nixos":
+      return "#5277C3";
+    case "graphql":
+      return "#E10098";
+    case "postgresql":
+      return "#4169E1";
+    case "prisma":
+      return "#2D3748";
+    case "storybook":
+      return "#FF4785";
+    case "tailwind_css":
+      return "#06B6D4";
+    case "urql":
+      return "#8196FF";
+    case "next_js":
+    case "vercel":
+    case "deno":
+      return ["#FFF", "#000"];
+    case "rust":
+      return "#b7410e"; // unofficial
+    case "dev_container":
+      return "#2753E3";
+    case "neo4j":
+      return "#4581C3";
+    case "argocd":
+      return "#EF7B4D";
+    case "kubernetes":
+      return "#326CE5";
+    case "astro":
+      return "#FF5D01";
+    case "svelte":
+      return "#FF3E00";
+    case "cloudflare":
+    case "cloudflare_pages":
+      return "#F38020";
+    case "node_js":
+      return "#339933";
+    case "typst":
+      return "#239DAD";
+    default:
+      return "#94a3b8";
+  }
+})();
+---
+
+<style lang="scss" scoped>
+  .tag {
+    display: flex;
+    align-items: center;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 100%;
+      background: var(--theme);
+    }
+    & > div {
+      padding: 0.125rem 0.25rem;
+      color: var(--main-text-color-main);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-decoration: solid underline var(--theme);
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    .tag.has-light-theme {
+      &::before {
+        background-color: var(--theme-light-theme);
+      }
+    }
+  }
+</style>
+
+<div
+  class={clsx("tag", { "has-light-theme": Array.isArray(colors) })}
+  style={{
+    "--theme": Array.isArray(colors) ? colors[0] : colors,
+    ...(Array.isArray(colors) ? { "--theme-light-theme": colors[1] } : {}),
+  }}
+>
+  <div>
+    {keyword}
+  </div>
+</div>
