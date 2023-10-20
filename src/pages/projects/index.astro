@@ -1,0 +1,241 @@
+---
+import Article from "~/components/Article.astro";
+import Tags from "~/components/Projects/Tags.astro";
+import NormalLayout from "~/layouts/NormalLayout.astro";
+---
+
+<style>
+  dl.repos {
+    & > dt {
+      font-size: 1.25rem;
+    }
+  }
+</style>
+
+<NormalLayout title="Projects">
+  <Article id="otomadb">
+    <hgroup>
+      <h2><a href="https://otomadb.com">OtoMADB</a></h2>
+      <p>音MADのデータベースを作る</p>
+    </hgroup>
+    <p>
+      ユーザからデータを募集したりすることによって，音MADの体系的なデータベースを作る．
+      以下の目的を持って開発している．
+    </p>
+    <dl>
+      <dt>プラットフォームの横断</dt>
+      <dd>
+        ニコニコ動画，Youtube，Bilibiliなどの動画/音声プラットフォームを<strong
+          >横断して</strong
+        >音MADを登録可能にすることによって網羅的に音MADを管理する．またそれぞれに対して統一的なメタデータを与えることによって探しやすくする．
+      </dd>
+      <dt>タグシステムの改善</dt>
+      <dd>
+        従来の素朴なタグシステムには不満点がある．例えばタグの親子関係が陽に扱われない点や，エイリアスなどが考慮されない点などが挙げられる．そうした問題点を改善したタグシステムを作成する．
+      </dd>
+      <dt>推薦システムの構築</dt>
+      <dd>
+        タグシステムやユーザのいいね情報から，好きそうな音MADを推薦するシステムを作成する．
+      </dd>
+      <dt>オントロジーの構築</dt>
+      <dd>純粋な興味として，音MADのオントロジーを構築する．</dd>
+    </dl>
+    <p>以下はリンク．</p>
+    <ol>
+      <li>
+        <a href="https://www.otomadb.com">www.otomadb.com</a>
+      </li>
+      <li>
+        <a href="https://github.com/otomadb">GitHub</a>
+      </li>
+    </ol>
+    <dl class="repos">
+      <dt>
+        <a href="https://github.com/otomadb/web">otomadb/web</a>
+      </dt>
+      <dd>
+        <Tags
+          keywords={[
+            "TypeScript",
+            "Node.js",
+            "Next.js",
+            "GraphQL",
+            "urql",
+            "Tailwind CSS",
+            "Storybook",
+            "Vercel",
+          ]}
+        />
+      </dd>
+      <dd>Webフロントエンド側．</dd>
+
+      <dt>
+        <a href="https://github.com/otomadb/api">otomadb/api</a>
+      </dt>
+      <dd>
+        <Tags
+          keywords={[
+            "TypeScript",
+            "Node.js",
+            "GraphQL",
+            "GraphQL Yoga",
+            "Prisma",
+            "PostgreSQL",
+            "Neo4j",
+            "Nix",
+          ]}
+        />
+      </dd>
+      <dd>GraphQL APIとして機能するバックエンド．</dd>
+
+      <dt>
+        <a href="https://github.com/otomadb/k8s-manifests"
+          >otomadb/k8s-manifests</a
+        >
+      </dt>
+      <dd>
+        <Tags keywords={["Kubernetes", "ArgoCD"]} />
+      </dd>
+      <dd>
+        Argo CDによってこのマニフェストが自宅のk8sクラスタにデプロイされる．
+      </dd>
+    </dl>
+  </Article>
+  <Article id="lean4-modal-logic">
+    <hgroup>
+      <h2>
+        <a href="https://github.com/SnO2WMaN/lean4-modallogic"
+          >Lean4 Modal Logic</a
+        >
+      </h2>
+      <p>Lean 4で様相論理を形式化する</p>
+    </hgroup>
+    <p>
+      命題論理や標準様相論理を始めとした，諸々の論理体系やその定理などをLean
+      4で形式化する．以下の目標がある．
+    </p>
+    <dl>
+      <dt>命題論理と標準様相論理の完全性定理</dt>
+      <dd>
+        論理体系において「真である」と「証明可能である」が一致する定理のことを完全性定理という．まずはこの事実を形式化したい．
+      </dd>
+      <dt>不完全性定理やLöbの定理などの擬似的な形式化</dt>
+      <dd>
+        証明可能性述語を取ることが出来る，適当な条件を満たした算術の体系上では不完全性定理が成り立つ．
+        それらの条件，具体的にはHilbert-Bernays-Löbの導出可能性条件やその他の条件を形式化して不完全性定理やLöbの定理などを証明する．
+        なお目的としては後述の証明可能性論理の為に実装しているため，具体的にどのようにして「算術上で証明可能性述語を構成するのか」や「算術がそのような条件を満たすのか」という事実は形式化しない．
+        それらの事実のLean 4による形式化は<a
+          href="https://github.com/iehality/lean4-logic">iehality/lean4-logic</a
+        >などを参照．
+      </dd>
+      <dt>証明可能性論理</dt>
+      <dd>
+        様相を<strong>理論における証明可能性</strong
+        >と解釈する様相論理を証明可能性論理という．証明可能性論理は不完全性定理などの性質を分析するための強力な道具となる．これらを形式化したい．
+      </dd>
+      <dt>様相論理のシーケント計算</dt>
+      <dd>
+        例えば，命題論理のGentzen流シーケント計算に対し，標準様相論理の各々で追加された公理を素朴に追加した計算体系や，上手く変形した規則を追加した計算体系は，
+        各々の論理に対して意味論的完全ではあるもののカット除去定理などの良い性質を失うということが知られている．
+        この問題に対して，シーケントの構造を拡張した体系などが提案されており，これらの体系では前述の良い性質を保存しながら完全である．
+        これらの拡張されたシーケント計算体系を形式化したい．
+      </dd>
+      <dt>中間命題論理</dt>
+      <dd>
+        古典命題論理と直観主義命題論理，または，直観主義命題論理と最小命題論理の間の論理は中間命題論理と言われる．それらに対する精緻化された分析をLeanによる形式化で行いたい．
+      </dd>
+      <dt>素朴なソルバーbotとして動かす</dt>
+      <dd>
+        命題論理をベースにしたほとんどの様相論理の体系は決定可能である事実が知られている．そのため直観主義命題論理に対する<a
+          href="https://zenn.dev/qnighy/articles/103144250d0a9d">ipc_bot</a
+        >のように，ユーザーから論理式などの入力を受け取り，その式の恒真性や妥当性などを判定するbotとして動かしても理論上は計算効率などは無視すれば停止する筈である．
+        Leanは汎用的なプログラミング言語としても設計されているので，そのような用途にも使うことができる（出来てほしい）ので，それを確かめるため実装してみたい．
+      </dd>
+    </dl>
+  </Article>
+
+  <Article id="etc">
+    <hgroup>
+      <h2>Et cetera</h2>
+      <p>その他の細々とした</p>
+    </hgroup>
+    <p>
+      ここにあるものは細々としており，いくつかは開発に戻る気がないものも列挙されている．
+    </p>
+    <dl class="repos">
+      <dt>
+        <a href="https://github.com/sno2wman/sno2wman.net">sno2wman.net</a>
+      </dt>
+      <dd>
+        <Tags keywords={["Astro", "Svelte", "Cloudflare Pages"]} />
+      </dd>
+      <dd>このサイト．</dd>
+
+      <dt>
+        <a href="https://github.com/SnO2WMaN/infrastructures"
+          >SnO2WMaN/infrastructures</a
+        >
+      </dt>
+      <dd>
+        <Tags keywords={["Nix", "NixOS", "Kubernetes", "ArgoCD"]} />
+      </dd>
+      <dd>自宅で実際に運用しているサーバやk8sクラスタ等の構成ファイル．</dd>
+
+      <dt>
+        <a href="https://github.com/SnO2WMaN/deno2nix">deno2nix</a>
+      </dt>
+      <dd>
+        <Tags keywords={["Deno", "Nix"]} />
+      </dd>
+      <dd>
+        Denoで書かれたプログラムをNixでうまく取り扱うためのユーティリティ．
+        Nixそのものへの情熱を失っているため，現在は特にメンテナンスはしていない．
+      </dd>
+
+      <dt>
+        <a href="https://github.com/SnO2WMaN/corepack-flake">corepack.nix</a>
+      </dt>
+      <dd>
+        <Tags keywords={["Node.js", "Nix"]} />
+      </dd>
+      <dd>
+        Node.jsのパッケージマネージャ管理ツールであるCorepackをNixでも使うためのユーティリティ．
+      </dd>
+
+      <dt>
+        <a href="https://github.com/SnO2WMaN/all-your-nicovideos-in-scrapbox"
+          >All your nicovideos in Scrapbox</a
+        >
+      </dt>
+      <dd>
+        <Tags keywords={["Deno", "TypeScript"]} />
+      </dd>
+      <dd>
+        Scrapbox内で言及したニコニコ動画の動画を全て取得する．使いやすいようにAPIとして提供．
+      </dd>
+
+      <dt>
+        <a href="https://github.com/SnO2WMaN/satyxin">satyxin</a>
+      </dt>
+      <dd>
+        <Tags keywords={["Nix", "SATySFi"]} />
+      </dd>
+      <dd>
+        SATySFiのパッケージ解決などをNixで行うための諸々のユーティリティー．
+        SATySFi及びNixそのものへの情熱を失っているため，現在は特にメンテナンスはしていない．
+      </dd>
+
+      <dt>
+        <a href="https://github.com/SnO2WMaN/incompleteness.txt"
+          >Incompleteness.txt</a
+        >
+      </dt>
+      <dd>
+        <Tags keywords={["Typst"]} />
+      </dd>
+      <dd>
+        不完全性定理と諸々の話題についてのメモ．書き途中かつ放棄している．
+      </dd>
+    </dl>
+  </Article>
+</NormalLayout>

@@ -1,0 +1,19 @@
+---
+import Tag from "./Tag.astro";
+interface Props {
+  keywords: string[];
+}
+const { keywords } = Astro.props;
+---
+
+<style scoped>
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+</style>
+
+<div>
+  {keywords.sort().map((keyword) => <Tag keyword={keyword} />)}
+</div>

@@ -1,0 +1,241 @@
+---
+import Article from "~/components/Article.astro";
+import NormalLayout from "~/layouts/NormalLayout.astro";
+---
+
+<style lang="scss" scoped>
+  article {
+    color: var(--main-text-color-main);
+    border-block-start: 1px solid var(--main-splitline-color);
+    padding: 24px 0;
+
+    & > hgroup {
+      border-left: 8px solid var(--main-highlight-color);
+      padding: 8px 0 8px 12px;
+      margin-bottom: 12px;
+      & > h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--main-text-color-heading);
+        letter-spacing: 2px;
+      }
+      & > p {
+        font-size: 0.9rem;
+        color: var(--main-text-color-heading);
+        letter-spacing: 1px;
+        & > a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+    }
+
+    figure.theorem {
+      padding: 8px 16px;
+      border-inline-start: 1px solid var(--main-highlight-color);
+      color: var(--main-text-color-main);
+      & > figcaption {
+        font-size: 0.9rem;
+        font-weight: bold;
+        text-decoration: solid underline;
+        margin-bottom: 4px;
+      }
+    }
+    ol.relates {
+      margin-top: 4px;
+      list-style: decimal;
+      padding-inline-start: 1rem;
+      & > li {
+        font-size: 0.9rem;
+        &:not(:last-of-type) {
+          margin-block-end: 0.25rem;
+        }
+        &::marker {
+          color: var(--main-text-color-sub);
+        }
+      }
+    }
+    dl {
+      display: flex;
+      flex-direction: column;
+      & > dt {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--main-text-color-sub);
+        &:not(:first-of-type) {
+          margin-top: 0.5rem;
+        }
+        & > a {
+          margin-inline-start: 0.5rem;
+          font-weight: 400;
+          color: var(--main-highlight-color);
+          &.url {
+            font-family: monospace;
+          }
+        }
+      }
+      & > dd {
+        padding-inline-start: 0.75rem;
+        font-size: 1rem;
+      }
+    }
+    & > section {
+      margin: 24px 0 0 16px;
+      color: var(--main-text-color-main);
+      & > h3 {
+        border-left: 4px solid var(--main-highlight-color);
+        padding: 4px 0 4px 8px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--main-text-color-heading);
+        margin-bottom: 4px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+</style>
+
+<NormalLayout title="AboutMe">
+  <Article id="introduction">
+    <hgroup>
+      <h2>自己紹介</h2>
+      <p>
+        <a href="https://nico.ms/sm23507309?from=43">怪しい奴め お前は誰だ</a>
+      </p>
+    </hgroup>
+    <blockquote>
+      <p>私は嘘つきです．</p>
+    </blockquote>
+  </Article>
+
+  <Article id="interest">
+    <hgroup>
+      <h2>興味と関心について</h2>
+      <p>お前の好きなものが分かってよかった</p>
+    </hgroup>
+
+    <p>次のことに興味が有ります．</p>
+
+    <section>
+      <h3>Webサービス開発</h3>
+      <p>
+        Webサービス開発に興味があり，個人開発でいくつかのWebサービスを開発しています．またそれらのWebサービスは可能な限りオープンソースで公開することを心がけています．
+        このポリシーは私のように独学でWebサービス開発を学ぶ人の参考になればと思っています．
+      </p>
+      <ol class="relates">
+        <li><a href="/projects#otomadb">OtoMADB</a></li>
+      </ol>
+    </section>
+
+    <section>
+      <h3>数理論理学</h3>
+      <p>
+        論理学一般に関心があります．特に，以下のように述べられる<strong
+          ><ruby>Gödel<rp>(</rp><rt>ゲーデル</rt><rp>)</rp></ruby
+          >の不完全性定理</strong
+        >や，その周辺話題におけるパラドキシカルな主張やメタ的な主張が興味深いと思っています．
+      </p>
+      <figure class="theorem">
+        <figcaption>
+          <cite>Gödelの不完全性定理</cite>
+        </figcaption>
+        <blockquote>
+          <p>
+            適当な条件を満たす無矛盾な理論には，証明も反証も不可能な命題が存在する<strong
+              >（第1不完全性定理）</strong
+            >．更に，その命題は自己の無矛盾性を表す命題と同値である．したがって，自己の無矛盾性を理論自身は証明できない<strong
+              >（第2不完全性定理）</strong
+            >．
+          </p>
+        </blockquote>
+      </figure>
+      <p>
+        その他にも<strong>様相論理</strong
+        >にも興味があります．特に様相を理論の証明可能性として解釈することで不完全性定理などを分析する<strong
+          >証明可能性論理</strong
+        >や，非標準的な様相論理の体系，証明論，計算機科学などのさまざまな分野への応用などにも興味があります．
+      </p>
+    </section>
+    <section>
+      <h3>定理証明支援系</h3>
+      <p>
+        定理証明支援系であり汎用プログラミング言語としても開発されている<a
+          href="https://lean-lang.org/">Lean</a
+        >に興味があります．大規模言語モデルと統合することでLeanでの形式証明の自動生成や証明支援を試みたり，教育支援の場でも用いられているケースがあります．
+      </p>
+      <p>
+        個人としては，Leanで命題論理や様相論理の種々の話題について形式化を行っていたりしますが，よりもっと使えるケースがあれば使ってみたいとも思っています．
+      </p>
+      <ol class="relates">
+        <li><a href="/projects#lean4-modal-logic">Lean4 Modal Logic</a></li>
+      </ol>
+    </section>
+    <section>
+      <h3>音MAD</h3>
+      <p>観る専門ですが，いつか作ってみたいと思っています．</p>
+    </section>
+    <section>
+      <h3>知識工学</h3>
+      <p>
+        知識の蓄積，整理や検索，またそれらの提示や推薦システムなどに興味があります．
+      </p>
+      <ol class="relates">
+        <li><a href="/projects#otomadb">OtoMADB</a></li>
+      </ol>
+    </section>
+  </Article>
+
+  <Article>
+    <hgroup>
+      <h2>連絡先</h2>
+      <p>
+        <a href="https://www.youtube.com/watch?v=2vpw7Lebvj4&t=74s">
+          It's the hotline, right?
+        </a>
+      </p>
+    </hgroup>
+    <dl>
+      <dt>
+        Twitter:<a class="url" href="https://twitter.com/SnO2WMaN">@SnO2WMaN</a>
+      </dt>
+      <dd>コミュニケーションツール(1)．</dd>
+
+      <dt>
+        Scrapbox:<a class="url" href="https://scrapbox.io/sno2wman">/sno2wman</a
+        >
+      </dt>
+      <dd>私的なメモや日報など．</dd>
+
+      <dt>
+        GitHub:<a class="url" href="https://github.com/SnO2WMaN">@SnO2WMaN</a>
+      </dt>
+      <dd>制作物(1)．</dd>
+
+      <dt>
+        Email:<a class="url" href="mailto:me@sno2wman.net">me@sno2wman.net</a>
+      </dt>
+      <dd>重要な連絡．</dd>
+
+      <dt>
+        Fedibird:<a class="url" href="https://fedibird.com/@SnO2WMaN" rel="me"
+          >@SnO2WMaN@fedibird.com</a
+        >
+      </dt>
+      <dd>コミュニケーションツール(2)．</dd>
+    </dl>
+  </Article>
+
+  <Article>
+    <hgroup>
+      <h2>スキルセット</h2>
+      <p>
+        <a href="https://www.youtube.com/watch?v=NunTnaEfxkE">
+          わたしにできること
+        </a>
+      </p>
+    </hgroup>
+    <p>
+      TODO:後で書く．<a href="/projects">Projects</a>などを参照してください．
+    </p>
+  </Article>
+</NormalLayout>
