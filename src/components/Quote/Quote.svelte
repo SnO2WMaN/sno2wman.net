@@ -1,5 +1,5 @@
 <script lang="ts">
-  const what = 1 + Math.floor(Math.random() * 19);
+  const what = 1 + Math.floor(Math.random() * 18);
 </script>
 
 <figure>
@@ -10,7 +10,7 @@
       <p>2022は留年が来ます。</p>
     </blockquote>
     <figcaption>
-      <span>幌田</span>
+      <span>幌田</span>;
       <cite>
         <a href="https://twitter.com/horodamsmr/status/1540322955938234368">
           『またぞろ。』次にくる漫画大賞2022ノミネートのお知らせ
@@ -23,11 +23,9 @@
       <p>この2年間、環境情報学部の意思決定は最終的には犬がしていたのでした。</p>
     </blockquote>
     <figcaption>
-      <span>脇田 玲</span>
+      <span>脇田 玲</span>;
       <cite>
-        <a href="https://www.sfc.keio.ac.jp/deans_diary/015686.html">
-          犬｜環境情報学部長
-        </a>
+        <a href="https://www.sfc.keio.ac.jp/deans_diary/015686.html">『犬』</a>
       </cite>
     </figcaption>
   {/if}
@@ -36,12 +34,12 @@
       <p>お前の好きなものが分かってよかった</p>
     </blockquote>
     <figcaption>
+      <span>リザルナーグ</span>;
       <cite>
         <a href="https://www.nicovideo.jp/watch/sm36166677">
-          『テレフォン・ハンバーガー』
+          『テレフォン・ハンバーガー』, コメント欄
         </a>
       </cite>
-      <span>コメント欄</span>
     </figcaption>
   {/if}
   {#if what === 4}
@@ -49,10 +47,10 @@
       <p>信じるものがワザップしかない時代が一番楽しかった</p>
     </blockquote>
     <figcaption>
-      <span>ななしのよっしん</span>
+      <span>ななしのよっしん</span>;
       <cite>
         <a href="https://dic.nicovideo.jp/b/a/ワザップ!/91-">
-          ニコニコ大百科『ワザップ!について語るスレ』&gt;&gt;108
+          ニコニコ大百科『ワザップ!について語るスレ』, &gt;&gt;108
         </a>
       </cite>
     </figcaption>
@@ -62,10 +60,10 @@
       <p>死ぬほど好きすぎて！</p>
     </blockquote>
     <figcaption>
-      <span>Otomadology</span>
+      <span>Otomadology</span>;
       <cite>
         <a href="https://www.nicovideo.jp/watch/sm28541015">
-          『ラーメン屋の親父コア』
+          『ラーメン屋の親父コア』, 投稿者コメント
         </a>
       </cite>
     </figcaption>
@@ -75,7 +73,7 @@
       <p>D ほぼすべての作品を視聴</p>
     </blockquote>
     <figcaption>
-      <span>ほのかとサキのアニメちゃんねる</span>
+      <span>ほのかとサキのアニメちゃんねる</span>;
       <cite>
         <a href="https://youtu.be/wJ-g8DPLy1U?t=42">
           『ゴルフアニメのバディゴルが超面白い！アニメレーダーで視聴者満足度を解説！「BIRDIE
@@ -93,7 +91,7 @@
       </p>
     </blockquote>
     <figcaption>
-      <span>ツイッターヘルプセンター</span>
+      <span>ツイッターヘルプセンター</span>;
       <cite>
         <a
           href="https://help.twitter.com/ja/rules-and-policies/abusive-behavior"
@@ -107,12 +105,12 @@
       <p>ダークらき☆すたｷﾀ━━━(ﾟ∀ﾟ)━━━!!</p>
     </blockquote>
     <figcaption>
+      <span>阿野坂</span>;
       <cite>
         <a href="https://www.nicovideo.jp/watch/sm30073401"
-          >『ふぃぎゅ@浦和高校』</a
+          >『ふぃぎゅ@浦和高校』, コメント欄</a
         >
       </cite>
-      <span>コメント欄</span>
     </figcaption>
   {/if}
   {#if what === 9}
@@ -120,7 +118,7 @@
       <p>人生を全面クリアできます。</p>
     </blockquote>
     <figcaption>
-      <span>百日紅</span>
+      <span>百日紅</span>;
       <cite>
         <a href="https://www.nicovideo.jp/watch/sm40816376"
           >『バグで有名な大山のぶ代はブロック崩しゲームアルカノイドがうまい』</a
@@ -129,33 +127,17 @@
     </figcaption>
   {/if}
   {#if what === 10}
-    <blockquote cite="https://omocoro.jp/kiji/353293">
-      <p>
-        意味のあることを言おう
-        <span class="saidby">永田</span>
-      </p>
-    </blockquote>
-    <figcaption>
-      <span>オモコロ編集部</span>
-      <cite>
-        <a href="https://omocoro.jp/kiji/353293"
-          >『広告コピーをバカに考えさせるとこうなる』</a
-        >
-      </cite>
-    </figcaption>
-  {/if}
-  {#if what === 11}
     <blockquote cite="https://petitlyrics.com/lyrics/935567">
       <p>困らせて神話になあれ</p>
     </blockquote>
     <figcaption>
-      <span>後ろから這いより隊G</span>
+      <span>後ろから這いより隊G</span>;
       <cite>
         <a href="https://petitlyrics.com/lyrics/935567">『恋は渾沌の隷也』</a>
       </cite>
     </figcaption>
   {/if}
-  {#if what === 12}
+  {#if what === 11}
     <blockquote cite="https://www.shogakukan.co.jp/books/09127513">
       <p>
         これがJavaScriptっスよ！！
@@ -163,7 +145,7 @@
       </p>
     </blockquote>
     <figcaption>
-      <span>コトヤマ</span>
+      <span>コトヤマ</span>;
       <cite>
         <a href="https://www.shogakukan.co.jp/books/09127513"
           >『だがしかし』第7巻</a
@@ -171,7 +153,7 @@
       </cite>
     </figcaption>
   {/if}
-  {#if what === 13}
+  {#if what === 12}
     <blockquote cite="https://youtu.be/EbgAu_X2mm4?t=237">
       <p>我々は知らねばならない、我々は知るであろう。</p>
     </blockquote>
@@ -182,12 +164,12 @@
       </cite>
     </figcaption>
   {/if}
-  {#if what === 14}
+  {#if what === 13}
     <blockquote cite="https://www.iwanami.co.jp/book/b246897.html">
       <p>梯子を登りきった者は梯子を投げ棄てなければならない。</p>
     </blockquote>
     <figcaption>
-      <span>Ludwig Wittgenstein</span>
+      <span>Ludwig Wittgenstein</span>;
       <cite>
         <a href="https://www.iwanami.co.jp/book/b246897.html"
           >『論理哲学論考』(訳:野矢茂樹)</a
@@ -195,7 +177,7 @@
       </cite>
     </figcaption>
   {/if}
-  {#if what === 15}
+  {#if what === 14}
     <blockquote>
       <p>
         <strong>結果</strong>
@@ -203,12 +185,11 @@
       </p>
     </blockquote>
     <figcaption>
-      <span>HoaYodritz</span>
-      <cite>『しずえさんとエッチする方法!!!!!!』</cite>
-      <span>ワザップ!</span>
+      <span>HoaYodritz</span>;<cite>『しずえさんとエッチする方法!!!!!!』, ワザップ！</cite>
+
     </figcaption>
   {/if}
-  {#if what === 16}
+  {#if what === 15}
     <blockquote
       cite="https://store.steampowered.com/app/274170/Hotline_Miami_2_Wrong_Number"
     >
@@ -225,7 +206,7 @@
       </cite>
     </figcaption>
   {/if}
-  {#if what === 17}
+  {#if what === 16}
     <blockquote cite="https://www.akitashoten.co.jp/comics/4253252397">
       <p>
         明日も教室でありもしない概念上の数字を足したり引いたり公式に当てはめたりするのか
@@ -233,16 +214,15 @@
       </p>
     </blockquote>
     <figcaption>
-      <span>阿部共実</span>
-      <cite>
+      <span>阿部共実</span>;<cite>
         <a
-          href="https://store.steampowered.com/app/274170/Hotline_Miami_2_Wrong_Number/"
+          href="https://www.akitashoten.co.jp/comics/4253252397"
           >『潮が舞い子が舞い』第2巻</a
         >
       </cite>
     </figcaption>
   {/if}
-  {#if what === 18}
+  {#if what === 17}
     <blockquote cite="https://www.akishobo.com/book/detail.html?id=819">
       <ul>
         <li>なんだかインターネットがおかしい。</li>
@@ -251,23 +231,21 @@
       </ul>
     </blockquote>
     <figcaption>
-      <span>ばるぼら & さやわか</span>
-      <cite>
+      <span>ばるぼら & さやわか</span>;<cite>
         <a href="https://www.akishobo.com/book/detail.html?id=819"
           >『僕たちのインターネット史』</a
         >
       </cite>
     </figcaption>
   {/if}
-  {#if what === 19}
+  {#if what === 18}
     <blockquote
       cite="https://twitter.com/mangatimekirara/status/1484823401311182848"
     >
       <p>十分に発達した科学は、きらら4コマと区別がつかない。</p>
     </blockquote>
     <figcaption>
-      <span>まんがタイムきらら編集部</span>
-      <cite>
+      <span>まんがタイムきらら編集部</span>;<cite>
         <a href="https://twitter.com/mangatimekirara/status/1484823401311182848"
           >『ぬるめた』第2巻発売のお知らせ</a
         >
@@ -279,12 +257,13 @@
 <style lang="scss">
   blockquote {
     margin: 0;
+      color: var(--main-text-color-main);
     & > p {
       font-size: 0.8rem;
       & > .saidby {
         font-size: 0.75rem;
         font-style: italic;
-        color: var(--weak-text-color);
+        color: var(--main-text-color-sub);
         &::before {
           content: "—";
           margin-inline-end: 0.125em;
@@ -308,23 +287,17 @@
     font-size: 0.75rem;
     margin-block-start: 0.125rem;
     text-align: left;
-    color: var(--weak-text-color);
+    color: var(--main-text-color-sub);
     &::before {
       content: "—";
       margin-inline-end: 0.25rem;
     }
     & > cite {
       font-style: italic;
+ &>a{ color: var(--main-text-color-sub);
+  text-decoration: none;
+ }
     }
   }
 
-  @keyframes blur {
-    from {
-      opacity: 0;
-      transform: translateX(-8px);
-    }
-    to {
-      opacity: 1;
-    }
-  }
 </style>
