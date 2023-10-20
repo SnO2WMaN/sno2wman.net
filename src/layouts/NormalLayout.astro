@@ -213,6 +213,9 @@ const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
     main {
       height: auto;
       overflow-y: auto;
+      & > .wrapper {
+        min-height: calc(100vh - 224px);
+      }
     }
   }
 </style>
