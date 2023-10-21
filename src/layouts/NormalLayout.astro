@@ -247,7 +247,10 @@ const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
 <meta name="twitter:url" content="https://sno2wman.net" />
 <meta name="twitter:site" content="@SnO2WMaN" />
 <title>{title || "SnO2WMaN.net"}</title>
-<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+<link
+  rel="icon"
+  href="https://scrapbox.io/api/pages/sno2wman/sno2wman/icon#.png"
+/>
 
 <body>
   <nav>
@@ -277,7 +280,7 @@ const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
   </nav>
   <main>
     <div class="wrapper">
-      <h1>{title}</h1>
+      {title && <h1>{title}</h1>}
       <slot />
     </div>
     <footer>
