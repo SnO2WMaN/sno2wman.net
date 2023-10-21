@@ -1,6 +1,7 @@
 ---
 import Article from "~/components/Article.astro";
 import Tags from "~/components/Projects/Tags.astro";
+import Toc from "~/components/Toc.astro";
 import NormalLayout from "~/layouts/NormalLayout.astro";
 ---
 
@@ -13,6 +14,20 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
 </style>
 
 <NormalLayout title="Projects">
+  <Toc>
+    <ul>
+      <li>
+        <a href="#otomadb">OtoMADB</a>
+      </li>
+      <li>
+        <a href="#lean4-modal-logic">Lean4 Modal Logic</a>
+      </li>
+      <li>
+        <a href="#etc">その他</a>
+      </li>
+    </ul>
+  </Toc>
+
   <Article id="otomadb">
     <hgroup>
       <h2><a href="https://otomadb.com">OtoMADB</a></h2>
@@ -108,11 +123,10 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
           >Lean4 Modal Logic</a
         >
       </h2>
-      <p>Lean 4で様相論理を形式化する</p>
+      <p>Lean4で様相論理を形式化する</p>
     </hgroup>
     <p>
-      命題論理や標準様相論理を始めとした，諸々の論理体系やその定理などをLean
-      4で形式化する．以下の目標がある．
+      命題論理や標準様相論理を始めとした，諸々の論理体系やその定理などをLean4で形式化する．以下の目標がある．
     </p>
     <dl>
       <dt>命題論理と標準様相論理の完全性定理</dt>
@@ -124,7 +138,7 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
         証明可能性述語を取ることが出来る，適当な条件を満たした算術の体系上では不完全性定理が成り立つ．
         それらの条件，具体的にはHilbert-Bernays-Löbの導出可能性条件やその他の条件を形式化して不完全性定理やLöbの定理などを証明する．
         なお目的としては後述の証明可能性論理の為に実装しているため，具体的にどのようにして「算術上で証明可能性述語を構成するのか」や「算術がそのような条件を満たすのか」という事実は形式化しない．
-        それらの事実のLean 4による形式化は<a
+        それらの事実のLean4による形式化は<a
           href="https://github.com/iehality/lean4-logic">iehality/lean4-logic</a
         >などを参照．
       </dd>
@@ -156,8 +170,8 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
 
   <Article id="etc">
     <hgroup>
-      <h2>Et cetera</h2>
-      <p>その他の細々とした</p>
+      <h2>その他</h2>
+      <p>細々としたもの</p>
     </hgroup>
     <p>
       ここにあるものは細々としており，いくつかは開発に戻る気がないものも列挙されている．
