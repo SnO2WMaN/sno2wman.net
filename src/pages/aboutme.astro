@@ -1,116 +1,55 @@
 ---
 import Article from "~/components/Article.astro";
 import NormalLayout from "~/layouts/NormalLayout.astro";
+import Toc from "~/components/Toc.astro";
 ---
 
 <style lang="scss" scoped>
-  article {
-    color: var(--main-text-color-main);
-    border-block-start: 1px solid var(--main-splitline-color);
-    padding: 24px 0;
-
-    & > hgroup {
-      border-left: 8px solid var(--main-highlight-color);
-      padding: 8px 0 8px 12px;
-      margin-bottom: 12px;
-      & > h2 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--main-text-color-heading);
-        letter-spacing: 2px;
-      }
-      & > p {
-        font-size: 0.9rem;
-        color: var(--main-text-color-heading);
-        letter-spacing: 1px;
-        & > a {
-          color: inherit;
-          text-decoration: none;
-        }
-      }
-    }
-
-    figure.theorem {
-      padding: 8px 16px;
-      border-inline-start: 1px solid var(--main-highlight-color);
-      color: var(--main-text-color-main);
-      & > figcaption {
-        font-size: 0.9rem;
-        font-weight: bold;
-        text-decoration: solid underline;
-        margin-bottom: 4px;
-      }
-    }
-    ol.relates {
-      margin-top: 4px;
-      list-style: decimal;
-      padding-inline-start: 1rem;
-      & > li {
-        font-size: 0.9rem;
-        &:not(:last-of-type) {
-          margin-block-end: 0.25rem;
-        }
-        &::marker {
-          color: var(--main-text-color-sub);
-        }
-      }
-    }
-    dl {
-      display: flex;
-      flex-direction: column;
-      & > dt {
-        font-size: 1rem;
-        font-weight: 700;
-        color: var(--main-text-color-sub);
-        &:not(:first-of-type) {
-          margin-top: 0.5rem;
-        }
-        & > a {
-          margin-inline-start: 0.5rem;
-          font-weight: 400;
-          color: var(--main-highlight-color);
-          &.url {
-            font-family: monospace;
-          }
-        }
-      }
-      & > dd {
-        padding-inline-start: 0.75rem;
-        font-size: 1rem;
-      }
-    }
-    & > section {
-      margin: 24px 0 0 16px;
-      color: var(--main-text-color-main);
-      & > h3 {
-        border-left: 4px solid var(--main-highlight-color);
-        padding: 4px 0 4px 8px;
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: var(--main-text-color-heading);
-        margin-bottom: 4px;
-        letter-spacing: 1px;
-      }
-    }
+  dl.contacts > dt > a {
+    font-family: var(--font-family-mono);
   }
 </style>
 
 <NormalLayout title="AboutMe">
+  <Toc>
+    <ul>
+      <li>
+        <a href="#introduction">自己紹介</a>
+      </li>
+      <li>
+        <a href="#interest">興味と関心について</a>
+      </li>
+      <li>
+        <a href="#contacts">連絡先</a>
+      </li>
+      <li>
+        <a href="#history">履歴</a>
+      </li>
+      <li>
+        <a href="#skillset">スキルセット</a>
+      </li>
+    </ul>
+  </Toc>
+
   <Article id="introduction">
     <hgroup>
-      <h2>自己紹介</h2>
+      <h2>
+        <a href="#introduction">自己紹介</a>
+      </h2>
       <p>
         <a href="https://nico.ms/sm23507309?from=43">怪しい奴め お前は誰だ</a>
       </p>
     </hgroup>
     <blockquote>
-      <p>私は嘘つきです．</p>
+      <p>私は嘘だけを言います．</p>
     </blockquote>
   </Article>
 
   <Article id="interest">
     <hgroup>
-      <h2>興味と関心について</h2>
+      <h2>
+        <a href="#interest">興味と関心について</a>
+      </h2>
       <p>お前の好きなものが分かってよかった</p>
     </hgroup>
 
@@ -185,16 +124,18 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
     </section>
   </Article>
 
-  <Article>
+  <Article id="contacts">
     <hgroup>
-      <h2>連絡先</h2>
+      <h2>
+        <a href="#contacts">連絡先</a>
+      </h2>
       <p>
         <a href="https://www.youtube.com/watch?v=2vpw7Lebvj4&t=74s">
           It's the hotline, right?
         </a>
       </p>
     </hgroup>
-    <dl>
+    <dl class="contacts">
       <dt>
         Twitter:<a class="url" href="https://twitter.com/SnO2WMaN">@SnO2WMaN</a>
       </dt>
@@ -225,9 +166,39 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
     </dl>
   </Article>
 
-  <Article>
+  <Article id="history">
     <hgroup>
-      <h2>スキルセット</h2>
+      <h2>
+        <a href="#history">履歴</a>
+      </h2>
+      <p>
+        <a href="https://www.youtube.com/watch?v=gAjR4_CbPpQ"
+          >Harder, Better, Faster, Stronger</a
+        >
+      </p>
+    </hgroup>
+    <dl>
+      <dt>
+        <time>2023-08</time> ~ <time>2023-09</time>:<a
+          class="url"
+          href="https://hatena.co.jp/recruit/intern/2023"
+          >はてなリモートインターンシップ 2023</a
+        >
+      </dt>
+      <dd>
+        はてなブログチームに所属し，Mastodon/Misskeyの共有ボタンの実装を行いました．<a
+          href="https://scrapbox.io/sno2wman/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%B32023%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F"
+          >参加録</a
+        >．
+      </dd>
+    </dl>
+  </Article>
+
+  <Article id="skillset">
+    <hgroup>
+      <h2>
+        <a href="#skillset">スキルセット</a>
+      </h2>
       <p>
         <a href="https://www.youtube.com/watch?v=NunTnaEfxkE">
           わたしにできること

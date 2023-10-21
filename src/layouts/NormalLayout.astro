@@ -1,16 +1,22 @@
 ---
 import "the-new-css-reset";
-import Quote from "~/components/Quote/Quote.svelte";
+import "@fontsource/jetbrains-mono";
+import "@fontsource/shippori-mincho-b1/400.css";
+import "@fontsource/shippori-mincho-b1/700.css";
+import Quote from "~/components/Quote.svelte";
 
 const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
 ---
 
 <style is:global>
   :root {
-    font-family: "Shippori Mincho B1", serif;
+    font-family: var(--font-family-serif);
     font-size: 16px;
 
-    --theme-hue: 199;
+    --theme-hue: 162;
+
+    --font-family-serif: "Shippori Mincho B1", serif;
+    --font-family-mono: "JetBrains Mono", monospace;
 
     --body-background-color: hsl(var(--theme-hue), 8%, 15%);
 
@@ -37,7 +43,7 @@ const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
 
   @media (prefers-color-scheme: light) {
     :root {
-      --theme-hue: 224;
+      --theme-hue: 218;
       --body-background-color: hsl(var(--theme-hue), 8%, 96%);
 
       --nav-background-color: hsl(var(--theme-hue), 25.9%, 90%);
@@ -218,6 +224,12 @@ const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
       }
     }
   }
+
+  @media (max-width: 640px) {
+    nav > .counter {
+      display: none;
+    }
+  }
 </style>
 
 <meta charset="UTF-8" />
@@ -236,12 +248,6 @@ const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
 <meta name="twitter:site" content="@SnO2WMaN" />
 <title>{title || "SnO2WMaN.net"}</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;700&display=swap"
-  rel="stylesheet"
-/>
 
 <body>
   <nav>
