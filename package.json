@@ -20,7 +20,7 @@
     "@fontsource/jetbrains-mono": "^5.0.16",
     "@fontsource/shippori-mincho-b1": "^5.0.13",
     "@fontsource/silkscreen": "^5.0.0",
-    "astro": "^3.0.0",
+    "astro": "^4.0.0",
     "clsx": "^2.0.0",
     "sass": "^1.58.3",
     "svelte": "^4.0.0",
