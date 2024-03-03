@@ -20,7 +20,7 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
         <a href="#otomadb">OtoMADB</a>
       </li>
       <li>
-        <a href="#lean4-modal-logic">Lean4 Modal Logic</a>
+        <a href="#lean4-modal-logic">Modal Logic in Lean4</a>
       </li>
       <li>
         <a href="#etc">その他</a>
@@ -119,20 +119,24 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
   <Article id="lean4-modal-logic">
     <hgroup>
       <h2>
-        <a href="https://github.com/SnO2WMaN/lean4-modallogic"
-          >Lean4 Modal Logic</a
+        <a
+          href="https://github.com/iehality/lean4-logic?tab=readme-ov-file#normal-modal-logic"
+          >Modal Logic in Lean4</a
         >
       </h2>
       <p>Lean4で様相論理を形式化する</p>
     </hgroup>
     <p>
-      命題論理や標準様相論理を始めとした，諸々の論理体系やその定理などをLean4で形式化する．以下の目標がある．
+      命題論理や標準様相論理を始めとした，諸々の論理体系やその定理などをLean4で形式化する．
     </p>
+    <p>
+      更新時現在では以下が形式化されている．詳しくはリンク先のリポジトリを参照のこと．
+    </p>
+    <ul>
+      <li>一般的な標準様相論理の完全性定理</li>
+    </ul>
+    <p>また，以下の目標がある．</p>
     <dl>
-      <dt>命題論理と標準様相論理の完全性定理</dt>
-      <dd>
-        論理体系において「真である」と「証明可能である」が一致する定理のことを完全性定理という．まずはこの事実を形式化したい．
-      </dd>
       <dt>不完全性定理やLöbの定理などの擬似的な形式化</dt>
       <dd>
         証明可能性述語を取ることが出来る，適当な条件を満たした算術の体系上では不完全性定理が成り立つ．
