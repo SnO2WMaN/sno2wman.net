@@ -2,4 +2,74 @@
 import NormalLayout from "~/layouts/NormalLayout.astro";
 ---
 
-<NormalLayout />
+<NormalLayout>
+  <h1 class="font-sans text-2xl text-slate-900">自己言及をしない</h1>
+
+  <h2 class="mt-8 font-sans text-xl text-slate-900 pl-4 py-2 mb-2 border-slate-900 border-l-4">関心領域</h2>
+  <p class="font-serif text-sm text-slate-900">次のことに興味があります．</p>
+
+  <article class="mt-2">
+    <h3 class="font-sans text-slate-700">数理論理学</h3>
+    <p class="font-serif text-sm">特に不完全性定理と様相論理について．</p>
+  </article>
+
+  <article class="mt-2">
+    <h3 class="font-sans text-slate-700">定理証明支援系</h3>
+    <p class="font-serif text-sm"></p>
+  </article>
+
+  <article class="mt-2">
+    <h3 class="font-sans text-slate-700">Webサービス開発</h3>
+  </article>
+
+  <article class="mt-2">
+    <h3 class="font-sans text-slate-700">音MAD</h3>
+  </article>
+
+  <h2 class="mt-8 font-sans text-xl text-slate-900 pl-4 py-2 mb-2 border-slate-900 border-l-4">プロジェクト</h2>
+
+  <article>
+    <div class="flex items-center">
+      <h3 class="font-red-hat-display font-semibold text-slate-700">Formalized Formal Logic</h3>
+    </div>
+    <p class="font-serif text-sm">
+      数理論理学の様々な事実を定理証明支援系であるLeanを用いて形式化するプロジェクト(iehality氏と共同)．
+      私は主に様相論理を担当しています．
+    </p>
+    <ul>
+      <li></li>
+    </ul>
+  </article>
+
+  <article class="mt-2">
+    <div class="flex items-center">
+      <h3 class="font-red-hat-display font-semibold text-slate-700">OTOMADB</h3>
+    </div>
+    <p class="font-serif text-sm">
+      音MADに対して適切なメタデータを与えてデータベースを構築するプロジェクト．
+      <strong>設計の抜本的な見直しを考えているため，現在開発停止中です．</strong>
+    </p>
+  </article>
+
+  <h2 class="mt-8 font-sans text-xl text-slate-900 pl-4 py-2 mb-2 border-slate-900 border-l-4">ノート</h2>
+
+  <article class="mt-2">
+    <div class="flex items-center">
+      <h3 class="font-sans text-slate-700">算術的完全性定理についてのノート</h3>
+    </div>
+    <p class="font-serif text-sm">
+      証明可能性論理という分野の出発点である，算術的完全性定理についてのメモ．
+    </p>
+  </article>
+
+  <h2 class="mt-8 font-sans text-xl text-slate-900 pl-4 py-2 mb-2 border-slate-900 border-l-4">履歴</h2>
+
+  <article class="mt-2">
+    <div class="flex items-center">
+      <h3 class="font-sans text-slate-700">はてなリモートインターンシップ 2023</h3>
+    </div>
+    <p class="font-serif text-sm">
+      はてなブログチームに所属し，Mastodon/Misskeyの共有ボタンの実装を行いました．
+    </p>
+  </article>
+</NormalLayout>
