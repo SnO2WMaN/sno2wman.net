@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "wrangler pages dev ./dist",
-    "lint": "biome check"
+    "check": "biome check"
   },
   "type": "module",
   "dependencies": {
