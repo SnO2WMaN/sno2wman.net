@@ -18,5 +18,4 @@ jobs:
           node-version-file: .node-version
           cache: npm
       - run: npm ci
-      - run: npm run lint:eslint
-      - run: npm run lint:prettier
+      - run: npx biome ci

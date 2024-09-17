@@ -1,9 +1,0 @@
-# direnv
-.direnv
-
-# deps
-package-lock.json
-
-# build output
-dist/
-_site/
