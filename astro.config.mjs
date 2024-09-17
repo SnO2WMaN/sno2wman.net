@@ -5,5 +5,5 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   integrations: [svelte()],
   output: "server",
-  adapter: cloudflare()
+  adapter: cloudflare(),
 });

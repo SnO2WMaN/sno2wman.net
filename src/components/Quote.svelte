@@ -1,5 +1,5 @@
 <script lang="ts">
-  const what = 1 + Math.floor(Math.random() * 18);
+const what = 1 + Math.floor(Math.random() * 18);
 </script>
 
 <figure>
