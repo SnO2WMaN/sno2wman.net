@@ -23,7 +23,7 @@
     "the-new-css-reset": "^1.8.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.2",
+    "@biomejs/biome": "1.9.3",
     "npm-run-all2": "^6.0.0",
     "typescript": "^5.0.0",
     "wrangler": "^3.0.0"
