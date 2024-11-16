@@ -17,3 +17,5 @@ logs/
 dist/
 _site/
 
+# Astro
+.astro/

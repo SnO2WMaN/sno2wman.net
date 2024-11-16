@@ -2,4 +2,154 @@
 import NormalLayout from "~/layouts/NormalLayout.astro";
 ---
 
-<NormalLayout />
+<NormalLayout>
+  <h1 class="font-sans text-2xl text-slate-900">SnO<sub>2</sub>WMaN.net</h1>
+
+  <div class="grid grid-col-span-1 lg:grid-cols-2 gap-y-8 mt-8">
+    <div class="col-span-full">
+      <h2 id="interest" class="font-sans text-xl text-slate-900 pl-4 py-2 mb-2 border-slate-900 border-l-4">
+        <a href="#interest">関心領域</a>
+      </h2>
+      <p class="font-serif text-sm text-slate-900">以下のことに興味があります．</p>
+      <div class="flex flex-col gap-y-2 mt-2">
+        <article>
+          <h3 class="font-sans text-slate-700">数理論理学</h3>
+          <p class="font-serif text-sm">特に不完全性定理と様相論理について．</p>
+        </article>
+        <article  >
+          <h3 class="font-sans text-slate-700">定理証明支援系</h3>
+          <p class="font-serif text-sm">ほとんど<a href="https://lean-lang.org/" class="underline">Lean</a>を使っています．</p>
+        </article>
+        <article>
+          <h3 class="font-sans text-slate-700">Webサービス開発</h3>
+        </article>
+        <article>
+          <h3 class="font-sans text-slate-700">音MAD</h3>
+        </article>
+      </div>
+    </div>
+
+    <div class="col-span-full">
+      <h2 id="project" class="font-sans text-xl text-slate-900 pl-4 py-2 mb-2 border-slate-900 border-l-4">
+        <a href="#project">プロジェクト</a>
+      </h2>
+      <p class="font-serif text-sm text-slate-900">以下は私が関わっているプロジェクトです．</p>
+      <div class="mt-2 flex flex-col gap-y-2">
+        <article>
+          <div class="flex items-baseline">
+            <h3 class="font-sans text-slate-700">Formalized Formal Logic</h3>
+            <div class="flex gap-x-2 ml-4">
+              <a class="text-sans text-sm underline text-slate-600" href="https://github.com/FormalizedFormalLogic">GitHub</a>
+            </div>
+          </div>
+          <p class="font-serif text-sm mt-1">
+            数理論理学の様々な事実を定理証明支援系であるLeanを用いて形式化するプロジェクト．
+            私は主に様相論理を担当しています．
+          </p>
+        </article>
+        <article>
+          <div class="flex items-baseline">
+            <h3 class="font-sans text-slate-700">OTOMADB</h3>
+            <div class="flex gap-x-2 ml-4">
+              <a class="text-sans underline text-sm text-slate-600" href="https://otomadb.com">Link</a>
+              <a class="text-sans underline text-sm text-slate-600" href="https://github.com/OTOMADB">GitHub</a>
+            </div>
+          </div>
+          <p class="font-serif text-sm mt-1">
+            音MADに対して適切なメタデータを与えてデータベースを構築するプロジェクト．
+            <strong>設計の抜本的な見直しを考えているため，現在開発停止中です．</strong>
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <div >
+      <h2 id="contact" class="font-sans text-xl text-slate-900 pl-4 py-2 mb-2 border-slate-900 border-l-4">
+        <a href="#contact">連絡先</a>
+      </h2>
+      <p class="font-serif text-sm text-slate-900">以下から連絡してください．</p>
+      <div class="mt-2 flex flex-col gap-y-2">
+        <article class="flex flex-row items-baseline">
+          <div class="flex items-baseline">
+            <h3 class="font-sans text-slate-700">Twitter</h3>
+            <a class="ml-1 text-slate-600 font-mono text-sm underline" href="https://twitter.com/SnO2WMaN">@SnO2WMaN</a>
+          </div>
+          <p class="font-serif text-sm flex-grow text-right">コミュニケーションツール．</p>
+        </article>
+        <article class="flex flex-row items-baseline">
+          <div class="flex items-baseline">
+            <h3 class="font-sans text-slate-700">GitHub</h3>
+            <a class="ml-1 text-slate-600 font-mono text-sm underline" href="https://github.com/SnO2WMaN">@SnO2WMaN</a>
+          </div>
+          <p class="font-serif text-sm flex-grow text-right">制作物．</p>
+        </article>
+        <article class="flex flex-row items-baseline">
+          <div class="flex items-baseline">
+            <h3 class="font-sans text-slate-700">Scrapbox</h3>
+            <a class="ml-1 text-slate-600 font-mono text-sm underline" href="https://scrapbox.io/SnO2WMaN">/SnO2WMaN</a>
+          </div>
+          <p class="font-serif text-sm flex-grow text-right">私的なメモや日報など．</p>
+        </article>
+        <article class="flex flex-row items-baseline">
+          <div class="flex items-baseline">
+            <h3 class="font-sans text-slate-700">Mail</h3>
+            <a class="ml-1 text-slate-600 font-mono text-sm underline" href="mailto:me@sno2wman.net">me@sno2wman.net</a>
+          </div>
+          <p class="font-serif text-sm flex-grow text-right">重要な連絡．</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="col-span-full">
+      <h2 id="history" class="font-sans text-xl text-slate-900 pl-4 py-2 mb-2 border-slate-900 border-l-4">
+        <a href="#history">履歴</a>
+      </h2>
+      <p class="font-serif text-sm text-slate-900">以下のことをしました．</p>
+      <div class="mt-2 flex flex-col gap-y-2">
+        <article>
+          <div class="flex items-baseline">
+            <date class="font-mono mr-2 text-slate-600 text-sm">2024.04.29</date>
+            <h3 class="font-sans text-slate-700">
+              音MADエキスポ
+            </h3>
+          </div>
+          <p class="font-serif text-sm mt-1">
+            第200回音MAD晒しイベントで開催される音MADエキスポの<a class="underline" href="https://otoexpo.otomad-sarashi.com/">公式サイト</a>を作成しました．
+          </p>
+        </article>
+        <article class="mt-2">
+          <div class="flex items-baseline">
+            <date class="font-mono mr-2 text-slate-600 text-sm">2023.09.08</date>
+            <h3 class="font-sans text-slate-700">
+              はてなリモートインターンシップ 2023
+            </h3>
+          </div>
+          <p class="font-serif text-sm mt-1">
+            はてなブログチームに所属し，Mastodon/Misskeyの共有ボタンの実装を行いました．
+            <a
+              class="underline"
+              href="https://scrapbox.io/sno2wman/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%B32023%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F"
+            >参加記録</a>
+          </p>
+        </article>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--
+  <h2 class="font-sans text-xl text-slate-900 pl-4 py-2 mb-2 border-slate-900 border-l-4">ノート</h2>
+
+    <div  class="mt-2 flex flex-col gap-y-2">
+    <article class="mt-2">
+      <div class="flex items-center">
+        <h3 class="font-sans text-slate-700">算術的完全性定理についてのノート</h3>
+      </div>
+      <p class="font-serif text-sm">
+        証明可能性論理という分野の出発点である，算術的完全性定理についてのメモ．
+      </p>
+    </article>
+  </div>
+ -->
+</NormalLayout>

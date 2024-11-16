@@ -1,236 +1,12 @@
 ---
-import "the-new-css-reset";
-import "@fontsource/jetbrains-mono";
-import "@fontsource/shippori-mincho-b1/400.css";
-import "@fontsource/shippori-mincho-b1/700.css";
-import Quote from "~/components/Quote.svelte";
+// ja
+import "@fontsource/biz-udpmincho/400.css";
+import "@fontsource/biz-udpmincho/700.css";
+import "@fontsource/shippori-antique-b1";
+import "@fontsource-variable/jetbrains-mono";
 
 const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
 ---
-
-<style is:global>
-  :root {
-    font-family: var(--font-family-serif);
-    font-size: 16px;
-
-    --theme-hue: 162;
-
-    --font-family-serif: "Shippori Mincho B1", serif;
-    --font-family-mono: "JetBrains Mono", monospace;
-
-    --body-background-color: hsl(var(--theme-hue), 8%, 15%);
-
-    --nav-background-color: hsl(var(--theme-hue), 12%, 12%);
-    --nav-text-color-main: hsl(var(--theme-hue), 19%, 81%);
-    --nav-text-color-sub: hsl(var(--theme-hue), 9%, 61%);
-    --nav-text-color-hover: var(--main-highlight-color);
-
-    --main-highlight-color: hsl(var(--theme-hue), 63%, 76%);
-    --main-text-color-heading: hsl(var(--theme-hue), 15%, 87%);
-    --main-text-color-main: hsl(var(--theme-hue), 24%, 81%);
-    --main-text-color-sub: hsl(var(--theme-hue), 9%, 61%);
-    --main-splitline-color: hsl(var(--theme-hue), 9%, 32%);
-  }
-
-  sub {
-    vertical-align: sub;
-  }
-
-  rt {
-    font-size: 0.65em;
-    margin-bottom: -0.6em;
-  }
-
-  @media (prefers-color-scheme: light) {
-    :root {
-      --theme-hue: 218;
-      --body-background-color: hsl(var(--theme-hue), 8%, 96%);
-
-      --nav-background-color: hsl(var(--theme-hue), 25.9%, 90%);
-      --nav-text-color-main: hsl(var(--theme-hue), 19%, 21%);
-      --nav-text-color-sub: hsl(var(--theme-hue), 21%, 25%);
-      --nav-text-color-hover: var(--main-highlight-color);
-
-      --main-highlight-color: hsl(var(--theme-hue), 77%, 45%);
-      --main-text-color-heading: hsl(var(--theme-hue), 8%, 17%);
-      --main-text-color-main: hsl(var(--theme-hue), 21%, 32%);
-      --main-text-color-sub: hsl(var(--theme-hue), 21%, 25%);
-      --main-splitline-color: hsl(var(--theme-hue), 15%, 65%);
-    }
-  }
-</style>
-
-<style>
-  body {
-    background-color: var(--body-background-color);
-
-    overflow-y: hidden;
-
-    display: flex;
-    flex-direction: row;
-  }
-
-  nav {
-    background-color: var(--nav-background-color);
-    width: 360px;
-    height: 100vh;
-    padding: 24px 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 0 24px var(--nav-background-color);
-
-    & > .header {
-      & > a {
-        font-size: 1.8rem;
-        font-family: "Shippori Mincho B1", serif;
-        text-align: center;
-        word-break: break-all;
-        color: var(--nav-text-color-main);
-      }
-    }
-
-    & > .links {
-      width: 100%;
-      flex-grow: 1;
-
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      row-gap: 8px;
-
-      padding: 0 32px;
-      margin: 12px 0;
-      color: var(--nav-text-color-main);
-
-      a:hover {
-        color: var(--nav-text-color-hover);
-        text-decoration: underline;
-      }
-
-      & > a {
-        font-size: 1.25rem;
-      }
-
-      & > .sub {
-        margin-left: 12px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        row-gap: 4px;
-        & > a {
-          font-size: 1rem;
-        }
-      }
-    }
-
-    & > .counter {
-      width: 240px;
-    }
-
-    & > .copyright {
-      margin-top: 12px;
-      color: var(--nav-text-color-sub);
-      font-size: 0.75rem;
-    }
-  }
-
-  main {
-    height: 100vh;
-    flex-grow: 1;
-
-    padding: 0 32px;
-
-    overflow-y: scroll;
-
-    & > .wrapper {
-      padding-top: 32px;
-      min-height: calc(100vh - 160px);
-      max-width: 860px;
-      margin: 0 auto;
-
-      & > h1 {
-        text-align: center;
-        text-decoration: solid underline;
-        text-decoration-color: var(--main-highlight-color);
-        font-size: 2.5rem;
-        font-weight: 700;
-        padding: 4px 0 4px 8px;
-        color: var(--main-text-color-heading);
-        letter-spacing: 2px;
-        margin-bottom: 16px;
-      }
-    }
-
-    & > footer {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 720px;
-
-      margin: 32px auto 0 auto;
-      min-height: 128px;
-      padding: 16px 0;
-      border-block-start: 1px solid var(--main-splitline-color);
-    }
-  }
-
-  @media (max-width: 1280px) {
-    body {
-      flex-direction: column;
-      overflow-y: scroll;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 9999;
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      height: 64px;
-      padding: 8px 32px;
-      & > .header {
-        & > a {
-          font-size: 1rem;
-          word-break: keep-all;
-        }
-      }
-      & > .links {
-        flex-direction: row;
-        column-gap: 12px;
-        & > a {
-          font-size: 1rem;
-        }
-        & > .sub {
-          display: none;
-        }
-      }
-      & > .counter {
-        width: auto;
-        height: auto;
-      }
-      & > .copyright {
-        display: none;
-      }
-    }
-
-    main {
-      height: auto;
-      overflow-y: auto;
-      & > .wrapper {
-        min-height: calc(100vh - 224px);
-      }
-    }
-  }
-
-  @media (max-width: 640px) {
-    nav > .counter {
-      display: none;
-    }
-  }
-</style>
 
 <meta charset="UTF-8" />
 <meta name="description" property="og:description" content={description} />
@@ -252,39 +28,31 @@ const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
   href="https://scrapbox.io/api/pages/sno2wman/sno2wman/icon#.png"
 />
 
-<body>
-  <nav>
-    <div class="header">
-      <a href="/">
-        SnO<sub>2</sub>WMaN.net
-      </a>
-    </div>
-    <div class="links">
-      <a href="/aboutme">AboutMe</a>
-      <a href="/projects">Projects</a>
-      <div class="sub">
-        <a href="/projects#otomadb">OtoMADB</a>
-        <a href="/projects#lean4-modal-logic">Modal Logic in Lean4</a>
-      </div>
-      <a href="/links">Links</a>
-    </div>
-    <img
-      class="counter"
-      src={import.meta.env.DEV
-        ? "https://count.getloli.com/get/@sno2wman.net-dev?theme=rule34"
-        : "https://count.getloli.com/get/@sno2wman.net?theme=rule34"}
-    />
-    <p class="copyright">
-      <time>2023</time> - <span>SnO<sub>2</sub>WMaN</span>
-    </p>
-  </nav>
-  <main>
-    <div class="wrapper">
-      {title && <h1>{title}</h1>}
+<body class="bg-slate-100 overflow-y-scroll">
+  <div class="min-h-svh flex flex-col container max-w-screen-lg mx-auto px-16">
+    <nav class="py-8 gap-x-4 flex">
+      <a href="/">Home</a>
+      <a href="/social">Social</a>
+    </nav>
+    <div class="flex-grow">
+      {title && <h1 class="font-sans text-2xl text-slate-900 mb-4">{title}</h1>}
       <slot />
-    </div>
-    <footer>
-      <Quote />
+    </div>　
+    <footer class="mt-16 flex flex-col md:flex-row items-center gap-y-4 border-t py-8 border-slate-900 border-dotted">
+      <div class="flex-grow">
+        <p class="text-sm text-slate-700">
+          <date>2024</date>
+          <a href="/">SnO2WMaN</a>
+        </p>
+      </div>
+      <div class="h-24 w-96 flex-shrink-0">
+        <img
+          class="h-full mx-auto"
+          src={import.meta.env.DEV
+            ? "https://count.getloli.com/@sno2wman.net-dev?name=sno2wman.net-dev&theme=green&padding=8&offset=0&align=bottom&pixelated=1&darkmode=0"
+            : "https://count.getloli.com/@sno2wman.net?name=sno2wman.net&theme=green&padding=8&offset=0&align=bottom&pixelated=1&darkmode=0"}
+        />
+      </div>
     </footer>
-  </main>
+  </div>
 </body>
