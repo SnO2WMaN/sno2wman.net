@@ -34,9 +34,22 @@ const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
 
 <body  >
   <main class="min-h-svh py-12 px-24 bg-slate-100">
-    <div class="wrapper">
-      {title && <h1>{title}</h1>}
+    <div class="container max-w-screen-lg mx-auto">
+      {title && <h1 class="font-sans text-2xl text-slate-900">{title}</h1>}
       <slot />
+      <footer class="mt-24 flex items-center px-8 border-t py-8 border-slate-900 border-dotted">
+        <div class="flex-grow">
+          <p class="text-sm text-slate-700">2024 SnO2WMaN</p>
+        </div>
+        <div class="h-24 w-96 flex-shrink-0">
+          <img
+            class="h-full mx-auto"
+            src={import.meta.env.DEV
+              ? "https://count.getloli.com/@sno2wman.net-dev?name=sno2wman.net-dev&theme=green&padding=8&offset=0&align=bottom&pixelated=1&darkmode=0"
+              : "https://count.getloli.com/@sno2wman.net?name=sno2wman.net&theme=green&padding=8&offset=0&align=bottom&pixelated=1&darkmode=0"}
+          />
+        </div>
+      </footer>
     </div>
   </main>
 </body>
