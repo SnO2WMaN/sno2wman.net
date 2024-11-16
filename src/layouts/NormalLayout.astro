@@ -28,29 +28,31 @@ const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
   href="https://scrapbox.io/api/pages/sno2wman/sno2wman/icon#.png"
 />
 
-<body  >
-  <main class="bg-slate-100">
-    <div class="min-h-svh py-12 px-16 flex flex-col container max-w-screen-lg mx-auto">
+<body class="bg-slate-100 overflow-y-scroll">
+  <div class="min-h-svh flex flex-col container max-w-screen-lg mx-auto px-16">
+    <nav class="py-8 gap-x-4 flex">
+      <a href="/">Home</a>
+      <a href="/social">Social</a>
+    </nav>
+    <div class="flex-grow">
+      {title && <h1 class="font-sans text-2xl text-slate-900 mb-4">{title}</h1>}
+      <slot />
+    </div>　
+    <footer class="mt-16 flex flex-col md:flex-row items-center gap-y-4 border-t py-8 border-slate-900 border-dotted">
       <div class="flex-grow">
-        {title && <h1 class="font-sans text-2xl text-slate-900">{title}</h1>}
-        <slot />
+        <p class="text-sm text-slate-700">
+          <date>2024</date>
+          <a href="/">SnO2WMaN</a>
+        </p>
       </div>
-      <footer class="mt-16 flex flex-col md:flex-row items-center px-8 gap-y-4 border-t py-8 border-slate-900 border-dotted">
-        <div class="flex-grow">
-          <p class="text-sm text-slate-700">
-            <date>2024</date>
-            <a href="/">SnO2WMaN</a>
-          </p>
-        </div>
-        <div class="h-24 w-96 flex-shrink-0">
-          <img
-            class="h-full mx-auto"
-            src={import.meta.env.DEV
-              ? "https://count.getloli.com/@sno2wman.net-dev?name=sno2wman.net-dev&theme=green&padding=8&offset=0&align=bottom&pixelated=1&darkmode=0"
-              : "https://count.getloli.com/@sno2wman.net?name=sno2wman.net&theme=green&padding=8&offset=0&align=bottom&pixelated=1&darkmode=0"}
-          />
-        </div>
-      </footer>
-    </div>
-  </main>
+      <div class="h-24 w-96 flex-shrink-0">
+        <img
+          class="h-full mx-auto"
+          src={import.meta.env.DEV
+            ? "https://count.getloli.com/@sno2wman.net-dev?name=sno2wman.net-dev&theme=green&padding=8&offset=0&align=bottom&pixelated=1&darkmode=0"
+            : "https://count.getloli.com/@sno2wman.net?name=sno2wman.net&theme=green&padding=8&offset=0&align=bottom&pixelated=1&darkmode=0"}
+        />
+      </div>
+    </footer>
+  </div>
 </body>

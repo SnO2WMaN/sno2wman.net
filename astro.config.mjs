@@ -10,7 +10,7 @@ export default defineConfig({
 	adapter: cloudflare(),
 	redirects: {
 		"/projects": "/#projects",
-		"/links": "/#links",
+		"/links": "/social",
 		"/aboutme": "/",
 	},
 });
