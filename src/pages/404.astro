@@ -1,25 +1,6 @@
 ---
-import { Image } from "astro:assets";
 import NormalLayout from "~/layouts/NormalLayout.astro";
-import Gif404 from "../images/404.gif";
 ---
 
-<style lang="scss" scoped>
-  .wrapper {
-    display: flex;
-    justify-content: center;
-
-    img {
-      width: 100%;
-      max-width: 480px;
-      height: auto;
-      margin: 0 auto;
-    }
-  }
-</style>
-
 <NormalLayout title="404 Page Not Found" description="Page not found.">
-  <div class="wrapper">
-    <Image src={Gif404} alt="404.gif" />
-  </div>
 </NormalLayout>
