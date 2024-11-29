@@ -1,5 +1,12 @@
 ---
+import { getCollection } from "astro:content";
 import NormalLayout from "~/layouts/NormalLayout.astro";
+
+const latestHistories = await getCollection("history").then((s) =>
+  s
+    .toSorted(({ data: { date: a } }, { data: { date: b } }) => b - a)
+    .slice(0, 5),
+);
 ---
 
 <NormalLayout>
@@ -107,36 +114,10 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
       <p class="font-serif text-sm text-slate-900">以下のことをしました．</p>
       <div class="mt-2 flex flex-col gap-y-2">
         {
-          [
-            {
-              date: "2024.11.26",
-              title: "TPP2024",
-              title_link: "https://www.math.nagoya-u.ac.jp/~garrigue/tpp2024",
-              text: "『標準的な様相論理のLeanでの形式化について』というショートトークをしました．",
-              links: [
-                {text: "発表資料", href: "https://github.com/SnO2WMaN/slides-for-tpp2024" }
-              ]
-            },
-            {
-              date: "2024.04.29",
-              title: "音MADエキスポ",
-              title_link: "https://otoexpo.otomad-sarashi.com",
-              text: "第200回音MAD晒しイベントで開催される音MADエキスポの公式サイトを作成しました．",
-              links: [  ]
-            },
-            {
-              date: "2023.09.08",
-              title: "はてなリモートインターンシップ 2023",
-              title_link: "https://hatena.co.jp/recruit/intern/2023",
-              text: "はてなブログチームにインターンとして所属し，Mastodon/Misskeyの共有ボタンの実装を行いました．",
-              links: [
-                { text: "参加記録", href: "https://scrapbox.io/sno2wman/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%B32023%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F" }
-              ]
-            }
-          ].map(({date, title, title_link, text, links}) => (
+         latestHistories.map(({slug, data:{title,date,title_link,description,links}}) => (
             <article>
               <div class="flex items-baseline">
-                <date class="font-mono mr-2 text-slate-600 text-sm">{date}</date>
+                <date class="font-mono mr-2 text-slate-600 text-sm">{date.toLocaleDateString("ja-JP", { year: "numeric", month: "2-digit", day: "2-digit"})}</date>
                 <h3 class="font-sans text-slate-700">
                   {
                     title_link
@@ -146,9 +127,9 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
                 </h3>
               </div>
               <p class="font-serif text-sm mt-1">
-                {text}
-                {links.map(({text, href}) => (
-                  <a class="ml-1 underline" href={href}>{text}</a>
+                {description}
+                {links.map(({text, url}) => (
+                  <a class="ml-1 underline" href={url}>{text}</a>
                 ))}
               </p>
             </article>
@@ -157,21 +138,4 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
       </div>
     </div>
   </div>
-
-
-
-  <!--
-  <h2 class="font-sans text-xl text-slate-900 pl-4 py-2 mb-2 border-slate-900 border-l-4">ノート</h2>
-
-    <div  class="mt-2 flex flex-col gap-y-2">
-    <article class="mt-2">
-      <div class="flex items-center">
-        <h3 class="font-sans text-slate-700">算術的完全性定理についてのノート</h3>
-      </div>
-      <p class="font-serif text-sm">
-        証明可能性論理という分野の出発点である，算術的完全性定理についてのメモ．
-      </p>
-    </article>
-  </div>
- -->
 </NormalLayout>
