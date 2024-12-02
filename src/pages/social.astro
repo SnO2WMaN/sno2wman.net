@@ -1,5 +1,8 @@
 ---
 import NormalLayout from "~/layouts/NormalLayout.astro";
+
+import links from "../data/links.json";
+import metalinks from "../data/metalinks.json";
 ---
 
 <NormalLayout title="Social" description="Social">　
@@ -14,167 +17,12 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
         >より連絡してください．
       </p>
       <div class="mt-2 flex flex-col gap-y-2">
-        {[
-          {
-            hostname: "haxibami",
-            sitename: "神話募集中",
-            url: "https://haxibami.net",
-          }
-          ,
-          {
-            hostname: "一階堂洋",
-            sitename: "みそは入ってませんけど",
-            url: "https://not-miso-inside.netlify.app",
-          },
-          {
-            hostname: "LW",
-            sitename: "LWのサイゼリヤ",
-            url: "https://saize-lw.hatenablog.com",
-          },
-          {
-            hostname: "みかぶる",
-            sitename: "人造日本人",
-            url: "https://mikanixonable.github.io",
-          },
-          {
-            hostname: "uynet",
-            sitename: "ゆいネット",
-            url: "https://uynet.work",
-          },
-          {
-            hostname: "ふぁぼん",
-            sitename: "ふぁぼんのホームページ",
-            url: "https://www.fabon.info",
-          },
-          {
-            hostname: "Aumy",
-            sitename: "fuku.day",
-            url: "https://fuku.day",
-          },
-          {
-            hostname: "Xe Iaso",
-            sitename: "Xe Iaso",
-            url: "https://xeiaso.net",
-          },
-          {
-            hostname: "rinsuki",
-            sitename: "rinsuki.net",
-            url: "https://rinsuki.net",
-          },
-          {
-            hostname: "gfngfn",
-            sitename: "gfnweb",
-            url: "https://gfngfn.github.io/ja",
-          },
-          {
-            hostname: "Ryota Kameoka",
-            sitename: "ryota-ka.me",
-            url: "https://ryota-ka.me",
-          },
-          {
-            hostname: "yude",
-            sitename: "yude.jp",
-            url: "https://www.yude.jp",
-          },
-          {
-            hostname: "Sigmy",
-            sitename: "shigu.jp",
-            url: "https://shigu.jp",
-          },
-          {
-            hostname: "バイブ",
-            sitename: "デカメシドットコム",
-            url: "https://dekameshi.com",
-          },
-          {
-            hostname: "okkaradon",
-            sitename: "okkaradon.com",
-            url: "https://okkaradon.com",
-          },
-          {
-            sitename: "garden at dawn",
-            url: "https://gardenatdawn.blogspot.com",
-          },
-          {
-            sitename: "翻訳困難",
-            url: "http://hon-kon.o.oo7.jp",
-          },
-          {
-            hostname: "永月杏",
-            sitename: "空論上の砂、楼閣上の机。",
-            url: "https://all-for-nothing.com",
-          },
-          {
-            hostname: "西村 祐輝",
-            sitename: "Nishimura Yuki's Website",
-            url: "https://nishimura-yuki-website.glitch.me",
-          },
-          {
-            hostname: "xscey",
-            sitename: "哲学覚書",
-            url: "https://xscey.github.io/note",
-          },
-          {
-            hostname: "palalansouki",
-            sitename: "国立公園",
-            url: "https://scrapbox.io/kokuritsukouen",
-          },
-          {
-            hostname: "xcloche",
-            sitename: "セミになっちゃた",
-            url: "https://xcloche.hateblo.jp",
-          },
-          {
-            hostname: "lachrymaL",
-            sitename: "lachrymaL",
-            url: "https://lachrymal.net",
-          },
-          {
-            hostname: "ゆきくらげ",
-            sitename: "YUKINET",
-            url: "https://yukikurage.net",
-          },
-          {
-            hostname: "橘いおね",
-            sitename: "いんたーねっと☆えくすぷろーらー！",
-            url: "https://blog.tachibanai.one",
-          },
-          {
-            hostname: "konn",
-            sitename: "konn-san.com 建設予定地",
-            url: "https://konn-san.com",
-          },
-          {
-            hostname: "Totsugekitai",
-            sitename: "花園シャトー107号室",
-            url: "https://hanazonochateau.net",
-          },
-          {
-            hostname: "宇野草壁",
-            sitename: "KusakabeWorks",
-            url: "https://kusakabeworks.net",
-          },
-          {
-            hostname: "douro",
-            sitename: "douro log",
-            url: "https://tachibana51.github.io",
-          },
-          {
-            hostname: "Nymphium",
-            sitename: "lilyum ensemble",
-            url : "https://nymphium.github.io"
-          },
-          {
-            hostname: "p-hone",
-            sitename: "p-hone.info",
-            url : "https://p-hone.info"
-          },
-        ].map(
+        {links.map(
           ({ hostname, url, sitename }) => (
-            <article class="flex flex-row items-baseline">
-              <a href={url} class="text-slate-900 hover:underline">{sitename}</a>
-              {hostname &&  <span class="ml-2 text-slate-700 text-sm">{hostname}</span>}
-              <span class="flex-grow text-right font-mono text-xs text-slate-600">{url}</span>
+            <article class="flex flex-col md:flex-row items-baseline">
+              <div><a href={url} class="text-slate-900 hover:underline">{sitename}</a></div>
+              {hostname && <v class="md:ml-2 text-slate-700 text-sm">{hostname}</v>}
+              <div class="mt-1 md:mt-0 flex-grow text-left md:text-right font-mono text-xs text-slate-600">{url}</div>
             </article>)
           )
         }
@@ -190,38 +38,12 @@ import NormalLayout from "~/layouts/NormalLayout.astro";
           >より連絡してください．
       </p>
       <div class="mt-2 flex flex-col gap-y-2">
-        {[
-          {
-            hostname: "橘いおね",
-            sitename: "Nodenarium",
-            url: "https://nodenarium.net/",
-          },
-          {
-            hostname: "一階堂洋",
-            sitename: "みそは入ってませんけど#リンク",
-            url: "https://not-miso-inside.net/about_me#rinku",
-          },
-          {
-            hostname: "haxibami",
-            sitename: "神話募集中#Link exchange",
-            url: "https://www.haxibami.net/about#link-exchange",
-          },
-          {
-            hostname: "みかぶる",
-            sitename: "人造日本人#相互リンク",
-            url: "https://mikanixonable.github.io/135",
-          },
-          {
-            hostname: "みかぶる",
-            sitename: "人造日本人#一方的リンク",
-            url: "https://mikanixonable.github.io/142",
-          }
-        ].map(
+        {metalinks.map(
           ({ hostname, url, sitename }) => (
-            <article class="flex flex-row items-baseline">
-              <a href={url} class="text-slate-900 hover:underline">{sitename}</a>
-              {hostname &&  <span class="ml-2 text-slate-700 text-sm">{hostname}</span>}
-              <span class="flex-grow text-right font-mono text-xs text-slate-600">{url}</span>
+            <article class="flex flex-col md:flex-row items-baseline">
+              <div><a href={url} class="text-slate-900 hover:underline">{sitename}</a></div>
+              {hostname && <div class="md:ml-2 text-slate-700 text-sm">{hostname}</div>}
+              <div class="mt-1 md:mt-0 flex-grow text-left md:text-right font-mono text-xs text-slate-600">{url}</div>
             </article>)
           )
         }
