@@ -19,10 +19,10 @@ import metalinks from "../data/metalinks.json";
       <div class="mt-2 flex flex-col gap-y-2">
         {links.map(
           ({ hostname, url, sitename }) => (
-            <article class="flex flex-row items-baseline">
-              <a href={url} class="text-slate-900 hover:underline">{sitename}</a>
-              {hostname &&  <span class="ml-2 text-slate-700 text-sm">{hostname}</span>}
-              <span class="flex-grow text-right font-mono text-xs text-slate-600">{url}</span>
+            <article class="flex flex-col md:flex-row items-baseline">
+              <div><a href={url} class="text-slate-900 hover:underline">{sitename}</a></div>
+              {hostname && <v class="md:ml-2 text-slate-700 text-sm">{hostname}</v>}
+              <div class="mt-1 md:mt-0 flex-grow text-left md:text-right font-mono text-xs text-slate-600">{url}</div>
             </article>)
           )
         }
@@ -40,10 +40,10 @@ import metalinks from "../data/metalinks.json";
       <div class="mt-2 flex flex-col gap-y-2">
         {metalinks.map(
           ({ hostname, url, sitename }) => (
-            <article class="flex flex-row items-baseline">
-              <a href={url} class="text-slate-900 hover:underline">{sitename}</a>
-              {hostname &&  <span class="ml-2 text-slate-700 text-sm">{hostname}</span>}
-              <span class="flex-grow text-right font-mono text-xs text-slate-600">{url}</span>
+            <article class="flex flex-col md:flex-row items-baseline">
+              <div><a href={url} class="text-slate-900 hover:underline">{sitename}</a></div>
+              {hostname && <div class="md:ml-2 text-slate-700 text-sm">{hostname}</div>}
+              <div class="mt-1 md:mt-0 flex-grow text-left md:text-right font-mono text-xs text-slate-600">{url}</div>
             </article>)
           )
         }
