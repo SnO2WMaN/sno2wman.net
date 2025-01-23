@@ -1,0 +1,14 @@
+[
+  {
+    "name": "算術の超準モデルなどに関するメモ",
+    "description": "算術の超準モデル，Tennenbaumの定理の定理などについてのメモ",
+    "pdf": "https://sno2wman.github.io/notes-on-nonstandard/main.pdf",
+    "github": "https://github.com/SnO2WMaN/notes-on-nonstandard"
+  },
+  {
+    "name": "Smullyanのシステムの形式化について",
+    "description": "Smullyanのシステムとその形式化についてのメモ",
+    "pdf": "https://sno2wman.github.io/notes-on-smullyanTP/main.pdf",
+    "github": "https://github.com/SnO2WMaN/notes-on-smullyanTP"
+  }
+]
