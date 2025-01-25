@@ -10,5 +10,11 @@
     "description": "Smullyanのシステムとその形式化についてのメモ",
     "pdf": "https://sno2wman.github.io/notes-on-smullyanTP/main.pdf",
     "github": "https://github.com/SnO2WMaN/notes-on-smullyanTP"
+  },
+  {
+    "name": "Henkin構成による完全性定理の証明",
+    "description": "1階述語論理の完全性定理をHenkinの構成によって証明する",
+    "pdf": "https://sno2wman.github.io/notes-on-henkin-construction/main.pdf",
+    "github": "https://github.com/SnO2WMaN/notes-on-henkin-construction"
   }
 ]
