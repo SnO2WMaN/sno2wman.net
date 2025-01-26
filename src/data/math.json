@@ -16,5 +16,11 @@
     "description": "1階述語論理の完全性定理をHenkinの構成によって証明する",
     "pdf": "https://sno2wman.github.io/notes-on-henkin-construction/main.pdf",
     "github": "https://github.com/SnO2WMaN/notes-on-henkin-construction"
+  },
+  {
+    "name": "Yabloのパラドックスについて",
+    "description": "Yabloのパラドックスと，その形式化による不完全性定理の証明に関するメモ",
+    "pdf": "https://sno2wman.github.io/notes-on-yablo-paradox/main.pdf",
+    "github": "https://github.com/SnO2WMaN/notes-on-yablo-paradox"
   }
 ]
