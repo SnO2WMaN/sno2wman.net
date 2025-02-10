@@ -151,5 +151,10 @@
     "hostname": "p-hone",
     "sitename": "p-hone.info",
     "url": "https://p-hone.info"
+  },
+  {
+    "hostname": "cannorin",
+    "sitename": "cannorin.net",
+    "url": "https://www.cannorin.net"
   }
 ]
