@@ -22,5 +22,11 @@
     "description": "Yabloのパラドックスと，その形式化による不完全性定理の証明に関するメモ",
     "pdf": "https://sno2wman.github.io/notes-on-yablo-paradox/main.pdf",
     "github": "https://github.com/SnO2WMaN/notes-on-yablo-paradox"
+  },
+  {
+    "name": "Kripke不完全な様相論理",
+    "description": "様相論理KHはKripke意味論に対して不完全であるという事実に関するメモ",
+    "pdf": "https://sno2wman.github.io/notes-on-kripke-incomplete-modal-logic/main.pdf",
+    "github": "https://github.com/SnO2WMaN/notes-on-kripke-incomplete-modal-logic"
   }
 ]
