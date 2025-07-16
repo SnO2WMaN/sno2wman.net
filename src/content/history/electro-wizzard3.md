@@ -1,7 +1,7 @@
 ---
 date: 2025-03-23
 title: ELECTRO WIZZARD EPISODE 3
-title_link: https://hatena.co.jp/recruit/intern/2023
+title_link: https://circus-tokyo.jp/event/electro-wizzard-episode-3
 description: (Moe)₂ Chimera Maker™名義で，DJ DEKAMESHIVIVEとB2BでDJしました．
 links:
   - text: 再現ミックス
