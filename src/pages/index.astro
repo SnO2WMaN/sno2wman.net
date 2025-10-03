@@ -3,8 +3,7 @@ import { getCollection } from "astro:content";
 import NormalLayout from "~/layouts/NormalLayout.astro";
 
 const latestHistories = await getCollection("history").then((s) =>
-  s
-    .toSorted(({ data: { date: a } }, { data: { date: b } }) => b - a)
+  s.toSorted(({ data: { date: a } }, { data: { date: b } }) => b - a),
 );
 ---
 
