@@ -2,7 +2,6 @@
   "recommendations": [
     "editorconfig.editorconfig",
     "astro-build.astro-vscode",
-    "svelte.svelte-vscode",
-    "biomejs.biome"
+    "svelte.svelte-vscode"
   ]
 }

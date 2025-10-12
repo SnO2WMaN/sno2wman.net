@@ -1,0 +1,36 @@
+---
+// ja
+import "@fontsource/biz-udpmincho/400.css";
+import "@fontsource/biz-udpmincho/700.css";
+import "@fontsource/shippori-antique-b1";
+import "@fontsource-variable/jetbrains-mono";
+const { title = null, description = "SnO2WMaN, sno2wman.net" } = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="description" property="og:description" content={description} />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+
+<meta name="og:type" content="website" />
+<meta name="og:title" content={title} />
+<meta name="og:site_name" content="SnO2WMaN.net" />
+<meta name="og:type" content="website" />
+<meta name="og:url" content="https://sno2wman.net" />
+
+<meta name="twitter:title" content="SnO2WMaN.net" />
+<meta name="twitter:url" content="https://sno2wman.net" />
+<meta name="twitter:site" content="@SnO2WMaN" />
+<title>{title || "SnO2WMaN.net"}</title>
+<link
+  rel="icon"
+  href="https://scrapbox.io/api/pages/sno2wman/sno2wman/icon#.png"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Micro+5&family=Shippori+Mincho+B1&display=swap"
+  rel="stylesheet"
+/>
+
+<body>
+  <slot />
+</body>

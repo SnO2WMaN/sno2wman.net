@@ -1,0 +1,212 @@
+---
+import Meta from "~/layouts/Meta.astro";
+import { Image } from "astro:assets";
+
+import IconLogic from "~/icons/logic.svg";
+import IconFormalize from "~/icons/formalize.svg";
+import IconWeb from "~/icons/web.svg";
+import IconOtomad from "~/icons/otomad.svg";
+import IconDj from "~/icons/dj.svg";
+
+import SvgSiteQRCode from "~/images/qrcode.svg";
+---
+
+<Meta>
+  <header class="w-full min-h-screen relative">
+    <div class="wallpaper fixed top-0 left-0 w-full h-screen">
+      <svg
+        class="absolute w-full h-full inset-0 px-8 py-8"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <pattern
+            id="star"
+            width="31"
+            height="31"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect x="15" y="15" width="1" height="1" fill="#ffffff44"></rect>
+          </pattern>
+        </defs>
+
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#star)"></rect>
+      </svg>
+    </div>
+
+    <div
+      class="nameplate relative lg:absolute m-auto inset-x-0 h-screen flex flex-col justify-center items-center lg:items-baseline w-full sm:w-[640px]"
+    >
+      <div
+        class="name font-['Micro_5'] text-[2rem] sm:text-[3rem] tracking-[0.5em] w-full text-center"
+      >
+        <span class="text-white">SnO<sub class="text-cyan-400">2</sub>WMaN</span
+        ><span class="text-slate-500">.net</span>
+      </div>
+      <div
+        class="flex flex-col sm:flex-row items-center sm:jutify-center mt-4 px-24 sm:w-full sm:px-0 space-y-4 sm:space-y-0 sm:space-x-6"
+      >
+        <SvgSiteQRCode class="w-[128px] h-[128px] flex-shrink-0" />
+        <div class="flex-grow flex flex-col space-y-2">
+          <div class="sitelink">
+            <span>Twitter</span>
+            <a href="https://twitter.com/SnO2WMaN">@SnO2WMaN</a>
+          </div>
+          <div class="sitelink">
+            <span>GitHub</span>
+            <a href="https://github.com/SnO2WMaN">@SnO2WMaN</a>
+          </div>
+          <div class="sitelink">
+            <span>Scrapbox</span>
+            <a href="https://scrapbox.io/SnO2WMaN">/SnO2WMaN</a>
+          </div>
+          <div class="sitelink">
+            <span>Nicovideo</span>
+            <a href="https://www.nicovideo.jp/user/118012640">118012640</a>
+          </div>
+          <div class="sitelink">
+            <span>Mail</span>
+            <a href="mailto:me@sno2wman.net">me@sno2wman.net</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="relative lg:absolute lg:right-0 lg:bottom-0 w-full lg:w-[480px] p-8 lg:p-16 z-10"
+    >
+      <a
+        href="/interest"
+        class="block text-white mb-4 text-2xl tracking-[0.125em]"
+      >
+        興味分野
+      </a>
+      <div class="flex flex-col space-y-2">
+        <a href="/interest#logic" class="interest-block">
+          <IconLogic />
+          <div>
+            <span>論理学</span>
+            <span>Logic</span>
+          </div>
+        </a>
+        <a href="/interest#formalize" class="interest-block">
+          <IconFormalize />
+          <div>
+            <span>数学の形式化</span>
+            <span>Formalized Mathematics</span>
+          </div>
+        </a>
+        <a href="/interest#webdev" class="interest-block">
+          <IconWeb />
+          <div>
+            <span>Web開発</span>
+            <span>Web Development</span>
+          </div>
+        </a>
+        <a href="/interest#otomad" class="interest-block">
+          <IconOtomad />
+          <div>
+            <span>音MAD</span>
+            <span>OTOMAD</span>
+          </div>
+        </a>
+        <a href="/interest#dj" class="interest-block">
+          <IconDj />
+          <div>
+            <span>DJ</span>
+            <span>DJ</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </header>
+</Meta>
+
+<style>
+  header {
+    background: hsl(180, 7%, 9%);
+  }
+
+  .sitename {
+    @apply font-mono;
+    font-size: 1.5em;
+    letter-spacing: 0.5em;
+    color: white;
+  }
+
+  .nameplate {
+  }
+
+  .sitelink {
+    @apply flex;
+    font-size: 0.8rem;
+    color: white;
+    & > span {
+      flex-grow: 1;
+      display: inline-flex;
+      flex-shrink: 0;
+      text-align: right;
+      letter-spacing: 0.05em;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 50%;
+        flex-grow: 1;
+        border-bottom: 1px rgb(126, 126, 126) dashed;
+        margin: 0 0.5em;
+        padding: 0 1em;
+      }
+    }
+    & > a {
+      @apply font-mono underline text-right;
+    }
+  }
+
+  .interest-block {
+    @apply flex items-center;
+
+    & > svg {
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.75rem;
+    }
+
+    & > div {
+      @apply lg:w-full flex flex-col lg:flex-row lg:items-center;
+    }
+
+    span {
+      color: white;
+      transition-duration: 0.5s;
+      transition-timing-function: cubic-bezier(0.125, 0.6, 0.15, 0.94);
+
+      &:nth-of-type(1) {
+        text-align: left;
+        flex-grow: 1;
+        letter-spacing: 0.25em;
+        transition-property: letter-spacing;
+        @apply font-sans;
+        font-size: 0.9rem;
+      }
+      &:nth-of-type(2) {
+        flex-shrink: 0;
+        letter-spacing: 0em;
+        transition-property: letter-spacing margin-right;
+        @apply font-mono italic;
+        font-size: 0.8rem;
+        flex-grow: 1;
+        @apply lg:text-right;
+      }
+    }
+    &:hover {
+      span {
+        &:nth-of-type(1) {
+          letter-spacing: 0;
+          @apply tracking-[0];
+        }
+        &:nth-of-type(2) {
+          @apply tracking-[0.1em] lg:m-[-0.1em];
+        }
+      }
+    }
+  }
+</style>
