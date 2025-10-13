@@ -93,9 +93,6 @@ import pngYu1 from "~/images/index/yu1.png";
   for (let i = 0; i < $samplings.length; i++) {
     const $sampling = $samplings[i];
 
-    const oW = $sampling.width;
-    const oH = $sampling.height;
-
     const x = Math.random() ** 0.75 * 60 - 15;
     if (Math.random() < 0.5) $sampling.style.left = `${x}%`;
     else $sampling.style.right = `${x}%`;
@@ -121,7 +118,6 @@ import pngYu1 from "~/images/index/yu1.png";
       `saturate(${Math.random() * 350}%)`,
       `brightness(${Math.random() * 120 + 40}%)`,
       `contrast(${Math.random() * 100 + 50}%)`,
-
     ].join(" ");
 
     const trigger = () => {
@@ -131,14 +127,11 @@ import pngYu1 from "~/images/index/yu1.png";
       const w = p ** 4 * Math.random() * 500 + 250;
       const h = w * (0.25 + p * (Math.random() + 0.25) ** 2 * 4);
 
-      const z = (w * h) / 2.5e3;
-      console.log(z ** 0.5);
-
       $sampling.style.zIndex = `${i - $samplings.length}`;
 
       $sampling.style.width = `${w}px`;
       $sampling.style.height = `${h}px`;
-      $sampling.style.animationDelay = `${250 + i * 7.5 - wt}ms`;
+      $sampling.style.animationDelay = `${500 + i * 16 - wt}ms`;
       $sampling.style.animationDuration = `${60 * p + 50}ms`;
       $sampling.style.animationPlayState = "running";
     };
@@ -244,7 +237,6 @@ import pngYu1 from "~/images/index/yu1.png";
           // { src: pngLainSkate, alt: "lainskate" },
           // { src: pngSAO, alt: "sao" },
         ].map(({ src, alt }) => (
-          <Image src={src} alt={alt} class:list={["sampling", "absolute"]} />
           <Image src={src} alt={alt} class:list={["sampling", "absolute"]} />
         ))
       }
@@ -443,11 +435,11 @@ import pngYu1 from "~/images/index/yu1.png";
 
   @keyframes animation-1 {
     from {
-      opacity: .9;
+      opacity: 0;
       transform: scaleY(0);
     }
     to {
-      opacity: .9;
+      opacity: 1;
       transform: scaleY(1);
     }
   }
