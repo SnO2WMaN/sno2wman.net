@@ -6,9 +6,6 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig({
   integrations: [svelte()],
-  output: "server",
-  adapter: cloudflare(),
-
   redirects: {
     "/projects": "/#projects",
     "/links": "/social",
