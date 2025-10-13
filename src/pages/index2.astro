@@ -1,5 +1,5 @@
 ---
-import Meta from "~/layouts/Meta.astro";
+import Metalayout from "~/layouts/Metalayout.astro";
 import { Image } from "astro:assets";
 
 import IconLogic from "~/icons/logic.svg";
@@ -11,7 +11,7 @@ import IconDj from "~/icons/dj.svg";
 import SvgSiteQRCode from "~/images/qrcode.svg";
 ---
 
-<Meta>
+<Metalayout>
   <header class="w-full min-h-screen relative">
     <div class="wallpaper fixed top-0 left-0 w-full h-screen">
       <svg
@@ -39,7 +39,8 @@ import SvgSiteQRCode from "~/images/qrcode.svg";
       <div
         class="name font-['Micro_5'] text-[2rem] sm:text-[3rem] tracking-[0.5em] w-full text-center"
       >
-        <span class="text-white">SnO<sub class="text-cyan-400">2</sub>WMaN</span
+        <span class="text-chalk-1"
+          >SnO<sub class="text-cyan-400">2</sub>WMaN</span
         ><span class="text-slate-500">.net</span>
       </div>
       <div
@@ -72,15 +73,15 @@ import SvgSiteQRCode from "~/images/qrcode.svg";
     </div>
 
     <div
-      class="relative lg:absolute lg:right-0 lg:bottom-0 w-full lg:w-[480px] p-8 lg:p-16 z-10"
+      class="relative lg:absolute lg:right-0 lg:bottom-0 w-full lg:w-[480px] p-8 lg:p-12 z-10"
     >
       <a
         href="/interest"
-        class="block text-white mb-4 text-2xl tracking-[0.125em]"
+        class="block text-chalk-1 mb-4 text-2xl tracking-[0.125em]"
       >
         興味分野
       </a>
-      <div class="flex flex-col space-y-2">
+      <div class="flex flex-col space-y-4">
         <a href="/interest#logic" class="interest-block">
           <IconLogic />
           <div>
@@ -119,29 +120,27 @@ import SvgSiteQRCode from "~/images/qrcode.svg";
       </div>
     </div>
   </header>
-</Meta>
+</Metalayout>
 
 <style>
   @reference "~/styles/global.css";
 
   header {
-    background: hsl(180, 7%, 9%);
+    @apply bg-charcoal-1;
   }
 
   .sitename {
-    @apply font-mono;
+    @apply font-mono text-chalk-1;
     font-size: 1.5em;
     letter-spacing: 0.5em;
-    color: white;
   }
 
   .nameplate {
   }
 
   .sitelink {
-    @apply flex;
     font-size: 0.8rem;
-    color: white;
+    @apply flex text-chalk-1;
     & > span {
       flex-grow: 1;
       display: inline-flex;
@@ -167,9 +166,7 @@ import SvgSiteQRCode from "~/images/qrcode.svg";
     @apply flex items-center;
 
     & > svg {
-      width: 1rem;
-      height: 1rem;
-      margin-right: 0.75rem;
+      @apply w-8 h-8 fill-chalk-1 mr-8 shrink-0;
     }
 
     & > div {
@@ -177,7 +174,7 @@ import SvgSiteQRCode from "~/images/qrcode.svg";
     }
 
     span {
-      color: white;
+      @apply text-chalk-1;
       transition-duration: 0.5s;
       transition-timing-function: cubic-bezier(0.125, 0.6, 0.15, 0.94);
 

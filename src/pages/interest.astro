@@ -1,0 +1,327 @@
+---
+import Layout from "~/layouts/DefaultLayout.astro";
+
+import IconLogic from "~/icons/logic.svg";
+import IconFormalize from "~/icons/formalize.svg";
+import IconWeb from "~/icons/web.svg";
+import IconOtomad from "~/icons/otomad.svg";
+import IconDj from "~/icons/dj.svg";
+---
+
+<Layout>
+  <section class="px-8 py-4">
+    <header class="flex items-center">
+      <div>
+        <IconLogic />
+      </div>
+      <h2 id="logic">
+        <span>論理学</span>
+        <span>Mathematical Logic</span>
+      </h2>
+    </header>
+    <p class="mt-4">
+      数理論理学に興味があります。特に<ruby
+        >Gödel<rp>(</rp><rt>ゲーデル</rt><rp>)</rp></ruby
+      >の不完全性定理と様相論理、それらの境界分野としての証明可能性論理について関心があります。
+    </p>
+  </section>
+  <section class="mt-4">
+    <header>
+      <div>
+        <IconFormalize />
+      </div>
+      <h2 id="formalize">
+        <span>数学の形式化</span>
+        <span>Formalization of Mathematics</span>
+      </h2>
+    </header>
+    <p class="mt-4">
+      定理証明支援系を用いた数学の形式化に興味があります。特に定理証明支援系として<a
+        href="https://lean-lang.org/">Lean</a
+      >を用いて数理論理学の形式化を進めています。
+    </p>
+
+    <div
+      class="mt-4 border-l-4 border-charcoal-2 pl-4 py-4 flex flex-col md:flex-row"
+    >
+      <h3 class="flex-shrink-0 text-lg md:text-sm md:w-1/5 text-charcoal-1">
+        関連プロジェクト
+      </h3>
+      <div class="flex flex-col mt-2 md:mt-0 space-y-4">
+        <article class="border-l-1 border-dotted border-charcoal-2 pl-4">
+          <h4 class="text-lg text-charcoal-1">
+            <a
+              href="https://github.com/FormalizedFormalLogic/Foundation"
+              class="underline">Formalized Formal Logic</a
+            >
+          </h4>
+          <p class="pl-4 text-sm mt-2 text-charcoal-1">
+            Leanによる数理論理学の形式化プロジェクト。<a
+              href="https://github.com/iehality"
+              class="underline">Palalansoukî</a
+            >と共同で進めています。
+            主に様相論理と中間命題論理を担当しており、様々な論理体系やその意味論などを整備したり、無数にある論理体系の分類などを形式化しています。
+            またその応用として、証明可能性論理の基本定理である<ruby
+              >Solovay<rp>(</rp><rt>ソロヴェイ</rt><rp>)</rp></ruby
+            >の算術的完全性定理の形式化も行っています。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="mt-4">
+    <header>
+      <div><IconWeb /></div>
+      <h2 id="webdev">
+        <span>Web開発</span>
+        <span>Web Development</span>
+      </h2>
+      <p class="mt-4"></p>
+    </header>
+    <p class="mt-4">
+      色々なWebサービスやWebサイトなどを作ったり、運営したりしています。
+    </p>
+    <div
+      class="mt-4 border-l-4 border-charcoal-2 pl-4 py-4 flex flex-col md:flex-row"
+    >
+      <h3 class="flex-shrink-0 text-lg md:text-sm md:w-1/5 text-charcoal-1">
+        関連プロジェクト
+      </h3>
+      <div class="flex flex-col mt-2 md:mt-0 space-y-4">
+        <article
+          class="border-l-1 border-dotted border-charcoal-2 pl-4 border-charcoal-2"
+        >
+          <h4 class="text-lg underline text-charcoal-1">
+            <a href="https://otodb.net">otodb</a>
+          </h4>
+          <p class="mt-2 text-sm text-charcoal-1">
+            開発にはあまり携われていませんが、いくつか機能開発の提案や設計に関する助言をしています。
+          </p>
+        </article>
+
+        <article
+          class="border-l-1 border-dotted border-charcoal-2 pl-4 border-charcoal-2"
+        >
+          <h4 class="text-lg underline text-charcoal-1">
+            <a href="https://github.com/OTOMADB">OTOMADB</a>
+          </h4>
+          <p class="mt-2 text-sm text-charcoal-1">
+            かつて自分が開発していた音MADのデータベースサイトです。精神的続編としてotodbになり、今ではソースコードだけが公開された状態になっています。
+          </p>
+        </article>
+
+        <article
+          class="border-l-1 border-dotted border-charcoal-2 pl-4 border-charcoal-2"
+        >
+          <h4 class="text-lg underline text-charcoal-1">
+            <a href="https://otoexpo.otomad-sarashi.com"
+              >音MADエキスポ 公式サイト</a
+            >
+          </h4>
+          <p class="mt-2 text-sm text-charcoal-1">
+            第200回音MAD晒しイベントで開催される音MADエキスポの公式サイトを作成しました。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-4">
+    <header>
+      <div><IconOtomad /></div>
+      <h2 id="otomad">
+        <span>音MAD</span>
+        <span>OTOMAD</span>
+      </h2>
+    </header>
+    <p class="mt-4">観たり、まとめたり、ミックスしたりしています。</p>
+
+    <div
+      class="mt-4 border-l-4 border-charcoal-2 pl-4 py-4 flex flex-col md:flex-row"
+    >
+      <h3 class="flex-shrink-0 text-lg md:text-sm md:w-1/5 text-charcoal-1">
+        関連リンク
+      </h3>
+      <div class="flex flex-col mt-2 md:mt-0 space-y-4">
+        <article class="border-l-1 border-dotted border-charcoal-2 pl-4">
+          <h4 class="text-lg underline text-charcoal-1">
+            <a href="https://otodb.net/profile/SnO2WMaN">otodb</a>
+          </h4>
+          <p class="mt-2 text-sm text-charcoal-1">
+            モデレータを務めていて、音MADを気が向いたときに登録したりしています。
+          </p>
+        </article>
+
+        <article class="border-l-1 border-dotted border-charcoal-2 pl-4">
+          <h4 class="text-lg text-charcoal-1">
+            ニコニコ動画でいいねした音MADののマイリスト
+          </h4>
+          <p class="mt-2 text-sm text-charcoal-1">
+            自分はあまりマイリストにまとめる習慣がなかったので思い出し次第追加し続けています。
+            投稿日時は無関係であくまでその時期に良かったものです。
+          </p>
+          <ol class="list-decimal pl-4 mt-2 text-sm space-y-1">
+            {
+              [
+                {
+                  link: "https://www.nicovideo.jp/mylist/78110237",
+                  label: "2025年6月前半から現在まで",
+                },
+                {
+                  link: "https://www.nicovideo.jp/mylist/78076337",
+                  label: "2024年から2025年6月前半まで",
+                },
+                {
+                  link: "https://www.nicovideo.jp/mylist/78110208",
+                  label: "2024年後期",
+                },
+              ].map(({ link, label }) => (
+                <li class="text-charcoal-1">
+                  <a href={link} class="underline">
+                    {label}
+                  </a>
+                </li>
+              ))
+            }
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-4">
+    <header>
+      <div><IconDj /></div>
+      <h2 id="dj">
+        <span>DJ</span>
+      </h2>
+    </header>
+    <p class="mt-4">
+      ミックスを作ったり、極稀に人前でDJをしたりしています。激しめの音楽にサンプリングの多い曲や音MADでミックスをするのが好きです。
+      変なDJばかりしていますが要望があれば連絡先からブッキングしてください。
+    </p>
+
+    <div
+      class="mt-4 border-l-4 border-charcoal-2 pl-4 py-4 flex flex-col md:flex-row"
+    >
+      <h3 class="flex-shrink-0 text-lg md:text-sm md:w-1/5 text-charcoal-1">
+        関連プロジェクト
+      </h3>
+      <div class="flex flex-col mt-2 md:mt-0 space-y-4">
+        <article class="border-l-1 border-dotted border-charcoal-2 pl-4">
+          <h4 class="text-lg text-charcoal-1">『ミクース』シリーズ</h4>
+          <p class="pl-4 text-sm mt-2 text-charcoal-1">
+            ブレイクコアやハードコア系などのサンプリングの多い激しく速いジャンルに、音MADを混ぜたりして作ったDJミックス集です。
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <div
+      class="mt-4 border-l-4 border-charcoal-2 pl-4 py-4 flex flex-col md:flex-row"
+    >
+      <h3 class="flex-shrink-0 text-lg md:text-sm md:w-1/5 text-charcoal-1">
+        出演情報
+      </h3>
+      <div class="flex flex-col mt-2 md:mt-0 space-y-4">
+        {
+          (
+            [
+              {
+                event: "MADDRIFT 2",
+                date: "2025.10.24",
+                location: "武蔵野美術大学",
+                description: (
+                  <>
+                    『音MADをテーマにしたDJパーティー』というテーマのイベントに出演します。
+                  </>
+                ),
+              },
+              {
+                event: "ELECTRO WIZARD 3",
+                date: "2025.03.23",
+                location: "CIRCUS TOKYO",
+                description: (
+                  <>
+                    (Moe)₂ Chimera Maker™として、DJ
+                    DEKAMESHIVIVEとB2BでDJしました。
+                  </>
+                ),
+              },
+            ] satisfies {
+              event: string;
+              date: string;
+              location: string;
+              description: null | any;
+            }[]
+          ).map(({ event, date, location, description }) => (
+            <article class="border-l-1 border-dotted border-charcoal-2 pl-4">
+              <div class="text-lg">
+                <span class="text-sm font-mono text-charcoal-2">{date}</span>
+                <h4 class="inline ml-2 text-charcoal-1">{event}</h4>
+                <span class="text-charcoal-2 ml-1 text-sm">@{location}</span>
+              </div>
+              <p class="pl-4 text-sm mt-2 text-charcoal-1">{description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "~/styles/global.css";
+
+  section {
+    @apply px-8 py-4;
+
+    header {
+      @apply flex items-center;
+
+      & > :has(svg) {
+        @apply w-16 h-16 mr-8 bg-charcoal-1 px-4 py-4 flex-shrink-0;
+        & > svg {
+          @apply w-full h-full fill-chalk-1;
+          /* @apply drop-shadow-[0_0_2px_var(--color-chalk-1)]; */
+        }
+      }
+
+      & > h2 {
+        @apply inline-flex flex-col md:flex-row;
+        & > span:nth-of-type(1) {
+          @apply text-2xl font-sans text-charcoal-1 tracking-wider;
+        }
+        & > span:nth-of-type(2) {
+          @apply mt-2 md:mt-0 md:ml-4 font-mono text-sm md:text-lg font-light text-charcoal-2 tracking-wide;
+        }
+      }
+    }
+
+    & > p {
+      @apply text-charcoal-1 text-sm md:text-base;
+
+      a {
+        @apply underline;
+      }
+    }
+
+    & > h3 {
+      @apply border-l-4 border-charcoal-2 pl-4 py-1 text-charcoal-1;
+    }
+
+    & > .projectlist {
+      display: flex flex-col gap-y-2;
+
+      article {
+        @apply border-l-1 border-charcoal-2 pl-4 py-1;
+        & > h4 {
+          @apply text-charcoal-1 font-sans text-lg;
+        }
+        & > p {
+          @apply text-charcoal-1 mt-2 text-sm;
+        }
+      }
+    }
+  }
+</style>

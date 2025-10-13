@@ -1,0 +1,44 @@
+---
+import Metalayout from "./Metalayout.astro";
+---
+
+<Metalayout>
+  <div class="bg-charcoal-1 min-h-screen">
+    <div class="wallpaper fixed top-0 left-0 w-full h-full">
+      <svg
+        class="absolute w-full h-full inset-0 px-8 py-8"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <pattern
+            id="star"
+            width="31"
+            height="31"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect x="15" y="15" width="1" height="1" fill="#ffffff44"></rect>
+          </pattern>
+        </defs>
+
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#star)"></rect>
+      </svg>
+    </div>
+
+    <header class="px-8 h-[320px] flex items-center relative z-1">
+      <h1
+        id="interest"
+        class="text-chalk-1 text-center w-full text-2xl tracking-widest relative z-1"
+      >
+        興味分野
+      </h1>
+    </header>
+    <div
+      class="bg-chalk-1 px-4 py-8 lg:py-16 lg:px-32 min-h-[calc(100vh-320px)] relative z-1"
+    >
+      <div class="max-w-[1024px] mx-auto">
+        <slot />
+      </div>
+    </div>
+    <footer class="py-32"></footer>
+  </div>
+</Metalayout>

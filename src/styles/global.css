@@ -4,4 +4,9 @@
   --font-serif: "BIZ UDPMincho", sans-serif;
   --font-sans: "Shippori Antique B1", sans;
   --font-mono: "JetBrains Mono", monospace;
+
+  --color-charcoal-1: hsl(196, 24%, 8%);
+  --color-charcoal-2: hsl(172, 16%, 42%);
+
+  --color-chalk-1: hsl(179, 42%, 91%);
 }
