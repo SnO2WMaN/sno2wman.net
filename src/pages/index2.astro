@@ -10,45 +10,149 @@ import IconDj from "~/icons/dj.svg";
 
 import SvgSiteQRCode from "~/images/qrcode.svg";
 
+// import pngDonald1 from "~/images/index/donald1.gif";
+// import pngDonaldVirus from "~/images/index/donaldvirus.gif";
+// import pngLainSkate from "~/images/index/lainskate.gif";
+// import pngSAO from "~/images/index/sao.gif";
+import pngAkane1 from "~/images/index/akane1.jpg";
+import pngAoi1 from "~/images/index/aoi1.png";
+import pngAoi2 from "~/images/index/aoi2.png";
 import pngAtri1 from "~/images/index/atri1.png";
+import pngAtri2 from "~/images/index/atri2.png";
+import pngBiorante1 from "~/images/index/biorante1.png";
+import pngBiriheri1 from "~/images/index/biriheri1.png";
 import pngChihaya1 from "~/images/index/chihaya1.png";
+import pngContradiction1 from "~/images/index/contradiction.png";
 import pngDeutchBoy from "~/images/index/deutch_boy.png";
-import pngDonaldVirus from "~/images/index/donaldvirus.gif";
+import pngDoge1 from "~/images/index/doge1.jpg";
+import pngEiraMiyafuji1 from "~/images/index/eira_miyafuji1.png";
 import pngErio1 from "~/images/index/erio1.png";
+import pngEva1 from "~/images/index/eva1.png";
+import pngExe1 from "~/images/index/exe1.jpg";
+import pngExe2 from "~/images/index/exe2.jpg";
+import pngGurugurume from "~/images/index/gurugurume.png";
+import pngHajime1 from "~/images/index/hajime1.png";
+import pngHarunopasi from "~/images/index/harunopasi.png";
 import pngHeadphone from "~/images/index/headphone.jpg";
+import pngHG1 from "~/images/index/hg1.jpg";
 import pngHinata1 from "~/images/index/hinata1.png";
 import pngHNS1 from "~/images/index/HNS1.png";
 import pngIchigomashimaro1 from "~/images/index/ichigomashimaro1.png";
-import pngIkari from "~/images/index/ikari.png";
+import pngInami1 from "~/images/index/inami1.png";
+import pngJakku1 from "~/images/index/jakku1.png";
 import pngKana1 from "~/images/index/kana1.png";
 import pngKomarin1 from "~/images/index/komarin1.png";
+import pngKotoura1 from "~/images/index/kotoura1.png";
 import pngKurumi1 from "~/images/index/kurumi1.png";
 import pngKushieda1 from "~/images/index/kushieda1.png";
-import pngLainSkate from "~/images/index/lainskate.gif";
+import pngKyoto1 from "~/images/index/kyoto1.png";
 import pngMadoka1 from "~/images/index/madoka1.png";
+import pngMan1 from "~/images/index/man1.png";
 import pngMangenano from "~/images/index/mangenano.jpg";
+import pngMei1 from "~/images/index/mei1.png";
 import pngMetalcube from "~/images/index/metalcube.png";
 import pngMinamike1 from "~/images/index/minamike1.png";
 import pngNano1 from "~/images/index/nano1.png";
 import pngOreimo1 from "~/images/index/oreimo1.png";
+import pngOtaku1 from "~/images/index/otaku1.png";
+import pngParn1 from "~/images/index/parn1.png";
+import pngRem1 from "~/images/index/rem1.jpg";
+import pngRenako1 from "~/images/index/renako1.png";
+import pngRenge1 from "~/images/index/renge1.png";
 import pngRisa1 from "~/images/index/risa1.png";
-import pngSAO from "~/images/index/sao.gif";
 import pngShamiko1 from "~/images/index/shamiko1.png";
 import pngTaiga1 from "~/images/index/taiga1.png";
+import pngTaxi1 from "~/images/index/taxi1.jpg";
 import pngThanks from "~/images/index/thanks.png";
 import pngTIVAC from "~/images/index/theinterviewersarecoming.png";
 import pngTogetter1 from "~/images/index/togetter1.png";
+import pngUtsu1 from "~/images/index/utsu1.jpg";
 import pngWithoutInduction from "~/images/index/without_induction.png";
-import pngWTF1 from "~/images/index/eira_miyafuji1.png";
-import pngWTF2 from "~/images/index/donald1.gif";
 import pngYu1 from "~/images/index/yu1.png";
 ---
+
+<script>
+  function shuffle<T>(array: T[]): T[] {
+    let copy = [...array];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  const $samplings = shuffle(
+    document
+      .querySelectorAll<HTMLImageElement>(".wallpaper > .sampling")
+      .entries()
+      .toArray()
+      .map(([i, el]) => el)
+  );
+  const nowInit = Date.now();
+
+  for (let i = 0; i < $samplings.length; i++) {
+    const $sampling = $samplings[i];
+
+    const oW = $sampling.width;
+    const oH = $sampling.height;
+
+    const x = Math.random() ** 0.75 * 60 - 15;
+    if (Math.random() < 0.5) $sampling.style.left = `${x}%`;
+    else $sampling.style.right = `${x}%`;
+
+    const y = Math.random() ** 0.75 * 60 - 15;
+    if (Math.random() < 0.5) $sampling.style.top = `${y}%`;
+    else $sampling.style.bottom = `${y}%`;
+
+    switch (Math.floor(Math.random() * 2)) {
+      case 0:
+        $sampling.classList.add("animation-0");
+        $sampling.style.transformOrigin =
+          Math.random() < 0.5 ? "left" : "right";
+        break;
+      case 1:
+        $sampling.classList.add("animation-1");
+        $sampling.style.transformOrigin =
+          Math.random() < 0.5 ? "top" : "bottom";
+        break;
+    }
+
+    $sampling.style.filter = [
+      `saturate(${Math.random() * 350}%)`,
+      `brightness(${Math.random() * 120 + 40}%)`,
+      `contrast(${Math.random() * 100 + 50}%)`,
+
+    ].join(" ");
+
+    const trigger = () => {
+      const wt = Math.min(Date.now() - nowInit, 3500);
+
+      const p = ($samplings.length - i) / $samplings.length;
+      const w = p ** 4 * Math.random() * 500 + 250;
+      const h = w * (0.25 + p * (Math.random() + 0.25) ** 2 * 4);
+
+      const z = (w * h) / 2.5e3;
+      console.log(z ** 0.5);
+
+      $sampling.style.zIndex = `${i - $samplings.length}`;
+
+      $sampling.style.width = `${w}px`;
+      $sampling.style.height = `${h}px`;
+      $sampling.style.animationDelay = `${250 + i * 7.5 - wt}ms`;
+      $sampling.style.animationDuration = `${60 * p + 50}ms`;
+      $sampling.style.animationPlayState = "running";
+    };
+
+    $sampling.addEventListener("load", trigger);
+    if ($sampling.complete) trigger();
+  }
+</script>
 
 <Metalayout>
   <header class="w-full min-h-screen relative">
     <div class="wallpaper fixed top-0 left-0 w-screen h-screen overflow-hidden">
       <svg
-        class="absolute w-full h-full inset-0 px-8 py-8 z-50"
+        class="absolute w-full h-full inset-0 px-8 py-8 z-9999"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
@@ -75,68 +179,82 @@ import pngYu1 from "~/images/index/yu1.png";
         src={import.meta.env.DEV
           ? "https://count.getloli.com/@sno2wman.net-dev?name=sno2wman.net-dev&theme=green&padding=8&offset=0&align=bottom&pixelated=1&darkmode=0"
           : "https://count.getloli.com/@sno2wman.net?name=sno2wman.net&theme=green&padding=8&offset=0&align=bottom&pixelated=1&darkmode=0"}
-        class="absolute top-[29%] left-[9%] h-[126px] rotate-270 z-20"
+        class="absolute top-[29%] left-[9%] h-[126px] rotate-270 z-9999 saturate-50 brightness-50"
       />
 
-      <Image
-        src={pngWTF2}
-        alt="w"
-        class:list={["absolute top-[22%] right-[14%] w-[160px] h-[96px]"]}
-      />
-      <Image
-        src={pngWTF2}
-        alt="w"
-        class:list={["absolute top-[26%] right-[16%] w-[160px] h-[96px]"]}
-      />
-      <Image
-        src={pngWTF2}
-        alt="w"
-        class:list={["absolute top-[30%] right-[18%] w-[160px] h-[96px]"]}
-      />
-
-      <Image
-        src={pngWTF1}
-        alt="w"
-        class:list={["absolute bottom-[10%] left-[8%] w-[260px] h-[260px]"]}
-      />
-
-      <Image src={pngOreimo1} alt="w" class="oreimo-1" />
-      <Image src={pngIkari} alt="w" class="ikari-1" />
-      <Image src={pngErio1} alt="w" class="erio-1" />
-      <Image src={pngDeutchBoy} alt="w" class="deutchboy" />
-      <Image src={pngAtri1} alt="w" class="atri-1" />
-      <Image src={pngDonaldVirus} alt="w" class="donaldvirus" />
-      <Image src={pngHeadphone} alt="w" class="headphone" />
-      <Image src={pngKana1} alt="w" class="kana-1" />
-      <Image src={pngKurumi1} alt="w" class="kurumi-1" />
-      <Image src={pngLainSkate} alt="w" class="lain-skate" />
-      <Image src={pngMadoka1} alt="w" class="madoka-1" />
-      <Image src={pngMangenano} alt="w" class="mangenano" />
-      <Image src={pngNano1} alt="w" class="nano-1" />
-      <Image src={pngRisa1} alt="w" class="risa-1" />
-      <Image src={pngSAO} alt="w" class="sao" />
-      <Image src={pngShamiko1} alt="w" class="shamiko-1" />
-      <Image src={pngTaiga1} alt="w" class="taiga-1" />
-      <Image src={pngWithoutInduction} alt="w" class="without-induction" />
-      <Image src={pngChihaya1} alt="w" class="chihaya-1" />
-      <Image src={pngKomarin1} alt="w" class="komarin-1" />
-      <Image src={pngYu1} alt="w" class="yu-1" />
-      <Image src={pngTogetter1} alt="w" class="togetter-1" />
-      <Image src={pngTIVAC} alt="w" class="tivac" />
-      <Image src={pngThanks} alt="w" class="thanks" />
-      <Image src={pngMinamike1} alt="w" class="minamike-1" />
-      <Image src={pngMetalcube} alt="w" class="metalcube" />
-      <Image src={pngKushieda1} alt="w" class="kushieda-1" />
-      <Image src={pngIchigomashimaro1} alt="w" class="ichigomashimaro-1" />
-      <Image src={pngHNS1} alt="w" class="hns-1" />
-      <Image src={pngHinata1} alt="w" class="hinata-1" />
+      {
+        [
+          { src: pngAkane1, alt: "akane" },
+          { src: pngAoi1, alt: "aoi" },
+          { src: pngAoi2, alt: "ikari" },
+          { src: pngAtri1, alt: "atri" },
+          { src: pngAtri2, alt: "atri2" },
+          { src: pngBiorante1, alt: "biorante" },
+          { src: pngBiriheri1, alt: "biriheri" },
+          { src: pngChihaya1, alt: "chihaya" },
+          { src: pngContradiction1, alt: "contradiction" },
+          { src: pngDeutchBoy, alt: "deutch_boy" },
+          { src: pngDoge1, alt: "doge" },
+          { src: pngEiraMiyafuji1, alt: "eira_miyafuji" },
+          { src: pngErio1, alt: "erio" },
+          { src: pngEva1, alt: "eva" },
+          { src: pngExe1, alt: "exe1" },
+          { src: pngExe2, alt: "exe2" },
+          { src: pngGurugurume, alt: "gurugurume" },
+          { src: pngHajime1, alt: "hajime" },
+          { src: pngHarunopasi, alt: "harunopasi" },
+          { src: pngHeadphone, alt: "headphone" },
+          { src: pngHG1, alt: "hg" },
+          { src: pngHinata1, alt: "hinata" },
+          { src: pngHNS1, alt: "HNS" },
+          { src: pngIchigomashimaro1, alt: "ichigomashimaro" },
+          { src: pngInami1, alt: "inami" },
+          { src: pngJakku1, alt: "jakku" },
+          { src: pngKana1, alt: "kana" },
+          { src: pngKomarin1, alt: "komarin" },
+          { src: pngKotoura1, alt: "kotoura" },
+          { src: pngKurumi1, alt: "kurumi" },
+          { src: pngKushieda1, alt: "kushieda" },
+          { src: pngKyoto1, alt: "kyoto" },
+          { src: pngMadoka1, alt: "madoka" },
+          { src: pngMan1, alt: "man" },
+          { src: pngMangenano, alt: "mangenano" },
+          { src: pngMei1, alt: "mei" },
+          { src: pngMetalcube, alt: "metalcube" },
+          { src: pngMinamike1, alt: "minamike" },
+          { src: pngNano1, alt: "nano" },
+          { src: pngOreimo1, alt: "oreimo" },
+          { src: pngOtaku1, alt: "otaku" },
+          { src: pngParn1, alt: "parn" },
+          { src: pngRem1, alt: "rem1" },
+          { src: pngRenako1, alt: "renako" },
+          { src: pngRenge1, alt: "renge" },
+          { src: pngRisa1, alt: "risa" },
+          { src: pngShamiko1, alt: "shamiko" },
+          { src: pngTaiga1, alt: "taiga" },
+          { src: pngTaxi1, alt: "taxi" },
+          { src: pngThanks, alt: "thanks" },
+          { src: pngTIVAC, alt: "theinterviewersarecoming" },
+          { src: pngTogetter1, alt: "togetter" },
+          { src: pngUtsu1, alt: "utsu" },
+          { src: pngWithoutInduction, alt: "without_induction" },
+          { src: pngYu1, alt: "yu" },
+          // { src: pngDonald1, alt: "donald" },
+          // { src: pngDonaldVirus, alt: "donaldvirus" },
+          // { src: pngLainSkate, alt: "lainskate" },
+          // { src: pngSAO, alt: "sao" },
+        ].map(({ src, alt }) => (
+          <Image src={src} alt={alt} class:list={["sampling", "absolute"]} />
+          <Image src={src} alt={alt} class:list={["sampling", "absolute"]} />
+        ))
+      }
     </div>
 
     <div
       class="nameplate relative lg:absolute m-auto inset-x-0 h-screen flex flex-col justify-center items-center lg:items-baseline w-full sm:w-[640px]"
     >
       <div
-        class="name font-['Micro_5'] text-[2rem] sm:text-[3rem] tracking-[0.5em] w-full text-center bg-charcoal-1/50 backdrop-blur-md"
+        class="name font-['Micro_5'] text-[2rem] sm:text-[3rem] tracking-[0.5em] w-full text-center bg-charcoal-1/50 backdrop-blur-sm"
       >
         <span class="text-chalk-1"
           >SnO<sub class="text-accent-1">2</sub>WMaN</span
@@ -146,10 +264,10 @@ import pngYu1 from "~/images/index/yu1.png";
         class="flex flex-col sm:flex-row items-center sm:jutify-center mt-4 sm:w-full px-0 sm:px-0 space-y-4 sm:space-y-0 sm:space-x-6"
       >
         <SvgSiteQRCode
-          class="w-[160px] h-[160px] flex-shrink-0 p-[16px] bg-charcoal-1/50 backdrop-blur-md"
+          class="w-[160px] h-[160px] flex-shrink-0 p-[16px] bg-charcoal-1/50 backdrop-blur-sm"
         />
         <div
-          class="flex-grow flex flex-col space-y-2 px-8 py-8 bg-charcoal-1/50 backdrop-blur-md"
+          class="flex-grow flex flex-col space-y-2 px-8 py-8 bg-charcoal-1/50 backdrop-blur-sm"
         >
           <div class="sitelink">
             <span>Twitter</span>
@@ -176,7 +294,7 @@ import pngYu1 from "~/images/index/yu1.png";
     </div>
 
     <div
-      class="relative lg:absolute lg:right-4 lg:bottom-4 w-full lg:w-[480px] p-8 lg:p-12 z-10 bg-charcoal-1/50 backdrop-blur-xs"
+      class="relative lg:absolute lg:right-4 lg:bottom-4 w-full lg:w-[480px] p-8 lg:p-12 z-10 bg-charcoal-1/50 backdrop-blur-sm"
     >
       <a
         href="/interest"
@@ -312,243 +430,42 @@ import pngYu1 from "~/images/index/yu1.png";
     }
   }
 
+  @keyframes animation-0 {
+    from {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    to {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes animation-1 {
+    from {
+      opacity: .9;
+      transform: scaleY(0);
+    }
+    to {
+      opacity: .9;
+      transform: scaleY(1);
+    }
+  }
+
   .wallpaper {
     @apply select-none;
 
-    & > .ikari-1 {
-      position: absolute;
-      top: 12%;
-      left: 25%;
-      width: 428px;
-      height: 126px;
-      filter: contrast(1.25);
-      z-index: 16;
-    }
-    & > .erio-1 {
-      position: absolute;
-      bottom: 7%;
-      left: 50%;
-      width: 326px;
-      height: 96px;
-      z-index: 2;
-    }
-    & > .deutchboy {
-      position: absolute;
-      top: 52%;
-      left: -2.5%;
-      width: 640px;
-      height: 160px;
-    }
-    & > .atri-1 {
-      position: absolute;
-      top: 15%;
-      right: 5%;
-      width: 160px;
-      height: 160px;
-    }
-    & > .donaldvirus {
-      position: absolute;
-      bottom: 15%;
-      left: 20%;
-      width: 160px;
-      height: 96px;
-    }
-    & > .headphone {
-      position: absolute;
-      top: 48%;
-      right: 13%;
-      width: 160px;
-      height: 160px;
-      z-index: 9;
-    }
-    & > .kana-1 {
-      position: absolute;
-      top: 5%;
-      left: 9%;
-      width: 240px;
-      height: 320px;
-    }
-    & > .kurumi-1 {
-      position: absolute;
-      top: 70%;
-      left: 36%;
-      width: 180px;
-      height: 180px;
-    }
-    & > .lain-skate {
-      position: absolute;
-      top: 40%;
-      right: 5%;
-      width: 160px;
-      height: 160px;
-    }
-    & > .madoka-1 {
-      position: absolute;
-      bottom: -10%;
-      right: -5%;
-      width: 640px;
-      height: 320px;
-      z-index: 1;
-    }
-    & > .mangenano {
-      position: absolute;
-      bottom: 5%;
-      left: 25%;
-      width: 320px;
-      height: 60px;
-      z-index: 4;
-    }
-    & > .nano-1 {
-      position: absolute;
-      top: 65%;
-      left: 24%;
-      width: 640px;
-      height: 60px;
-      z-index: 8;
-    }
-    & > .oreimo-1 {
-      position: absolute;
-      top: -25%;
-      right: 35%;
-      width: 480px;
-      height: 480px;
-      z-index: -1;
-    }
-    & > .risa-1 {
-      position: absolute;
-      top: -2.5%;
-      left: 2.5%;
-      width: 160px;
-      height: 320px;
-      z-index: 3;
-    }
-    & > .sao {
-      position: absolute;
-      top: 70%;
-      left: 60%;
-      width: 480px;
-      height: 160px;
-      z-index: -2;
-    }
-    & > .shamiko-1 {
-      position: absolute;
-      top: 20%;
-      right: 43%;
-      width: 720px;
-      height: 160px;
-      z-index: 5;
-    }
-    & > .taiga-1 {
-      position: absolute;
-      bottom: 40%;
-      right: 23%;
-      width: 240px;
-      height: 520px;
-      z-index: -2;
-    }
-    & > .without-induction {
-      position: absolute;
-      top: 5%;
-      right: 25%;
-      width: 240px;
-      height: 160px;
-      z-index: 7;
-    }
-    & > .chihaya-1 {
-      position: absolute;
-      top: -15%;
-      left: 76%;
-      width: 480px;
-      height: 320px;
-      z-index: -2;
-    }
-    & > .komarin-1 {
-      position: absolute;
-      bottom: 48%;
-      left: 64%;
-      width: 480px;
-      height: 60px;
-      z-index: 2;
-    }
-    & > .togetter-1 {
-      position: absolute;
-      bottom: 30%;
-      right: 32%;
-      width: 220px;
-      height: 60px;
-      z-index: 3;
-    }
-    & > .tivac {
-      position: absolute;
-      bottom: 25%;
-      right: 5%;
-      width: 240px;
-      height: 160px;
-      z-index: 1;
-    }
-    & > .minamike-1 {
-      position: absolute;
-      bottom: 0%;
-      left: 1.5%;
-      width: 320px;
-      height: 120px;
-      z-index: 3;
-    }
-    & > .metalcube {
-      position: absolute;
-      top: 40%;
-      left: 25%;
-      width: 120px;
-      height: 120px;
-      z-index: 4;
-    }
-    & > .ichigomashimaro-1 {
-      position: absolute;
-      top: 1%;
-      left: 16%;
-      width: 320px;
-      height: 160px;
-      z-index: 8;
-    }
-    & > .yu-1 {
-      position: absolute;
-      bottom: -5%;
-      left: 38%;
-      width: 240px;
-      height: 160px;
-      z-index: 10;
-    }
-    & > .thanks {
-      position: absolute;
-      bottom: 10%;
-      right: 37%;
-      width: 320px;
-      height: 160px;
-      z-index: -2;
-    }
-    & > .kushieda-1 {
-      position: absolute;
-      bottom: 5%;
-      left: 26%;
-      width: 160px;
-      height: 320px;
-      z-index: -3;
-    }
-    & > .hns-1 {
-      position: absolute;
-      bottom: 48%;
-      right: -7.5%;
-      width: 320px;
-      height: 320px;
-      z-index: -2;
-    }
-    & > .hinata-1 {
-      position: absolute;
-      bottom: 15%;
-      right: 20%;
-      width: 160px;
-      height: 320px;
-      z-index: -1;
+    & > .sampling {
+      animation-fill-mode: both;
+      animation-play-state: paused;
+      opacity: 0;
+
+      &.animation-0 {
+        animation-name: animation-0;
+      }
+      &.animation-1 {
+        animation-name: animation-1;
+      }
     }
   }
 </style>
