@@ -39,6 +39,24 @@ import Metalayout from "./Metalayout.astro";
         <slot />
       </div>
     </div>
-    <footer class="py-32"></footer>
+
+    <footer class="py-32 relative z-10">
+      <div class="max-w-[1024px] mx-auto text-center text-slate-700">
+        <ul class="text-chalk-1 flex justify-start items-start flex-col">
+          <li>
+            <span>GitHub</span>
+            <a href="https://github.com/SnO2WMaN" class="font-mono underline"
+              >@SnO2WMaN</a
+            >
+          </li>
+          <li>
+            <span>Twitter</span>
+            <a href="https://twitter.com/SnO2WMaN" class="font-mono underline"
+              >@SnO2WMaN</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
   </div>
 </Metalayout>

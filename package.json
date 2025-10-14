@@ -15,6 +15,7 @@
     "@astrojs/svelte": "^7.0.0",
     "@fontsource-variable/jetbrains-mono": "^5.1.1",
     "@fontsource/biz-udpmincho": "^5.0.13",
+    "@fontsource/micro-5": "^5.2.7",
     "@fontsource/shippori-antique-b1": "^5.0.13",
     "@tailwindcss/vite": "^4.1.14",
     "astro": "^5.0.0",
@@ -27,5 +28,6 @@
     "prettier": "^3.6.2",
     "typescript": "^5.0.0",
     "wrangler": "^3.0.0"
-  }
+  },
+  "packageManager": "pnpm@10.0.0+sha512.b8fef5494bd3fe4cbd4edabd0745df2ee5be3e4b0b8b08fa643aa3e4c6702ccc0f00d68fa8a8c9858a735a0032485a44990ed2810526c875e416f001b17df12b"
 }
