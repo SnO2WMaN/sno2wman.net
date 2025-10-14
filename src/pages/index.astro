@@ -274,7 +274,7 @@ import pngYu1 from "~/images/index/yu1.png";
       class="nameplate relative lg:absolute m-auto inset-x-0 h-screen flex flex-col justify-center items-center lg:items-baseline w-full sm:w-[640px]"
     >
       <div
-        class="name font-pixel text-[2rem] sm:text-[3rem] tracking-[0.5em] w-full text-center bg-charcoal-1/50 backdrop-blur-sm"
+        class="name font-pixel text-[2rem] sm:text-[3rem] tracking-[0.5em] w-full text-center bg-charcoal-1/75"
       >
         <span class="text-chalk-1"
           >SnO<sub class="text-accent-1">2</sub>WMaN</span
@@ -284,10 +284,10 @@ import pngYu1 from "~/images/index/yu1.png";
         class="flex flex-col sm:flex-row items-center sm:jutify-center mt-4 sm:w-full px-0 sm:px-0 space-y-4 sm:space-y-0 sm:space-x-6"
       >
         <SvgSiteQRCode
-          class="w-[160px] h-[160px] flex-shrink-0 p-[16px] bg-charcoal-1/50 backdrop-blur-sm"
+          class="w-[160px] h-[160px] flex-shrink-0 p-[16px] bg-charcoal-1/75"
         />
         <div
-          class="flex-grow flex flex-col space-y-2 px-8 py-8 bg-charcoal-1/50 backdrop-blur-sm"
+          class="flex-grow flex flex-col space-y-2 px-8 py-8 bg-charcoal-1/75"
         >
           <div class="sitelink">
             <span>Twitter</span>
@@ -314,7 +314,7 @@ import pngYu1 from "~/images/index/yu1.png";
     </div>
 
     <div
-      class="relative lg:absolute lg:right-4 lg:bottom-4 w-full lg:w-[480px] p-8 lg:p-12 z-10 bg-charcoal-1/50 backdrop-blur-sm"
+      class="relative lg:absolute lg:right-4 lg:bottom-4 w-full lg:w-[480px] p-8 lg:p-12 z-10 bg-charcoal-1/75"
     >
       <a
         href="/interest"
@@ -492,6 +492,7 @@ import pngYu1 from "~/images/index/yu1.png";
         animation-play-state: paused;
         animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
         opacity: 0;
+        will-change: transform opacity;
       }
       &.animation-h-0 > img {
         animation-name: animation-h-0;
