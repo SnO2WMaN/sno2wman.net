@@ -108,11 +108,13 @@ import pngYu1 from "~/images/index/yu1.png";
     if (Math.random() < 0.5) $sampling.style.top = `${y}%`;
     else $sampling.style.bottom = `${y}%`;
 
+    /*
     $sampling.style.filter = [
       `saturate(${Math.random() * 350}%)`,
       `brightness(${Math.random() * 120 + 40}%)`,
       `contrast(${Math.random() * 100 + 50}%)`,
     ].join(" ");
+    */
 
     const $samplingImg = $sampling.querySelector("img")!;
     const trigger = () => {
