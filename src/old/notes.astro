@@ -1,0 +1,43 @@
+---
+import NormalLayout from "~/layouts/NormalLayout.astro";
+
+import links from "../data/math.json";
+import metalinks from "../data/metalinks.json";
+---
+
+<NormalLayout title="Notes" description="Notes">
+  <div class="grid gap-y-4">
+    <div>
+      <h2
+        id="links"
+        class="font-sans text-xl text-slate-900 pl-4 py-2 mb-2 border-slate-900 border-l-4"
+      >
+        <a href="#math">数学</a>
+      </h2>
+      <p class="font-serif text-sm text-slate-900">
+        数学についてのメモ。誤りがあれば各リポジトリのIssueからお知らせください。
+      </p>
+      <div class="mt-2 flex flex-col gap-y-2">
+        {
+          links.map(({ pdf, description, github, name }) => (
+            <article class="flex flex-col items-baseline">
+              <div>
+                <h3>
+                  <a href={pdf} class="text-slate-900 hover:underline">
+                    {name}
+                  </a>
+                </h3>
+              </div>
+              <p class="text-sm text-slate-700">
+                {description}
+                <a href={github} class="ml-2 hover:underline">
+                  GitHub
+                </a>
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</NormalLayout>

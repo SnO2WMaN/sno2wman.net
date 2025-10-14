@@ -1,16 +1,17 @@
 import cloudflare from "@astrojs/cloudflare";
 import svelte from "@astrojs/svelte";
-import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [svelte(), tailwind()],
-  output: "server",
-  adapter: cloudflare(),
+  integrations: [svelte()],
   redirects: {
     "/projects": "/#projects",
     "/links": "/social",
     "/aboutme": "/",
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
 });

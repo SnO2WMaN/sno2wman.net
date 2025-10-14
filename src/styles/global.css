@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "BIZ UDPMincho", sans-serif;
+  --font-sans: "Shippori Antique B1", sans;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-pixel: "Micro 5", monospace;
+
+  --color-charcoal-1: hsl(196, 17%, 10%);
+  --color-charcoal-2: hsl(172, 9%, 32%);
+
+  --color-chalk-1: hsl(179, 42%, 91%);
+  --color-chalk-2: hsl(186, 22%, 61%);
+
+  --color-accent-1: hsl(197, 90%, 66%);
+}
