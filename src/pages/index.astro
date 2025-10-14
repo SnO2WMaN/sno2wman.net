@@ -114,11 +114,11 @@ import pngYu1 from "~/images/index/yu1.png";
       `brightness(${Math.random() * 120 + 40}%)`,
       `contrast(${Math.random() * 100 + 50}%)`,
     ].join(" ");
-    */
+*/
 
     const $samplingImg = $sampling.querySelector("img")!;
     const trigger = () => {
-      const wt = Math.min(Date.now() - nowInit, 3500);
+      const wt = Math.min(Date.now() - nowInit, 500);
 
       const p = ($samplings.length - i) / $samplings.length;
       const w = (p + Math.random() * 0.25) ** 3 * 360 + 160;
@@ -144,7 +144,7 @@ import pngYu1 from "~/images/index/yu1.png";
           break;
       }
 
-      $samplingImg.style.animationDelay = `${75 + 500 * (1 - p) - wt}ms`;
+      $samplingImg.style.animationDelay = `${500 + 600 * (1 - p) ** 0.5 - wt}ms`;
       $samplingImg.style.animationDuration = `${100}ms`;
       $samplingImg.style.animationPlayState = "running";
     };
@@ -490,7 +490,7 @@ import pngYu1 from "~/images/index/yu1.png";
       & > img {
         animation-fill-mode: both;
         animation-play-state: paused;
-        animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
         opacity: 0;
         will-change: transform opacity;
       }
